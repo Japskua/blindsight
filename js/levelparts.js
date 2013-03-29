@@ -22,6 +22,7 @@ function CreatePlatform(world, x, y, userdata) {
 } // End of CreatePlatform()
 
 
+// Comment for TileObject
 function TileObject(tileType, tileName) {
 
     /*
@@ -29,6 +30,38 @@ function TileObject(tileType, tileName) {
      */
     this._tileType = tileType;
     this._tileName = tileName;
+
+    // Player is never hidden
+    if (tileType == "player") {
+        this._hidden = false;
+    }
+    else {
+        this._hidden = true;
+    }
+
+
+    // Get hide value
+    this.getHidden = getHidden;
+    function getHidden() {
+        return this._hidden;
+    }
+
+    this.Hide = Hide;
+    function Hide() {
+        if (DEBUG) {
+            console.log("Hiding " + this._tileName);
+        }
+        this._hidden = true;
+    }
+
+    this.UnHide = UnHide;
+    function UnHide() {
+        if (DEBUG) {
+            console.log("Unhiding " + this._tileName);
+        }
+
+        this._hidden = false;
+    }
 
     // Getting the tile type
     this.getTileType = getTileType;

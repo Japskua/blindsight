@@ -1,10 +1,25 @@
 function drawWorld(world, context) {
-    for (var j = world.m_jointList; j; j = j.m_next) {
-        drawJoint(j, context);
+    // Draw all joints in the joint list
+    for (var jointList = world.m_jointList; jointList; jointList = jointList.m_next) {
+        drawJoint(jointList, context);
     }
-    for (var b = world.m_bodyList; b; b = b.m_next) {
-        for (var s = b.GetShapeList(); s != null; s = s.GetNext()) {
-            drawShape(s, context);
+
+    // Draw all bodies (shapes)
+    for (var body = world.m_bodyList; body; body = body.m_next) {
+        // Get all the shapes of the bodies
+        for (var shape = body.GetShapeList(); shape != null; shape = shape.GetNext()) {
+            if (DEBUG) {
+                var variable = shape.GetUserData().getHidden();
+               // console.log("Drawing shape that is: " + variable);
+            }
+
+            // If the shape is not marked as hidden
+            if (shape.GetUserData().getHidden() != true) {
+                // And Draw the shape
+                drawShape(shape, context);
+            }
+
+
         }
     }
 }

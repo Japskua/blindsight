@@ -72,9 +72,18 @@ function CheckPlayerCollision(collision) {
     var collisionObject1Type =  collision.GetShape1().GetUserData().getTileType();
     var collisionObject2Type =  collision.GetShape2().GetUserData().getTileType();
 
+    var collision1Data = collision.GetShape1().GetUserData();
+
     // Check if one of the colliders is the player
     if (collisionObject1Type == 'player' || collisionObject2Type == 'player'){
         if ((collisionObject1Type == 'ground' || collisionObject2Type == 'ground')){
+            // The player collided with the ground, so unhide
+            if (collision1Data.getHidden() == true) {
+
+                // Unhide
+                collision1Data.UnHide();
+
+            }
             var playerObj = (collisionObject1Type == 'player' ? collision.GetShape1().GetPosition() :  collision.GetShape2().GetPosition());
             var groundObj = (collisionObject1Type == 'ground' ? collision.GetShape1().GetPosition() :  collision.GetShape2().GetPosition());
             if (playerObj.y < groundObj.y){
@@ -102,7 +111,7 @@ function handleInteractions(){
                 DEBUG_COLLISION = collisionObject1;
 
                 // Inform
-                console.log(collisionObject1.getTileName() + " collided with " + collisionObject2.getTileName());
+                console.log(collisionObject1.getTileName() + " collided with " + collisionObject2.getTileName() + " and was hidden: " + collisionObject1.getHidden());
 
             }
         }   // End of DEBUG

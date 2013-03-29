@@ -8,9 +8,10 @@
     <ignored path="blindsight.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/index.html" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1364480257934" ignored="false" />
-    <file path="/game.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1364483748989" ignored="false" />
+    <file path="/game.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1364565301467" ignored="false" />
     <file path="/a.dummy" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1364410704716" ignored="false" />
-    <file path="/levelparts.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1364483713916" ignored="false" />
+    <file path="/levelparts.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1364566320330" ignored="false" />
+    <file path="/box2dutils.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1364562389515" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +34,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="35" selection-start="4591" selection-end="4591" vertical-scroll-proportion="-12.076923">
+            <state line="73" column="35" selection-start="4591" selection-end="4591" vertical-scroll-proportion="-0.65384614">
               <folding />
             </state>
           </provider>
@@ -42,7 +43,7 @@
       <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="92" selection-start="2477" selection-end="2477" vertical-scroll-proportion="0.0">
+            <state line="173" column="34" selection-start="4919" selection-end="4919" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -51,7 +52,7 @@
       <file leaf-file-name="levelparts.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/levelparts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="33" selection-start="385" selection-end="385" vertical-scroll-proportion="0.1923077">
+            <state line="33" column="29" selection-start="838" selection-end="838" vertical-scroll-proportion="0.36621314">
               <folding>
                 <element signature="e#0#157#0" expanded="false" />
               </folding>
@@ -71,7 +72,7 @@
       <file leaf-file-name="box2dutils.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/box2dutils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="22" selection-start="4198" selection-end="4198" vertical-scroll-proportion="0.0">
+            <state line="16" column="49" selection-start="715" selection-end="715" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -87,10 +88,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/box2dutils.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/tileobject.js" />
         <option value="$PROJECT_DIR$/js/game.js" />
+        <option value="$PROJECT_DIR$/js/box2dutils.js" />
         <option value="$PROJECT_DIR$/js/levelparts.js" />
       </list>
     </option>
@@ -127,6 +128,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -161,7 +163,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -169,8 +170,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="editor.preferences.completion" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -220,11 +221,11 @@
     <frame x="-8" y="-8" width="1696" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="92" y="92" width="1496" height="866" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24441762" sideWeight="0.6703297" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24785802" sideWeight="0.6703297" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -233,6 +234,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -301,6 +303,43 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="35" selection-start="4591" selection-end="4591" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="92" selection-start="2477" selection-end="2477" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/levelparts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="33" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#157#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/tileobject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/box2dutils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="137" column="22" selection-start="4198" selection-end="4198" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="58" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0">
           <folding />
         </state>
@@ -315,16 +354,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/box2d/collision/shapes/b2BoxDef.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="81" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.26923078">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/box2d/dynamics/b2Body.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="450" column="4" selection-start="11026" selection-end="11026" vertical-scroll-proportion="0.5192308">
-          <folding />
-        </state>
+        <state line="30" column="81" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.26923078" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/box2d/dynamics/b2ContactManager.js">
@@ -343,14 +373,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="35" selection-start="4591" selection-end="4591" vertical-scroll-proportion="-12.076923">
+        <state line="73" column="35" selection-start="4591" selection-end="4591" vertical-scroll-proportion="-0.65384614">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/game.js">
+    <entry file="file://$PROJECT_DIR$/js/box2d/dynamics/b2Body.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="92" selection-start="2477" selection-end="2477" vertical-scroll-proportion="0.0">
+        <state line="446" column="4" selection-start="10967" selection-end="10967" vertical-scroll-proportion="0.44104308">
           <folding />
         </state>
       </provider>
@@ -364,14 +394,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/box2dutils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="22" selection-start="4198" selection-end="4198" vertical-scroll-proportion="0.0">
+        <state line="16" column="49" selection-start="715" selection-end="715" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="173" column="34" selection-start="4919" selection-end="4919" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/levelparts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="33" selection-start="385" selection-end="385" vertical-scroll-proportion="0.1923077">
+        <state line="33" column="29" selection-start="838" selection-end="838" vertical-scroll-proportion="0.36621314">
           <folding>
             <element signature="e#0#157#0" expanded="false" />
           </folding>

@@ -55,9 +55,9 @@ function TileObject(tileType, tileName) {
     }
 
     this.UnHide = UnHide;
-    function UnHide() {
+    function UnHide(force) {
         if (DEBUG) {
-            console.log("Unhiding " + this._tileName);
+            console.log("Unhiding " + this._tileName + " with force of: " + force);
         }
 
         this._hidden = false;

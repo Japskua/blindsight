@@ -23,6 +23,16 @@ function drawWorld(world, context) {
         }
     }
 }
+
+/*
+Gets the collision information of both the collided objects
+ */
+function getCollisionData(collision) {
+
+
+
+} // End of getCollisionData
+
 function drawJoint(joint, context) {
     var b1 = joint.m_body1;
     var b2 = joint.m_body2;

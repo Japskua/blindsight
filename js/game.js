@@ -1,5 +1,3 @@
-
-
 /*
  THE VARIABLES
  */
@@ -21,6 +19,8 @@ var canvasHeight;
 var canvasTop;
 var canvasLeft;
 var keys = [];
+
+var hitCalculator = new HitCalculator();
 
 // Step that handles drawing/updating/physics
 // This is performed every 10 milliseconds
@@ -80,8 +80,11 @@ function CheckPlayerCollision(collision) {
             // The player collided with the ground, so unhide
             if (collision1Data.getHidden() == true) {
 
+	            // Check the collision strength
+	            var force = hitCalculator.CalculateHit(collision);
+
                 // Unhide
-                collision1Data.UnHide();
+                collision1Data.UnHide(force);
 
             }
             var playerObj = (collisionObject1Type == 'player' ? collision.GetShape1().GetPosition() :  collision.GetShape2().GetPosition());

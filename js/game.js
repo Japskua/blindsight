@@ -19,6 +19,7 @@ var canvasHeight;
 var canvasTop;
 var canvasLeft;
 var keys = [];
+var doublyList1 = new DoublyLinkedList();
 
 var hitCalculator = new HitCalculator();
 
@@ -145,32 +146,31 @@ function handleInteractions(){
 // Initializes the game
 function initGame(){
 
-    CreatePlatform(world, 3, 23, "start");
+    CreatePlatform(world, 10, 23, "start");
     CreatePlatform(world, 560, 360, "end");
 
-    // create 2 big platforms
-    //createBox(world, 3, 230, 60, 180, true, 'ground');
-    //createBox(world, 560, 360, 50, 50, true, 'ground');
+	// TODO: Create a function that handles linking platforms correctly!
+	// TODO: Automatically recognize if another platform is connected to this platform on the right side!
 
     // create small platforms
     for (var i = 0; i < 5; i++){
-        CreatePlatform(world, 150+(30*i), 360, i);
+        CreateLinkedPlatform(world, 150+(21*i), 360, i, doublyList1);
 
         //createBox(world, 150+(80*i), 360, 5, 40+(i*15), true, 'ground');
     }
-
 
     // Explain what was just written
     if(DEBUG == true) {
         // Size of levelPlatforms
         console.log("Number of level platforms created: " + levelPlatforms.size());
+	    console.log("Connected the platforms: " + doublyList1.toString());
     }   // End of DEBUG info
 
 
     // create player ball
     var ballSd = new b2CircleDef();
     ballSd.density = 0.1;
-    ballSd.radius = 12;
+    ballSd.radius = 8;
     ballSd.restitution = 0.5;
     ballSd.friction = 1;
     //ballSd.userData = 'player';

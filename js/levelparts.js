@@ -11,14 +11,34 @@ var TILE_HEIGHT = 10;
 var levelPlatforms = []
 var listGrounds = []
 
+
+// Creates a platform object in the given coordinates
+function CreateLinkedPlatform(world, x, y, userdata, list) {
+
+	tile = new TileObject("ground", "platform"+userdata.toString());
+
+	// Create the box in the given place
+	list.add(createBox(world, x, y, TILE_WIDTH, TILE_HEIGHT, true, tile))
+	//levelPlatforms.push(createBox(world, x, y, TILE_WIDTH, TILE_HEIGHT, true, tile));
+
+	if(DEBUG) {
+		console.log("Created platform" + userdata.toString() + " at " + x + "," + y);
+	}
+
+} // End of CreatePlatform()
+
 // Creates a platform object in the given coordinates
 function CreatePlatform(world, x, y, userdata) {
 
-    tile = new TileObject("ground", "platform"+userdata.toString());
+	tile = new TileObject("ground", "platform"+userdata.toString());
 
-    // Create the box in the given place
-    levelPlatforms.push(createBox(world, x, y, TILE_WIDTH, TILE_HEIGHT, true, tile));
-    console.log("Created platform" + userdata.toString());
+	// Create the box in the given place
+	levelPlatforms.push(createBox(world, x, y, TILE_WIDTH, TILE_HEIGHT, true, tile));
+
+	if(DEBUG) {
+		console.log("Created platform" + userdata.toString() + " at " + x + "," + y);
+	}
+
 } // End of CreatePlatform()
 
 
@@ -30,6 +50,7 @@ function TileObject(tileType, tileName) {
      */
     this._tileType = tileType;
     this._tileName = tileName;
+	this._tileDrawWidth = 0;
 
     // Player is never hidden
     if (tileType == "player") {
@@ -60,8 +81,14 @@ function TileObject(tileType, tileName) {
             console.log("Unhiding " + this._tileName + " with force of: " + force);
         }
 
+	    this._tileDrawWidth = force/100;
         this._hidden = false;
     }
+
+	this.getTileDrawWidth = getTileDrawWidth;
+	function getTileDrawWidth() {
+		return this._tileDrawWidth;
+	} // End of getTileDrawWidth()
 
     // Getting the tile type
     this.getTileType = getTileType;

@@ -24,15 +24,6 @@ function drawWorld(world, context) {
     }
 }
 
-/*
-Gets the collision information of both the collided objects
- */
-function getCollisionData(collision) {
-
-
-
-} // End of getCollisionData
-
 function drawJoint(joint, context) {
     var b1 = joint.m_body1;
     var b2 = joint.m_body2;
@@ -109,10 +100,12 @@ function drawShape(shape, context) {
                 var v = b2Math.AddVV(poly.m_position, b2Math.b2MulMV(poly.m_R, poly.m_vertices[i]));
                 context.lineTo(v.x, v.y);
             }
+
             context.lineTo(tV.x, tV.y);
         }
             break;
     }
+
     context.stroke();
 }
 

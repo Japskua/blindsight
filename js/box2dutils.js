@@ -106,9 +106,24 @@ function drawShape(shape, context) {
             break;
     }
 
+    drawDebugBox(100, 100, 0);
+
+    // Draw debug box around mouse click
+    drawDebugBox(mouseX, mouseY, 20);
+
     context.stroke();
 }
 
+
+function drawDebugBox(x, y, size) {
+    context.moveTo(x-size,y-size);
+
+    context.lineTo(x-size, y+TILE_HEIGHT+size);
+    context.lineTo(x+TILE_WIDTH+size, y+TILE_HEIGHT+size);
+    context.lineTo(x+TILE_WIDTH+size, y-size);
+
+    context.lineTo(x-size,y-size);
+}
 
 function createWorld() {
     var worldAABB = new b2AABB();

@@ -20,6 +20,8 @@ var canvasTop;
 var canvasLeft;
 var keys = [];
 var doublyList1 = new DoublyLinkedList();
+var mouseX;
+var mouseY;
 
 var hitCalculator = new HitCalculator();
 
@@ -84,6 +86,8 @@ function CheckPlayerCollision(collision) {
 	            // Check the collision strength
 	            var force = hitCalculator.CalculateHit(collision);
 
+                hitCalculator.FindCollisionFromWorld(collision.GetShape1());
+
                 // Unhide
                 collision1Data.UnHide(force);
 
@@ -116,6 +120,7 @@ function handleInteractions(){
 
                 // Inform
                 console.log(collisionObject1.getTileName() + " collided with " + collisionObject2.getTileName() + " and was hidden: " + collisionObject1.getHidden());
+
 
             }
         }   // End of DEBUG
@@ -154,7 +159,7 @@ function initGame(){
 
     // create small platforms
     for (var i = 0; i < 5; i++){
-        CreateLinkedPlatform(world, 150+(21*i), 360, i, doublyList1);
+        CreateLinkedPlatform(world, 150+(20*i), 360, i, doublyList1);
 
         //createBox(world, 150+(80*i), 360, 5, 40+(i*15), true, 'ground');
     }
@@ -196,10 +201,61 @@ function handleKeyUp(evt){
     keys[evt.keyCode] = false;
 }
 
+function handleMouseDown(evt) {
+    // Get the mouseX and mouseY in the game field
+    mouseX = (evt.clientX - context.canvas.offsetLeft);
+    mouseY = (evt.clientY - context.canvas.offsetTop);
+
+
+    console.log("Clicked at", mouseX, mouseY);
+    getBodyAtMouse();
+}
+
 /*
 END OF KEY EVENTS
  */
 
+var selectedBody;
+var mouseAabb = new b2AABB();
+function getBodyAtMouse() {
+    // Create the vector
+    mousePVec = new b2Vec2(mouseX, mouseY);
+
+    var aabb = new b2AABB();
+    aabb.minVertex.Set (mouseX - 20, mouseY - 20);
+    aabb.maxVertex.Set(mouseX + 20, mouseY + 20);
+    selectedBody = null;
+
+    mouseAabb = aabb;
+
+
+    getCloseByElements(mouseX, mouseY);
+
+
+
+}   // End of getBodyAtMouse()
+
+function getCloseByElements(x,y) {
+
+    // Get all world bodies
+    var b = world.GetBodyList();
+
+    var size = world.m_bodyCount;
+
+    for(var i=0; i<size; i++) {
+        console.log(b.m_position);
+        b = b.m_next;
+
+        // TODO: Finish the function!
+
+        // If we are on the same y-level
+
+        // And if our x is not further than TILE_WIDTH away
+
+        // We have a match!
+
+    }
+}
 
 // This function is run when the window is loaded
 // Starts the game
@@ -224,6 +280,7 @@ Event.observe(window, 'load', function() {
     // Add the event listeners for buttons
     window.addEventListener('keydown',handleKeyDown,true);
     window.addEventListener('keyup',handleKeyUp,true);
+    window.addEventListener("mousedown", handleMouseDown, true);
 });
 
 

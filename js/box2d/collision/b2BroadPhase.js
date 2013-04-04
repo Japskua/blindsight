@@ -645,6 +645,8 @@ b2BroadPhase.prototype =
 		var upperValues = new Array();
 		this.ComputeBounds(lowerValues, upperValues, aabb);
 
+        //console.log("LowerValues", lowerValues, "UpperValues", upperValues, "aabb", aabb);
+
 		var lowerIndex = 0;
 		var upperIndex = 0;
 		var lowerIndexOut = [lowerIndex];
@@ -657,6 +659,7 @@ b2BroadPhase.prototype =
 		var count = 0;
 		for (var i = 0; i < this.m_queryResultCount && count < maxCount; ++i, ++count)
 		{
+
 			//b2Settings.b2Assert(this.m_queryResults[i] < b2Settings.b2_maxProxies);
 			var proxy = this.m_proxyPool[ this.m_queryResults[i] ];
 			//b2Settings.b2Assert(proxy.IsValid());

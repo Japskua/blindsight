@@ -51,13 +51,15 @@ HitCalculator.prototype = {
 
     }, // End of CalculateHit(collision)     ,
 
-	getCloseByElements: function(x,y) {
+	getCloseByElements: function(x,y, distance) {
 
 		// Get all world bodies
 		var body = world.GetBodyList();
 
 		var size = world.m_bodyCount;
 
+		var leftDistance = distance;
+		var rightDistance = distance;
 
 		for(var i=0; i<size; i++) {
 			//console.log(body.m_position);
@@ -77,8 +79,11 @@ HitCalculator.prototype = {
 				if (x == posX - TILE_WIDTH * 2) {
 					console.log("leftside", posX);
 
+					if(leftDistance > 0) {
 
-					body.GetShapeList().GetUserData().UnHide(1);
+						leftDistance--;
+						body.GetShapeList().GetUserData().UnHide(leftDistance);
+					}
 
 				}
 
@@ -86,8 +91,12 @@ HitCalculator.prototype = {
 				if (x == posX + TILE_WIDTH * 2) {
 					console.log("rightSide", posX);
 
+					if (rightDistance>0) {
 
-					body.GetShapeList().GetUserData().UnHide(1);
+						rightDistance--;
+						body.GetShapeList().GetUserData().UnHide(rightDistance);
+
+					}
 				}
 
 
@@ -100,5 +109,6 @@ HitCalculator.prototype = {
 
 
 	}  // End of getCloseByElements()
+
 
 };

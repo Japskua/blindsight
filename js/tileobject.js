@@ -51,7 +51,7 @@ function TileObject(tileType, tileName, x ,y) {
 		this._tileDrawWidth = force/100;
 		this._hidden = false;
 
-		console.log(this._x, this._y);
+		hitCalculator.getCloseByElements(this._x, this._y, force);
 	}
 
 	this.getTileDrawWidth = getTileDrawWidth;

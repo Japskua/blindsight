@@ -87,10 +87,10 @@ function CheckPlayerCollision(collision) {
 	            var force = hitCalculator.CalculateHit(collision);
 
                 // Unhide
-                collision1Data.UnHide(force);
+                collision1Data.UnHide(2);
 
 	            // Check for other bodies to unhide besides
-	            hitCalculator.getCloseByElements(collision.GetShape1().GetPosition().x, collision.GetShape1().GetPosition().y);
+	            //hitCalculator.getCloseByElements(collision.GetShape1().GetPosition().x, collision.GetShape1().GetPosition().y);
 
             }
 

@@ -91,6 +91,9 @@ function CheckPlayerCollision(collision) {
                 // Unhide
                 collision1Data.UnHide(force);
 
+	            // Check for other bodies to unhide besides
+	            getCloseByElements(collision.GetShape1().GetPosition().x, collision.GetShape1().GetPosition().y);
+
             }
             var playerObj = (collisionObject1Type == 'player' ? collision.GetShape1().GetPosition() :  collision.GetShape2().GetPosition());
             var groundObj = (collisionObject1Type == 'ground' ? collision.GetShape1().GetPosition() :  collision.GetShape2().GetPosition());
@@ -222,8 +225,8 @@ function getBodyAtMouse() {
     mousePVec = new b2Vec2(mouseX, mouseY);
 
     var aabb = new b2AABB();
-    aabb.minVertex.Set (mouseX - 20, mouseY - 20);
-    aabb.maxVertex.Set(mouseX + 20, mouseY + 20);
+    aabb.minVertex.Set (mouseX - TILE_WIDTH, mouseY - TILE_HEIGHT);
+    aabb.maxVertex.Set(mouseX + TILE_WIDTH, mouseY + TILE_HEIGHT);
     selectedBody = null;
 
     mouseAabb = aabb;
@@ -235,27 +238,104 @@ function getBodyAtMouse() {
 
 }   // End of getBodyAtMouse()
 
+
+function getCloseByElementsWithForce(x,y, force) {
+
+	// Get all world bodies
+	var body = world.GetBodyList();
+
+	var size = world.m_bodyCount;
+
+	for(var i=0; i<size; i++) {
+		//console.log(body.m_position);
+
+		var posY = body.m_position.y;
+		var posX = body.m_position.x;
+
+		// TODO: Finish the function!
+		var force = 70;
+
+		// If we are on the same y-level
+		if((y >= posY - TILE_HEIGHT) && (y <= posY + TILE_HEIGHT) ) {
+			//console.log("y=",y,"body=",posY);
+
+
+			// If we are on the same x-level
+			//(our x is not further than TILE_WIDTH away)
+			if((x >= posX - TILE_WIDTH - force) && (x <= posX + TILE_WIDTH + force)) {
+				//console.log("x=",x,"body=",posX);
+
+				if(DEBUG) {
+					console.log("Hit at", posX,posY, "meeting with", body);
+				}
+
+				// MATCH!
+
+				// Edit the body
+				body.GetShapeList().GetUserData().UnHide(1);
+				//console.log(body.GetShapeList().m_userData.UnHide());
+
+
+			} // End of checking for x-value
+
+		} // End of checking for y-value
+
+		// Get the next bodyvalue
+		body = body.m_next;
+
+	} // End of for loop
+}  // End of getCloseByElementsWithForce()
+
+
 function getCloseByElements(x,y) {
 
     // Get all world bodies
-    var b = world.GetBodyList();
+    var body = world.GetBodyList();
 
     var size = world.m_bodyCount;
 
+
     for(var i=0; i<size; i++) {
-        console.log(b.m_position);
-        b = b.m_next;
+        //console.log(body.m_position);
+
+	    var posY = body.m_position.y;
+	    var posX = body.m_position.x;
 
         // TODO: Finish the function!
 
+	    console.log("Checking nearby at",x,y);
+
         // If we are on the same y-level
+	    if((y >= posY - TILE_HEIGHT) && (y <= posY + TILE_HEIGHT) ) {
 
-        // And if our x is not further than TILE_WIDTH away
 
-        // We have a match!
+		    // Check if there is a tile on the left side of the current one
+		    if (x == posX - TILE_WIDTH * 2) {
+			    console.log("leftside", posX);
 
-    }
-}
+
+			    body.GetShapeList().GetUserData().UnHide(1);
+
+		    }
+
+		    // Check if there is something on the right side
+		    if (x == posX + TILE_WIDTH * 2) {
+			    console.log("rightSide", posX);
+
+
+			    body.GetShapeList().GetUserData().UnHide(1);
+		    }
+
+
+	    } // End of checking for y-value
+
+	    // Get the next bodyvalue
+	    body = body.m_next;
+
+    } // End of for loop
+
+
+}  // End of getCloseByElements()
 
 // This function is run when the window is loaded
 // Starts the game

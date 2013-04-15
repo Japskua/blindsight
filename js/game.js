@@ -86,15 +86,15 @@ function CheckPlayerCollision(collision) {
 	            // Check the collision strength
 	            var force = hitCalculator.CalculateHit(collision);
 
-                hitCalculator.FindCollisionFromWorld(collision.GetShape1());
-
                 // Unhide
                 collision1Data.UnHide(force);
 
 	            // Check for other bodies to unhide besides
-	            getCloseByElements(collision.GetShape1().GetPosition().x, collision.GetShape1().GetPosition().y);
+	            hitCalculator.getCloseByElements(collision.GetShape1().GetPosition().x, collision.GetShape1().GetPosition().y);
 
             }
+
+	        // If touching ground, allow jumping
             var playerObj = (collisionObject1Type == 'player' ? collision.GetShape1().GetPosition() :  collision.GetShape2().GetPosition());
             var groundObj = (collisionObject1Type == 'ground' ? collision.GetShape1().GetPosition() :  collision.GetShape2().GetPosition());
             if (playerObj.y < groundObj.y){
@@ -192,51 +192,9 @@ function initGame(){
 
 }
 
-/*
-KEY EVENTS
- */
-function handleKeyDown(evt){
-    keys[evt.keyCode] = true;
-}
-
-
-function handleKeyUp(evt){
-    keys[evt.keyCode] = false;
-}
-
-function handleMouseDown(evt) {
-    // Get the mouseX and mouseY in the game field
-    mouseX = (evt.clientX - context.canvas.offsetLeft);
-    mouseY = (evt.clientY - context.canvas.offsetTop);
-
-
-    console.log("Clicked at", mouseX, mouseY);
-    getBodyAtMouse();
-}
-
-/*
-END OF KEY EVENTS
- */
-
-var selectedBody;
-var mouseAabb = new b2AABB();
-function getBodyAtMouse() {
-    // Create the vector
-    mousePVec = new b2Vec2(mouseX, mouseY);
-
-    var aabb = new b2AABB();
-    aabb.minVertex.Set (mouseX - TILE_WIDTH, mouseY - TILE_HEIGHT);
-    aabb.maxVertex.Set(mouseX + TILE_WIDTH, mouseY + TILE_HEIGHT);
-    selectedBody = null;
-
-    mouseAabb = aabb;
-
-
-    getCloseByElements(mouseX, mouseY);
 
 
 
-}   // End of getBodyAtMouse()
 
 
 function getCloseByElementsWithForce(x,y, force) {
@@ -286,56 +244,6 @@ function getCloseByElementsWithForce(x,y, force) {
 	} // End of for loop
 }  // End of getCloseByElementsWithForce()
 
-
-function getCloseByElements(x,y) {
-
-    // Get all world bodies
-    var body = world.GetBodyList();
-
-    var size = world.m_bodyCount;
-
-
-    for(var i=0; i<size; i++) {
-        //console.log(body.m_position);
-
-	    var posY = body.m_position.y;
-	    var posX = body.m_position.x;
-
-        // TODO: Finish the function!
-
-	    console.log("Checking nearby at",x,y);
-
-        // If we are on the same y-level
-	    if((y >= posY - TILE_HEIGHT) && (y <= posY + TILE_HEIGHT) ) {
-
-
-		    // Check if there is a tile on the left side of the current one
-		    if (x == posX - TILE_WIDTH * 2) {
-			    console.log("leftside", posX);
-
-
-			    body.GetShapeList().GetUserData().UnHide(1);
-
-		    }
-
-		    // Check if there is something on the right side
-		    if (x == posX + TILE_WIDTH * 2) {
-			    console.log("rightSide", posX);
-
-
-			    body.GetShapeList().GetUserData().UnHide(1);
-		    }
-
-
-	    } // End of checking for y-value
-
-	    // Get the next bodyvalue
-	    body = body.m_next;
-
-    } // End of for loop
-
-
-}  // End of getCloseByElements()
 
 // This function is run when the window is loaded
 // Starts the game

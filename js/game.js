@@ -87,7 +87,7 @@ function CheckPlayerCollision(collision) {
 	            var force = hitCalculator.CalculateHit(collision);
 
                 // Unhide
-                collision1Data.UnHide(2);
+                collision1Data.UnHide(force);
 
 	            // Check for other bodies to unhide besides
 	            //hitCalculator.getCloseByElements(collision.GetShape1().GetPosition().x, collision.GetShape1().GetPosition().y);
@@ -159,6 +159,10 @@ function initGame(){
 
 	// TODO: Create a function that handles linking platforms correctly!
 	// TODO: Automatically recognize if another platform is connected to this platform on the right side!
+
+	for (var i=0; i<15; i++) {
+		CreateLinkedPlatform(world, 20+(20*i), 100, i, doublyList1);
+	}
 
     // create small platforms
     for (var i = 0; i < 5; i++){

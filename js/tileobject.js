@@ -51,7 +51,12 @@ function TileObject(tileType, tileName, x ,y) {
 		this._tileDrawWidth = force/100;
 		this._hidden = false;
 
-		hitCalculator.getCloseByElements(this._x, this._y, force);
+		// Check if there is still force left
+		if (force > 0) {
+			// Calculate the close by elements and pass the hit to them as well
+			hitCalculator.getCloseByElements(this._x, this._y, force);
+		}
+
 	}
 
 	this.getTileDrawWidth = getTileDrawWidth;

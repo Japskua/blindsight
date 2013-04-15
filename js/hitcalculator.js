@@ -41,6 +41,8 @@ HitCalculator.prototype = {
         // F = ma
         var force = mass * linearVelocity;
 
+	    // And then fix it to fit more nicely within the game's purpose
+	    force = force/1000;
 
         if (DEBUG) {
             console.log("Hit object with force of " + force);
@@ -56,20 +58,25 @@ HitCalculator.prototype = {
 		// Get all world bodies
 		var body = world.GetBodyList();
 
+		// Get the amount of bodies to check
 		var size = world.m_bodyCount;
 
+
+		// The distance should be still checked
 		var leftDistance = distance;
 		var rightDistance = distance;
 
+		// Loop through the whole list of bodies
 		for(var i=0; i<size; i++) {
-			//console.log(body.m_position);
 
+			// Get the X and Y Positions of the body in question
 			var posY = body.m_position.y;
 			var posX = body.m_position.x;
 
-			// TODO: Finish the function!
-
-			console.log("Checking nearby at",x,y);
+			// Again, if debugging
+			if (DEBUG) {
+				console.log("Checking nearby at",x,y);
+			}
 
 			// If we are on the same y-level
 			if((y >= posY - TILE_HEIGHT) && (y <= posY + TILE_HEIGHT) ) {
@@ -77,11 +84,13 @@ HitCalculator.prototype = {
 
 				// Check if there is a tile on the left side of the current one
 				if (x == posX - TILE_WIDTH * 2) {
-					console.log("leftside", posX);
 
+					// Check if we still have power left to reveal something on this side
 					if(leftDistance > 0) {
 
+						// Take on away from the distance
 						leftDistance--;
+						// And reveal the body, passing the changed distance amount
 						body.GetShapeList().GetUserData().UnHide(leftDistance);
 					}
 
@@ -89,11 +98,14 @@ HitCalculator.prototype = {
 
 				// Check if there is something on the right side
 				if (x == posX + TILE_WIDTH * 2) {
-					console.log("rightSide", posX);
 
+
+					// Check if we still have power on the right side to reveal something
 					if (rightDistance>0) {
 
+						// Take on away from the distance
 						rightDistance--;
+						// And reveal the body, passing the newly changed distance value
 						body.GetShapeList().GetUserData().UnHide(rightDistance);
 
 					}

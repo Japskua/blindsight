@@ -8,17 +8,17 @@
     <ignored path="blindsight.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/index.html" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366045976050" ignored="false" />
-    <file path="/game.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366046738856" ignored="false" />
+    <file path="/game.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366048289313" ignored="false" />
     <file path="/a.dummy" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1364410704716" ignored="false" />
     <file path="/levelparts.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366046787857" ignored="false" />
     <file path="/box2dutils.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1365078432385" ignored="false" />
     <file path="/a.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1365007801415" ignored="false" />
     <file path="/HitCalculator.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1365002348064" ignored="false" />
-    <file path="/hitcalculator.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366047313122" ignored="false" />
+    <file path="/hitcalculator.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366048156981" ignored="false" />
     <file path="/doublylinkedlist.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1365012788290" ignored="false" />
     <file path="/b2World.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1365078789212" ignored="false" />
     <file path="/b2BroadPhase.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1365078825855" ignored="false" />
-    <file path="/tileobject.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366047223306" ignored="false" />
+    <file path="/tileobject.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366047801404" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,10 +47,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="game.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="39" selection-start="2544" selection-end="2544" vertical-scroll-proportion="0.0">
+            <state line="160" column="111" selection-start="4757" selection-end="4757" vertical-scroll-proportion="0.40996602">
               <folding>
                 <element signature="n#!!block;n#getCloseByElementsWithForce#0" expanded="false" />
               </folding>
@@ -79,7 +79,7 @@
       <file leaf-file-name="tileobject.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/tileobject.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="64" selection-start="984" selection-end="984" vertical-scroll-proportion="0.0">
+            <state line="61" column="94" selection-start="1169" selection-end="1169" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#!!doc;n#TileObject#0" expanded="false" />
               </folding>
@@ -87,19 +87,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hitcalculator.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="hitcalculator.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/hitcalculator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="55" selection-start="1612" selection-end="1612" vertical-scroll-proportion="0.30690828">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="b2World.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/box2d/dynamics/b2World.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="470" column="44" selection-start="11138" selection-end="11138" vertical-scroll-proportion="0.0">
+            <state line="44" column="23" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -125,8 +116,8 @@
         <option value="$PROJECT_DIR$/js/controls.js" />
         <option value="$PROJECT_DIR$/js/levelparts.js" />
         <option value="$PROJECT_DIR$/js/tileobject.js" />
-        <option value="$PROJECT_DIR$/js/game.js" />
         <option value="$PROJECT_DIR$/js/hitcalculator.js" />
+        <option value="$PROJECT_DIR$/js/game.js" />
       </list>
     </option>
   </component>
@@ -434,6 +425,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/box2d/dynamics/b2World.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="470" column="44" selection-start="11138" selection-end="11138" vertical-scroll-proportion="0.019252548">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/levelparts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="86" selection-start="954" selection-end="954" vertical-scroll-proportion="0.0">
@@ -448,35 +446,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/box2d/dynamics/b2World.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="470" column="44" selection-start="11138" selection-end="11138" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/tileobject.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="64" selection-start="984" selection-end="984" vertical-scroll-proportion="0.0">
+        <state line="61" column="94" selection-start="1169" selection-end="1169" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="n#!!doc;n#TileObject#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/game.js">
+    <entry file="file://$PROJECT_DIR$/js/hitcalculator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="39" selection-start="2544" selection-end="2544" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!block;n#getCloseByElementsWithForce#0" expanded="false" />
-          </folding>
+        <state line="44" column="23" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/hitcalculator.js">
+    <entry file="file://$PROJECT_DIR$/js/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="55" selection-start="1612" selection-end="1612" vertical-scroll-proportion="0.30690828">
-          <folding />
+        <state line="160" column="111" selection-start="4757" selection-end="4757" vertical-scroll-proportion="0.40996602">
+          <folding>
+            <element signature="n#!!block;n#getCloseByElementsWithForce#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

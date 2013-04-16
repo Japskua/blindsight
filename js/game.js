@@ -154,6 +154,10 @@ function handleInteractions(){
 // Initializes the game
 function initGame(){
 
+	// Load the map
+	//gMap.LoadMap("https://dl.dropboxusercontent.com/u/4692161/map1.json");
+	gMap.LoadMap("http://localhost:8000/assets/map1.json&callback=?");
+
     CreatePlatform(world, 10, 23, "start");
     CreatePlatform(world, 560, 360, "end");
 

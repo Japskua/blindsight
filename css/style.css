@@ -1,0 +1,14 @@
+.center {
+    width:600px;
+    margin:0px auto;
+    display:block;
+}
+
+h1 {
+    text-align:center;
+}
+
+.clear {
+    clear:both;
+    padding:10px;
+}

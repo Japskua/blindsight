@@ -2,8 +2,16 @@
 <head>
     <title>HTML5 + Box2D Adventure Game - Anderson Ferminiano</title>
 
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
     <!--[if IE]><script type="text/javascript" src="lib/excanvas.js"></script><![endif]-->
+
+    <script src="lib/jquery-1.9.1.min.js"></script>
+
     <script src="lib/prototype-1.6.0.2.js"></script>
+
 
     <!-- box2djs -->
     <script src='js/box2d/common/b2Settings.js'></script>
@@ -70,6 +78,7 @@
     <script src='js/box2d/dynamics/joints/b2PulleyJointDef.js'></script>
     <script src='js/box2d/dynamics/joints/b2RevoluteJoint.js'></script>
     <script src='js/box2d/dynamics/joints/b2RevoluteJointDef.js'></script>
+
     <script src='js/box2dutils.js'></script>
     <script src="js/xhr.js"></script>
     <script src="js/maploader.js"></script>
@@ -79,29 +88,27 @@
     <script src="js/levelparts.js"></script>
     <script src="js/hitcalculator.js"></script>
     <script src='js/game.js'></script>
-    <style type="text/css" media="screen" rel="stylesheet">
-        .center {
-            width:600px;
-            margin:0px auto;
-            display:block;
-        }
 
-        h1 {
-            text-align:center;
-        }
-
-        .clear {
-            clear:both;
-            padding:10px;
-        }
-    </style>
 </head>
 <body>
+
+               <script>
+                   jQuery.noConflict();
+
+                   jQuery(document).ready(function() {
+                             console.log("JQUERY!");
+                   });
+               </script>
+
 <div class="center">
     <h1>BlindSight</h1>
     <p style="float:right;"><a href="http://japskua.wordpress.com">Janne Parkkila</a>
     <div class="clear"></div>
     <canvas id="game" width='640' height='480'></canvas>
     </p>
+</div>
+
+
+
 </body>
 </html>

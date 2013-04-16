@@ -51,8 +51,24 @@ MapLoader.prototype = {
 		console.log("Loading map from:", mapPath);
 
 
+		//mapPath = mapPath + "?callback=?";
 
 
+		jQuery.ajax(mapPath, {
+			crossDomain:true,
+			dataType:"jsonp",
+			success:function(data, text, xhqr) {
+				var obj = jQuery.parseJSON(data);
+				console.log("Data",obj);
+			}
+		})
+
+		/*
+		jQuery.getJSON(mapPath, function(data) {
+			console.log("dataaa",data);
+		});
+          */
+		    /*
 		// Get the map
 		xhrGet(mapPath, function(data) {
 			// Once loaded, call the
@@ -66,7 +82,7 @@ MapLoader.prototype = {
 
 		//var obj = JSON.parse(this.ReadJSON(mapPath));
 		//console.log("OBJ is", obj);
-
+             */
 	}, // End of LoadMap()
 
 	/*

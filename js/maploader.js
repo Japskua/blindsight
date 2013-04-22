@@ -50,10 +50,13 @@ MapLoader.prototype = {
 		// Use this to load the given map
 		console.log("Loading map from:", mapPath);
 
+		xhrJSONP(mapPath, function() {
+			console.log("LOADED");
+		});
 
 		//mapPath = mapPath + "?callback=?";
 
-
+		                   /*
 		jQuery.ajax(mapPath, {
 			crossDomain:true,
 			dataType:"jsonp",
@@ -61,7 +64,7 @@ MapLoader.prototype = {
 				var obj = jQuery.parseJSON(data);
 				console.log("Data",obj);
 			}
-		})
+		})                   */
 
 		/*
 		jQuery.getJSON(mapPath, function(data) {

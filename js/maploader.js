@@ -50,9 +50,7 @@ MapLoader.prototype = {
 		// Use this to load the given map
 		console.log("Loading map from:", mapPath);
 
-		xhrJSONP(mapPath, function() {
-			console.log("LOADED");
-		});
+		xhrJSONP(mapPath, this.ParseMapJSON);
 
 		//mapPath = mapPath + "?callback=?";
 

@@ -91,7 +91,7 @@ function xhrJSONP(reqUri,callback)
 			},
 			'error': function(jqXHR, textStatus, errorThrown)
 			{
-				console.log(errorThrown);
+				console.log(errorThrown, jqXHR, textStatus);
 
 			}
 		});

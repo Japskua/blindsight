@@ -8,7 +8,7 @@
     <ignored path="blindsight.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/index.html" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366140358757" ignored="false" />
-    <file path="/game.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366650028206" ignored="false" />
+    <file path="/game.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366735577707" ignored="false" />
     <file path="/a.dummy" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1364410704716" ignored="false" />
     <file path="/levelparts.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366046787857" ignored="false" />
     <file path="/box2dutils.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1365078432385" ignored="false" />
@@ -19,8 +19,8 @@
     <file path="/b2World.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1365078789212" ignored="false" />
     <file path="/b2BroadPhase.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1365078825855" ignored="false" />
     <file path="/tileobject.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366047801404" ignored="false" />
-    <file path="/maploader.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366653959797" ignored="false" />
-    <file path="/xhr.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366653578989" ignored="false" />
+    <file path="/maploader.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366735016325" ignored="false" />
+    <file path="/xhr.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366735233365" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,10 +40,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="game.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="160" column="81" selection-start="4796" selection-end="4796" vertical-scroll-proportion="0.4418079">
+            <state line="161" column="47" selection-start="4848" selection-end="4848" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="map1.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/map1.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="21" selection-start="1935" selection-end="1935" vertical-scroll-proportion="-24.846153">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tester.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/tester.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="191" column="1" selection-start="5724" selection-end="5724" vertical-scroll-proportion="-31.73077">
               <folding />
             </state>
           </provider>
@@ -52,10 +70,8 @@
       <file leaf-file-name="assetloader.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/assetloader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="0" selection-start="1766" selection-end="1766" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state line="71" column="38" selection-start="1702" selection-end="1702" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -87,10 +103,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="maploader.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="maploader.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/maploader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="34" selection-start="842" selection-end="842" vertical-scroll-proportion="0.0">
+            <state line="93" column="57" selection-start="1655" selection-end="1655" vertical-scroll-proportion="0.6146893">
               <folding />
             </state>
           </provider>
@@ -99,10 +115,8 @@
       <file leaf-file-name="xhr.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/xhr.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="88" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state line="93" column="58" selection-start="2369" selection-end="2369" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,7 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/HitCalculator.js" />
         <option value="$PROJECT_DIR$/js/linkedlist.js" />
         <option value="$PROJECT_DIR$/js/doublylinkedlist.js" />
         <option value="$PROJECT_DIR$/js/box2dutils.js" />
@@ -130,9 +143,10 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/assetloader.js" />
-        <option value="$PROJECT_DIR$/js/xhr.js" />
         <option value="$PROJECT_DIR$/js/maploader.js" />
+        <option value="$PROJECT_DIR$/js/xhr.js" />
         <option value="$PROJECT_DIR$/js/game.js" />
+        <option value="$PROJECT_DIR$/assets/tester.json" />
       </list>
     </option>
   </component>
@@ -255,8 +269,8 @@
     <property name="options.lastSelected" value="appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -406,16 +420,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="551" column="15" selection-start="9811" selection-end="9811" vertical-scroll-proportion="0.33295584" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/box2d/dynamics/b2World.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="470" column="44" selection-start="11138" selection-end="11138" vertical-scroll-proportion="0.019252548">
-          <folding />
-        </state>
+        <state line="470" column="44" selection-start="11138" selection-end="11138" vertical-scroll-proportion="0.019252548" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/box2d/dynamics/b2BodyDef.js">
@@ -426,13 +433,6 @@
     <entry file="file://$PROJECT_DIR$/js/hitcalculator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="23" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.7299435">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/map1.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="49" selection-start="1611" selection-end="1611" vertical-scroll-proportion="0.4219858">
           <folding />
         </state>
       </provider>
@@ -463,22 +463,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/xhr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="88" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/maploader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="34" selection-start="842" selection-end="842" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/tileobject.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="56" selection-start="466" selection-end="466" vertical-scroll-proportion="0.0">
@@ -502,16 +486,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/assetloader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="0" selection-start="1766" selection-end="1766" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state line="71" column="38" selection-start="1702" selection-end="1702" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="160" column="81" selection-start="4796" selection-end="4796" vertical-scroll-proportion="0.4418079">
+        <state line="161" column="47" selection-start="4848" selection-end="4848" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/map1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="21" selection-start="1935" selection-end="1935" vertical-scroll-proportion="-24.846153">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/tester.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="191" column="1" selection-start="5724" selection-end="5724" vertical-scroll-proportion="-31.73077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/xhr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="58" selection-start="2369" selection-end="2369" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/maploader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="57" selection-start="1655" selection-end="1655" vertical-scroll-proportion="0.6146893">
           <folding />
         </state>
       </provider>

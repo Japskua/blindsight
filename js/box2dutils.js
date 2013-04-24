@@ -16,13 +16,44 @@ function drawWorld(world, context) {
             // If the shape is not marked as hidden
             if (shape.GetUserData().getHidden() != true) {
                 // And Draw the shape
-                drawShape(shape, context);
+                //drawShape(shape, context);
+                drawStuff(shape,context);
             }
 
 
         }
     }
 }
+
+function drawStuff(shape, context){
+
+
+    // Get the TileType of the tile in question
+    if(shape.GetUserData().getTileType() == 154) {
+
+        var myImage = new Image();
+        myImage.src = "images/square.jpeg";
+
+        //var posX = shape.m_position.x;
+        //var posY = shape.m_position.y;
+
+        var posX = shape.GetUserData()._x;
+        var posY = shape.GetUserData()._y;
+
+        //console.log("Drawing the tile at (", posX, ",", posY, ")");
+
+        // Draw the image to the x,y location
+        context.drawImage(myImage, posX, posY);
+
+    }
+    else if(shape.GetUserData().getTileType() == "player")
+    {
+        drawShape(shape, context);
+    }
+
+
+
+} // end of drawStuff()
 
 function drawJoint(joint, context) {
     var b1 = joint.m_body1;

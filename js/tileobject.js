@@ -18,14 +18,19 @@ function TileObject(tileType, tileName, x ,y) {
 	this._tileDrawWidth = 0;
 	this._x = x;
 	this._y = y;
+    this._tileGroup = "";
 
 	// Player is never hidden
 	if (tileType == "player") {
 		this._hidden = false;
+        // Tilegroup is player
+        this._tileGroup = "player";
 	}
 	else {
 		//this._hidden = true;
         this._hidden = false;
+        // Tiletype is currently just ground
+        this._tileGroup = "ground";
 	}
 
 
@@ -72,6 +77,11 @@ function TileObject(tileType, tileName, x ,y) {
 
 	}   // End of getTileType()
 
+    this.getTileGroup = getTileGroup;
+    function getTileGroup() {
+        // Return the tilegroup
+        return this._tileGroup;
+    }
 
 	// Getting the tilename
 	this.getTileName = getTileName;

@@ -62,9 +62,8 @@ function showWin(){
     context.fillStyle    = '#000';
     context.font         = '30px verdana';
     context.textBaseline = 'top';
-    context.fillText('Ye! you made it!', 30, 0);
-    context.fillText('thank you, andersonferminiano.com', 30, 30);
-    context.fillText('@andferminiano', 30, 60);
+    context.fillText('Level Done!', 30, 0);
+
 }
 
 // Checks if the player has collided with something
@@ -150,6 +149,62 @@ function handleInteractions(){
     player.object.SetLinearVelocity(vel);
 }
 
+function CreateLayer(layer) {
+
+    // Get the tile data of the layer
+    var layerData = layer["data"];
+
+
+    // Set the starting location for the loop in question
+    var xLocation = 0;
+    var yLocation = 0;
+
+    // Loop through all the tiles in this layer
+    for(var tileNumber=0; tileNumber<gMap.numXTiles*gMap.numYTiles; tileNumber++) {
+
+
+        if(layerData[tileNumber] == 154) {
+
+            if(DEBUG) {
+                console.log("Tile:", layerData[tileNumber] , "placed at (", yLocation,",",xLocation,")");
+            }
+
+            // Draw the tile
+            CreatePlatform(world, xLocation, yLocation, tileNumber);
+
+        }
+
+        // Make the current xLocation to be bigger
+        xLocation++;
+
+        // Check if xLocation is 20 (full row)
+        if(xLocation==20) {
+            // In this case, start the next row from the start
+            xLocation = 0;
+            // The next row starts with having 1 bigger y than before
+            yLocation++;
+        }
+
+
+    }
+
+} // End of CreateLayer()
+
+
+function CreateLevel() {
+    if(DEBUG) {
+        console.log("Creating the level");
+        console.log("Xtiles:", gMap.numXTiles, " YTiles:", gMap.numYTiles );
+    }
+
+    // Get the layer in question
+    var groundLayer = gMap.currentMap.layers[0];
+
+    // Create the layer
+    CreateLayer(groundLayer);
+
+
+}
 
 // Initializes the game
 function initGame(){
@@ -159,7 +214,11 @@ function initGame(){
 	//gMap.LoadMap("https://raw.github.com/Japskua/blindsight/master/assets/map1.js");
     gMap.LoadMapLocalJSON(level1);
 
+    if(gMap.fullyLoaded == true) {
+        CreateLevel();
+    }
 
+   /*
 
     CreatePlatform(world, 10, 23, "start");
     CreatePlatform(world, 560, 360, "end");
@@ -185,7 +244,7 @@ function initGame(){
 	    console.log("Connected the platforms: " + doublyList1.toString());
     }   // End of DEBUG info
 
-
+     */
     // create player ball
     var ballSd = new b2CircleDef();
     ballSd.density = 0.1;
@@ -265,11 +324,21 @@ Event.observe(window, 'load', function() {
     context = $('game').getContext('2d');
     // Get the game canvas element
     var canvasElement = $('game');
+
+    // Set the size for the canvas according to level settings
+    canvasElement.width = level1["width"] * level1["tilewidth"];
+    canvasElement.height = level1["height"] * level1["tileheight"];
+
+
+
     // Get the values of canvas size
     canvasWidth = parseInt(canvasElement.width);
     canvasHeight = parseInt(canvasElement.height);
     canvasTop = parseInt(canvasElement.style.top);
     canvasLeft = parseInt(canvasElement.style.left);
+
+
+    console.log("canvasWidth:",canvasWidth, " canvasHeight:", canvasHeight);
 
     // Now, lets initialize everything we need in the game
     initGame();

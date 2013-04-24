@@ -24,7 +24,8 @@ function TileObject(tileType, tileName, x ,y) {
 		this._hidden = false;
 	}
 	else {
-		this._hidden = true;
+		//this._hidden = true;
+        this._hidden = false;
 	}
 
 

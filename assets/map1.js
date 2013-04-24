@@ -1,3 +1,4 @@
+var level1 =
 { "height":20,
  "layers":[
         {

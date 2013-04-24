@@ -45,15 +45,51 @@ MapLoader.prototype = {
 
 	constructor: MapLoader,
 
+    LoadMapLocalJSON: function(levelMap) {
+
+        // Save the current map to local variable
+        gMap.currentMap = levelMap;
+
+        console.log("currentMap",gMap.currentMap);
+        // Then, continue adding the values
+
+        // Number of tiles
+        gMap.numXTiles = gMap.currentMap.height;
+        gMap.numYTiles = gMap.currentMap.width;
+
+        // Size of the tiles
+        gMap.tileSize.x = gMap.currentMap.tilewidth;
+        gMap.tileSize.y = gMap.currentMap.tileheight;
+
+        // Pixel size
+        gMap.pixelSize.x = gMap.tileSize.x * gMap.numXTiles;
+        gMap.pixelSize.y = gMap.tileSize.y * gMap.numYTiles;
+
+        // Finally, set to fully loaded
+        gMap.fullyLoaded = true;
+
+    },
+
 	LoadMap: function(mapPath) {
 
 		// Use this to load the given map
 		console.log("Loading map from:", mapPath);
 
+
+        throw "MapLoader.LoadMap() Not implemented! (Use LoadMapLocalJSON() instead";
+        console.log(mapPath);
+        console.log(mapPath["height"])
+
+        /*
+        xhrGet(mapPath, false, function(data){
+            console.log(data);
+        } )*/
+
+        /*
 		xhrJSONP(mapPath, function() {
 			console.log("LOADED");
 		});
-
+          */
 		//mapPath = mapPath + "?callback=?";
 
 		                   /*

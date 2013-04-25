@@ -17,7 +17,11 @@ function drawWorld(world, context) {
             if (shape.GetUserData().getHidden() != true) {
                 // And Draw the shape
                 //drawShape(shape, context);
-                drawStuff(shape,context);
+                //drawStuff(shape,context);
+	            gMap.draw(context);
+	            if(shape.GetUserData().getTileType() == "player") {
+		            drawShape(shape, context);
+	            }
             }
 
 

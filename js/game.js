@@ -19,7 +19,6 @@ var canvasHeight;
 var canvasTop;
 var canvasLeft;
 var keys = [];
-var doublyList1 = new DoublyLinkedList();
 var mouseX;
 var mouseY;
 

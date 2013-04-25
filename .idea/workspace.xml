@@ -5,10 +5,10 @@
     <ignored path="blindsight.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/index.html" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366893996545" ignored="false" />
-    <file path="/game.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366912421599" ignored="false" />
+    <file path="/game.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366919923179" ignored="false" />
     <file path="/a.dummy" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1364410704716" ignored="false" />
     <file path="/levelparts.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366804337800" ignored="false" />
-    <file path="/box2dutils.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366804291754" ignored="false" />
+    <file path="/box2dutils.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366920134795" ignored="false" />
     <file path="/a.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1365007801415" ignored="false" />
     <file path="/HitCalculator.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1365002348064" ignored="false" />
     <file path="/hitcalculator.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366048156981" ignored="false" />
@@ -16,7 +16,7 @@
     <file path="/b2World.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1365078789212" ignored="false" />
     <file path="/b2BroadPhase.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1365078825855" ignored="false" />
     <file path="/tileobject.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366805296427" ignored="false" />
-    <file path="/maploader.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366917957144" ignored="false" />
+    <file path="/maploader.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366918405708" ignored="false" />
     <file path="/xhr.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366653578989" ignored="false" />
     <file path="$USER_HOME$/WebstormProjects/NodeGameServer/routes/level.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366782940937" ignored="false" />
     <file path="/level.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366782939142" ignored="false" />
@@ -46,25 +46,16 @@
       <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="22" selection-start="2491" selection-end="2491" vertical-scroll-proportion="0.0">
+            <state line="30" column="52" selection-start="448" selection-end="448" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map1.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/map1.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="77" selection-start="1745" selection-end="1745" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="box2dutils.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="box2dutils.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/box2dutils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="19" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0">
+            <state line="22" column="46" selection-start="990" selection-end="990" vertical-scroll-proportion="0.30734465">
               <folding>
                 <element signature="n#!!block;n#drawJoint#0" expanded="false" />
               </folding>
@@ -72,10 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="maploader.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="maploader.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/maploader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="226" column="60" selection-start="6293" selection-end="6293" vertical-scroll-proportion="0.75028247">
+            <state line="82" column="58" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -122,7 +113,6 @@
         <option value="$PROJECT_DIR$/assets/levels.js" />
         <option value="$PROJECT_DIR$/assets/map1.js" />
         <option value="$PROJECT_DIR$/js/levelparts.js" />
-        <option value="$PROJECT_DIR$/js/box2dutils.js" />
         <option value="$PROJECT_DIR$/js/tileobject.js" />
         <option value="$PROJECT_DIR$/js/collisionhandler.js" />
         <option value="$PROJECT_DIR$/js/gameloader.js" />
@@ -132,8 +122,9 @@
         <option value="$PROJECT_DIR$/assets/tilemanager.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/spritemanager.js" />
-        <option value="$PROJECT_DIR$/js/game.js" />
         <option value="$PROJECT_DIR$/js/maploader.js" />
+        <option value="$PROJECT_DIR$/js/game.js" />
+        <option value="$PROJECT_DIR$/js/box2dutils.js" />
       </list>
     </option>
   </component>
@@ -487,36 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/doublylinkedlist.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="4" selection-start="1642" selection-end="1642" vertical-scroll-proportion="0.5954802">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/map1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="77" selection-start="1745" selection-end="1745" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/box2dutils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="19" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!block;n#drawJoint#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="22" selection-start="2491" selection-end="2491" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/tileobject.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="91" column="24" selection-start="1911" selection-end="1911" vertical-scroll-proportion="0.0">
@@ -531,10 +492,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/map1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="77" selection-start="1745" selection-end="1745" vertical-scroll-proportion="0.4678899">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/maploader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="226" column="60" selection-start="6293" selection-end="6293" vertical-scroll-proportion="0.75028247">
+        <state line="82" column="58" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/doublylinkedlist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="4" selection-start="1642" selection-end="1642" vertical-scroll-proportion="0.24971752">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="52" selection-start="448" selection-end="448" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/box2dutils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="46" selection-start="990" selection-end="990" vertical-scroll-proportion="0.30734465">
+          <folding>
+            <element signature="n#!!block;n#drawJoint#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

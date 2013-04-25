@@ -226,6 +226,16 @@ MapLoader.prototype = {
 				//    using "getTilePacket" calling the tileId
 				var tilePacket = gMap.getTilePacket(tileId);
 
+				// Test, if the tile is within the world bounds
+				var worldX = Math.floor(tileIndex % this.numXTiles) * this.tileSize.x;
+				var worldY = Math.floor(tileIndex / this.numXTiles) * this.tileSize.x;
+
+				// And finally draw the image
+				context.drawImage(tilePacket.image, tilePacket.px, tilePacket.py,
+								  this.tileSize.x, this.tileSize.y,
+								  worldX, worldY,
+								  this.tileSize.x, this.tileSize.y);
+
 
 			} // End of tileIndex for loop
 

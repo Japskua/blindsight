@@ -135,6 +135,105 @@ MapLoader.prototype = {
 
     },
 
+	// Gets the tile from the "layer" data and returns the
+	// "packet" object for the layer we want to draw
+	// Takes the parameter "tileIndex",
+	// whici is the id of the tile we want to draw
+	// in the layer data
+	getTilePacket: function(tileIndex) {
+
+		// Define the "packet" object to contain
+		//
+		// 1. Image object of the given tile
+		// 2. (x,y) value of the tile to draw
+		//    the tile in map coordinates
+		var packet = {
+			"image": null,
+			"px": 0,
+			"py": 0
+		};
+
+		// First, find the correct tileset to draw from
+		// Loop through the whole tileset
+		var tile = 0;
+		for(tile=this.tilesets.length -1; tile>=0; tile--) {
+			if(this.tilesets[tile].firstgid <= tileIndex) {
+				break;
+			}
+		} // End of for
+
+		// Set the packet image to be the correct tileset image
+		packet.image = this.tilesets[tile].image;
+
+		// Calculate the location to draw to
+		// The local id of the tile
+		// calculated from the "tileIndex" of the tile we want to draw to
+		// and the "firstgid" found earlier
+		var localIdx = tileIndex - this.tilesets[tile].firstgid;
+
+		// Get the (x,y) position of the tile in terms of the number
+		// of tiles in the tileset.
+		var lTileX = Math.floor(localIdx % this.tilesets[tile].numXTiles);
+		var lTileY = Math.floor(localIdx / this.tilesets[tile].numXTiles);
+
+		// The final (x,y) position of the tileset we want to draw to
+		// based on the previously calculated tileset location and multiplied
+		// by tilesize to find the correct place
+		packet.px = (lTileX * this.tileSize.x);
+		packet.py = (lTileY * this.tileSize.y);
+
+		return packet;
+
+	}, // End of getTilePacket(tileIndex)
+
+
+	draw: function(context) {
+
+		// First, check if the mapdata has finished loading
+		if(gMap.fullyLoaded != true) {
+			// Return, as we are not done yet
+			return;
+		}
+
+
+		// For each layer in the "layers" Array of the
+		// currentMapData, do the following.
+		for(var layerIndex=0; layerIndex<gMap.currentMap.layers.length; layerIndex++)
+		{
+
+			// 1. Check, if the type of the layer is "tilelayer".
+			//    If not, don't draw
+			if(gMap.currentMap.layers[layerIndex].type != "tilelayer") {
+				continue;
+			}
+
+			// 2. If it is a "tilelayer", grab the "data" array of the given
+			//    layer
+			var layerData = gMap.currentMap.layers[layerIndex].data;
+
+			// 3. For each tile id in the "data" array
+			for(var tileIndex=0; tileIndex<layerData.length; tileIndex++)
+			{
+				// Get the tileId
+				var tileId = layerData[tileIndex];
+
+				// a. Check if the tile id is 0. If so, just skip (empty)
+				if(tileId == 0) {
+					continue;
+				}
+
+				// b. if the tile is something else than 0, grab the packet data
+				//    using "getTilePacket" calling the tileId
+				var tilePacket = gMap.getTilePacket(tileId);
+
+
+			} // End of tileIndex for loop
+
+		} // End of layerIndex for loop
+
+
+	}, // End of draw(context)
+
 	LoadMap: function(mapPath) {
 
 		// Use this to load the given map
@@ -215,7 +314,11 @@ MapLoader.prototype = {
 
 		// Finally, set to fully loaded
 		gMap.fullyLoaded = true;
-	}
+
+	}  // End of ParseMapJSON(mapJSON)
+
+
+
 
 
 }; // End of MapLoader.prototype

@@ -54,26 +54,35 @@ function initGame(){
         // Load Spritemap
         //spriteManager.LoadSpriteMap("assets/futuretiles.png");
         console.log("-----Fully Loaded!---------");
-        CreateLevel();
+
+
     }
 
+	CreateLevel();
+	createPlayer();
 
-    // create player ball
-    var ballSd = new b2CircleDef();
-    ballSd.density = 0.1;
-    ballSd.radius = 8;
-    ballSd.restitution = 0.5;
-    ballSd.friction = 1;
-    //ballSd.userData = 'player';
-    ballSd.userData = new TileObject("player", "player1");
-    var ballBd = new b2BodyDef();
-    ballBd.linearDamping = .03;
-    ballBd.allowSleep = false;
-    ballBd.AddShape(ballSd);
-    ballBd.position.Set(20,0);
-    player.object = world.CreateBody(ballBd);
 
 }
+
+
+function createPlayer() {
+
+	// create player ball
+	var ballSd = new b2CircleDef();
+	ballSd.density = 0.1;
+	ballSd.radius = 8;
+	ballSd.restitution = 0.5;
+	ballSd.friction = 1;
+	//ballSd.userData = 'player';
+	ballSd.userData = new TileObject("player", "player1");
+	var ballBd = new b2BodyDef();
+	ballBd.linearDamping = .03;
+	ballBd.allowSleep = false;
+	ballBd.AddShape(ballSd);
+	ballBd.position.Set(20,0);
+	player.object = world.CreateBody(ballBd);
+
+} // End of createPlayer
 
 
 // This function is run when the window is loaded

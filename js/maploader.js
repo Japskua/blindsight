@@ -25,6 +25,9 @@ MapLoader.prototype = {
 	// The currently loaded map
 	currentMap: null,
 
+    // The tilesets within this packet
+    tilesets: [],
+
 	// The amount of tiles in the current map
 	numXTiles: 0,
 	numYTiles: 0,
@@ -41,6 +44,8 @@ MapLoader.prototype = {
 		"y":32
 	},
 
+    // Loadcount that keeps track of amount of images to load
+    imageLoadCount: 0,
 
 
 	constructor: MapLoader,
@@ -65,8 +70,68 @@ MapLoader.prototype = {
         gMap.pixelSize.x = gMap.tileSize.x * gMap.numXTiles;
         gMap.pixelSize.y = gMap.tileSize.y * gMap.numYTiles;
 
-        // Finally, set to fully loaded
-        gMap.fullyLoaded = true;
+
+        // Loop trough "levelMap.tilesets" Array
+        for(var i=0; i<levelMap.tilesets.length; i++) {
+
+            // Load each tileset as Images
+            var image = new Image();
+            image.onload = function() {
+
+                console.log("Inside image.onload()");
+
+                // Increment the load count with 1
+                gMap.imageLoadCount++;
+
+                console.log("ImageLoadCount:", gMap.imageLoadCount);
+
+                console.log("gMap.imageLoadCount:", gMap.imageLoadCount, " levelMap.tilesets.length:", levelMap.tilesets.length);
+
+                // If all tilesets are loaded
+                if(gMap.imageLoadCount == levelMap.tilesets.length) {
+                   // Set fullyloaded flag to true
+                    gMap.fullyLoaded = true;
+
+                    console.log("Set gMap.fulloaded to:", gMap.fullyLoaded);
+                }
+            }; // End of image.onload()
+
+            // The src value to load each new image from is in the
+            // "image" property of the "tilesets"
+            image.src = "assets/" + levelMap.tilesets[i].image;
+
+
+            // Next, create the object for each tileset to
+            // be stored in the tilesets array
+
+            var tileset = {
+
+                // The GID of the tileset
+                "firstgid": i+1,
+
+                // The image
+                "image": image,
+                // And the image related data
+                "imageheight": image.height,
+                "imagewidth": image.width,
+                "name": gMap.currentMap.tilesets[i].name,
+
+                // Calculate the data from the width and height of the image
+                // and the size of each individual tile
+                "numXTiles": (image.width/gMap.tileSize.x)|0,
+                "numYTiles": (image.height/gMap.tileSize.y)|0
+
+
+            }; // End of tileset
+
+            console.log("Created tileset", tileset);
+
+            // After creating the tileset,
+            // push the information to the Array containing
+            // all the loaded tilesets
+            this.tilesets.push(tileset);
+        }
+
 
     },
 

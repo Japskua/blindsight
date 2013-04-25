@@ -24,6 +24,7 @@ var mouseX;
 var mouseY;
 
 var hitCalculator = new HitCalculator();
+var spriteManager = SpriteManager();
 
 
 
@@ -37,19 +38,22 @@ function showWin(){
 }
 
 
-
-
-
-
 // Initializes the game
 function initGame(){
 
 	// Load the map
+    //gMap.LoadMap("https://raw.github.com/Japskua/blindsight/master/assets/map1.js");
 
-	//gMap.LoadMap("https://raw.github.com/Japskua/blindsight/master/assets/map1.js");
+
     gMap.LoadMapLocalJSON(level1);
 
+    console.log("gMap.fullyLoaded", gMap.fullyLoaded);
+
+
     if(gMap.fullyLoaded == true) {
+        // Load Spritemap
+        //spriteManager.LoadSpriteMap("assets/futuretiles.png");
+        console.log("-----Fully Loaded!---------");
         CreateLevel();
     }
 

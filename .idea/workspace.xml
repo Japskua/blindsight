@@ -4,8 +4,8 @@
     <list default="true" id="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" name="Default" comment="" />
     <ignored path="blindsight.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366805881630" ignored="false" />
-    <file path="/game.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366805347596" ignored="false" />
+    <file path="/index.html" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366893996545" ignored="false" />
+    <file path="/game.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366895066023" ignored="false" />
     <file path="/a.dummy" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1364410704716" ignored="false" />
     <file path="/levelparts.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366804337800" ignored="false" />
     <file path="/box2dutils.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366804291754" ignored="false" />
@@ -16,13 +16,14 @@
     <file path="/b2World.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1365078789212" ignored="false" />
     <file path="/b2BroadPhase.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1365078825855" ignored="false" />
     <file path="/tileobject.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366805296427" ignored="false" />
-    <file path="/maploader.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366784012802" ignored="false" />
+    <file path="/maploader.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366894890803" ignored="false" />
     <file path="/xhr.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366653578989" ignored="false" />
     <file path="$USER_HOME$/WebstormProjects/NodeGameServer/routes/level.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366782940937" ignored="false" />
     <file path="/level.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366782939142" ignored="false" />
     <file path="/map1.json" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366783304064" ignored="false" />
     <file path="/map1.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366783338956" ignored="false" />
     <file path="/levels.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366783533793" ignored="false" />
+    <file path="/spritemanager.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366889818844" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,21 +43,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="game.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="396" selection-end="396" vertical-scroll-proportion="-7.68">
+            <state line="50" column="0" selection-start="895" selection-end="895" vertical-scroll-proportion="0.45909092">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="physicsmanager.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/physicsmanager.js">
+      <file leaf-file-name="map1.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/map1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="20" selection-start="929" selection-end="929" vertical-scroll-proportion="0.57954544">
+            <state line="23" column="77" selection-start="1714" selection-end="1714" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="maploader.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/maploader.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="94" column="76" selection-start="2312" selection-end="2312" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spritemanager.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/spritemanager.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="13" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="n#!!doc;n#step#0" expanded="false" />
+                <element signature="n#!!doc;n#SpriteManager#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -66,9 +85,7 @@
         <entry file="file://$PROJECT_DIR$/js/levelmanager.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="70" column="1" selection-start="1625" selection-end="1625" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc;n#CreateLayer#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,19 +93,8 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="39" selection-start="4720" selection-end="4720" vertical-scroll-proportion="-8.346154">
+            <state line="83" column="38" selection-start="4719" selection-end="4719" vertical-scroll-proportion="-6.6923075">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="collisionhandler.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/collisionhandler.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="36" selection-start="1883" selection-end="1883" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc;n#CheckPlayerCollision#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -111,18 +117,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="maploader.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/maploader.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="63" selection-start="973" selection-end="973" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#1415#2514#0" expanded="false" />
-                <element signature="e#2631#3224#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -133,11 +127,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/assetloader.js" />
-        <option value="$PROJECT_DIR$/js/xhr.js" />
         <option value="$PROJECT_DIR$/assets/map1.json" />
         <option value="$PROJECT_DIR$/assets/levels.js" />
-        <option value="$PROJECT_DIR$/js/maploader.js" />
         <option value="$PROJECT_DIR$/assets/map1.js" />
         <option value="$PROJECT_DIR$/js/levelparts.js" />
         <option value="$PROJECT_DIR$/js/box2dutils.js" />
@@ -146,9 +137,12 @@
         <option value="$PROJECT_DIR$/js/gameloader.js" />
         <option value="$PROJECT_DIR$/js/levelloader.js" />
         <option value="$PROJECT_DIR$/js/levelmanager.js" />
-        <option value="$PROJECT_DIR$/js/game.js" />
         <option value="$PROJECT_DIR$/js/physicsmanager.js" />
+        <option value="$PROJECT_DIR$/assets/tilemanager.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/spritemanager.js" />
+        <option value="$PROJECT_DIR$/js/maploader.js" />
+        <option value="$PROJECT_DIR$/js/game.js" />
       </list>
     </option>
   </component>
@@ -200,6 +194,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -276,7 +271,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -285,8 +279,13 @@
     <property name="options.lastSelected" value="appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\parkkila\Documents\GitHub\blindsight\js" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -354,14 +353,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1698" height="1068" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278328" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24984913" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24622813" sideWeight="0.67216724" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951117" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -438,32 +437,14 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/xhr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="86" selection-start="2026" selection-end="2026" vertical-scroll-proportion="0.45909092">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/map1.tmx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="26" selection-start="455" selection-end="455" vertical-scroll-proportion="0.2125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/box2d/collision/shapes/b2Shape.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="4" selection-start="1082" selection-end="1093" vertical-scroll-proportion="0.3090909">
-          <folding />
-        </state>
+        <state line="32" column="4" selection-start="1082" selection-end="1093" vertical-scroll-proportion="0.3090909" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/box2d/dynamics/b2Body.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="227" column="4" selection-start="6011" selection-end="6011" vertical-scroll-proportion="0.33295456">
-          <folding />
-        </state>
+        <state line="227" column="4" selection-start="6011" selection-end="6011" vertical-scroll-proportion="0.33295456" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/box2dutils.js">
@@ -482,25 +463,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/map1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="77" selection-start="1507" selection-end="1507" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/tileobject.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="31" selection-start="1742" selection-end="1742" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/controls.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="6" selection-start="530" selection-end="532" vertical-scroll-proportion="0.50760233">
           <folding>
             <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/futuretiles.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/collisionhandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="36" selection-start="1883" selection-end="1883" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/physicsmanager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="25" selection-start="1680" selection-end="1680" vertical-scroll-proportion="1.0045455">
+          <folding>
+            <element signature="n#!!doc;n#step#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -512,54 +500,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/collisionhandler.js">
+    <entry file="file://$PROJECT_DIR$/js/tileobject.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="36" selection-start="1883" selection-end="1883" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc;n#CheckPlayerCollision#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/levelmanager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="1" selection-start="1625" selection-end="1625" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc;n#CreateLayer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="396" selection-end="396" vertical-scroll-proportion="-7.68">
+        <state line="82" column="31" selection-start="1742" selection-end="1742" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="39" selection-start="4720" selection-end="4720" vertical-scroll-proportion="-8.346154">
+        <state line="83" column="38" selection-start="4719" selection-end="4719" vertical-scroll-proportion="-6.6923075">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/levelmanager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="1" selection-start="1625" selection-end="1625" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/map1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="77" selection-start="1714" selection-end="1714" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/spritemanager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc;n#SpriteManager#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/maploader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="63" selection-start="973" selection-end="973" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1415#2514#0" expanded="false" />
-            <element signature="e#2631#3224#0" expanded="false" />
-          </folding>
+        <state line="94" column="76" selection-start="2312" selection-end="2312" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/physicsmanager.js">
+    <entry file="file://$PROJECT_DIR$/js/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="20" selection-start="929" selection-end="929" vertical-scroll-proportion="0.57954544">
-          <folding>
-            <element signature="n#!!doc;n#step#0" expanded="false" />
-          </folding>
+        <state line="50" column="0" selection-start="895" selection-end="895" vertical-scroll-proportion="0.45909092">
+          <folding />
         </state>
       </provider>
     </entry>

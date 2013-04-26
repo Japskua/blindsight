@@ -72,6 +72,7 @@ function TileObject(tileType, tileName, x ,y) {
 
 	// Getting the tile type
 	this.getTileType = getTileType;
+    // Get tileType
 	function getTileType() {
 		return this._tileType;
 

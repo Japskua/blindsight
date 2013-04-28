@@ -6,13 +6,23 @@
  * To change this template use File | Settings | File Templates.
  */
 
-/*function Entity(){
 
-};*/
+// Definition for Entity
+var Entity = Class.create({
 
-Entity = Class.extend({
+    initialize: function() {
 
-    constructor: Entity,
+	    // Initialize the values to zeros
+	    this.position.x = 0;
+	    this.position.y = 0;
+	    this.size.x = 0;
+	    this.size.y = 0;
+	    this.last.x = 0;
+	    this.last.y = 0;
+
+
+    }, // End of initialize()
+
 
     // (x,y) position of the entity in the game world
     position: {x:0, y:0},
@@ -21,8 +31,9 @@ Entity = Class.extend({
     // entitys previous (x,y) position
     last: {x:0, y:0},
 
+
     update: function() {
 
     } // End of update()
 
-}); // End of Entity.prototype
+}); // End Entity.create()

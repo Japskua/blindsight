@@ -60,6 +60,12 @@ function initGame(){
 	CreateLevel();
 	createPlayer();
 
+	//gGameEngine.setup();
+
+
+	// Testing the game engine spawner
+	var enemy = gGameEngine.spawnEntity("Enemy");
+
 
 }
 

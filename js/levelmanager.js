@@ -34,7 +34,7 @@ function CreateLayer(layer) {
             };
 
             // Draw the tile
-            CreatePlatform(world, xLocation, yLocation, tileData);
+            CreatePlatform(xLocation, yLocation, tileData);
 
         }
 

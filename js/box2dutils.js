@@ -160,6 +160,7 @@ function drawDebugBox(x, y, size) {
     context.lineTo(x-size,y-size);
 }
 
+/*
 function createWorld() {
     var worldAABB = new b2AABB();
     worldAABB.minVertex.Set(-1000, -1000);
@@ -169,6 +170,7 @@ function createWorld() {
     var world = new b2World(worldAABB, gravity, doSleep);
     return world;
 }
+*/
 
 function createGround(world) {
     var groundSd = new b2BoxDef();
@@ -192,6 +194,7 @@ function createBall(world, x, y) {
     return world.CreateBody(ballBd);
 }
 
+/*
 function createBox(world, x, y, width, height, fixed, userData) {
     if (typeof(fixed) == 'undefined') fixed = true;
     var boxSd = new b2BoxDef();
@@ -204,4 +207,4 @@ function createBox(world, x, y, width, height, fixed, userData) {
     boxBd.AddShape(boxSd);
     boxBd.position.Set(x,y);
     return world.CreateBody(boxBd)
-}
+} */

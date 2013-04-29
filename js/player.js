@@ -9,6 +9,17 @@
 
 var Player = Class.create(Entity, {
 
+    initialize: function($super) {
+
+        this.canJump = false;
+        this.object = null;
+
+    },
+
+    object: null,
+    canJump: false
+
+
 }); // End of Player.create()
 
 gFactory.nameClassMap["Player"] = Player;

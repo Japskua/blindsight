@@ -2,17 +2,17 @@
  THE VARIABLES
  */
 var initId = 0;
-var player = function(){
-    this.object = null;
-    this.canJump = false;
-};
+
+// Create the player
+var player = gGameEngine.spawnEntity("Player");
 
 
 var DEBUG = true;
 
 var DEBUG_COLLISION = null;
 
-var world = createWorld();
+//var world = createWorld();
+var world = gPhysicsEngine.CreateWorld();
 var context;
 var canvasWidth;
 var canvasHeight;
@@ -94,7 +94,7 @@ function createPlayer() {
 // Starts the game
 Event.observe(window, 'load', function() {
     // Create the world
-    world = createWorld();
+    //world = createWorld();
     // Get the context
     context = $('game').getContext('2d');
     // Get the game canvas element

@@ -72,11 +72,15 @@ var GameEngine = Class.create({
 		 // Create the new entity
 		//var entity = new (gGameEngine.factory[typename])();
 
+        // Get the entity type we want to create from the factory
 		var entityClass = gFactory.nameClassMap[typename];
+        // And then create the entity
 		var entity = new (entityClass)();
 
+        // Add the entity to the list of entities in the game engine
 		gGameEngine.entities.push(entity);
 
+        // And return the created entity
 		return entity;
 
 

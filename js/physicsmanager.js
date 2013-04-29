@@ -22,7 +22,8 @@ function step() {
 
 
     // Handle the interactions
-    handleInteractions();
+    //handleInteractions();
+    gPhysicsEngine.HandleInteractions();
 
     var stepping = false;
     var timeStep = 1.0/60;

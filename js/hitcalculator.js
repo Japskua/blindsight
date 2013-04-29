@@ -75,15 +75,19 @@ HitCalculator.prototype = {
 
 			// Again, if debugging
 			if (DEBUG) {
-				console.log("Checking nearby at",x,y);
+				//console.log("Checking nearby at",x,y);
 			}
 
 			// If we are on the same y-level
 			if((y >= posY - TILE_HEIGHT) && (y <= posY + TILE_HEIGHT) ) {
 
 
+				//console.log("Looking for box at", posX-TILE_WIDTH, " - ", posX + TILE_WIDTH);
+
 				// Check if there is a tile on the left side of the current one
-				if (x == posX - TILE_WIDTH * 2) {
+				if (x == posX - TILE_WIDTH) {
+
+
 
 					// Check if we still have power left to reveal something on this side
 					if(leftDistance > 0) {
@@ -97,7 +101,7 @@ HitCalculator.prototype = {
 				}
 
 				// Check if there is something on the right side
-				if (x == posX + TILE_WIDTH * 2) {
+				if (x == posX + TILE_WIDTH) {
 
 
 					// Check if we still have power on the right side to reveal something

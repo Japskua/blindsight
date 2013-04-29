@@ -7,55 +7,58 @@
  */
 
 
-// Comment for TileObject
-function TileObject(tileType, tileName, x ,y) {
+var TileObject = Class.create({
 
-	/*
-	 Private parameters
-	 */
-	this._tileType = tileType;
-	this._tileName = tileName;
-	this._tileDrawWidth = 0;
-	this._x = x;
-	this._y = y;
-    this._tileGroup = "";
+	_tileType: null,
+	_tileName: null,
+	_tileDrawWidth: 0,
+	_x: 0,
+	_y: 0,
+	_tileGroup: "",
 
-	// Player is never hidden
-	if (tileType == "player") {
-		this._hidden = false;
-        // Tilegroup is player
-        this._tileGroup = "player";
-	}
-	else {
+	initialize: function(tileType, tileName, x, y) {
 
-        // If hiding is turned off
-		if(CONSTANTS.HIDING == false) {
-            this._hidden = false;
-        }
-        else {
-            this._hidden = true;
-        }
-        // Tiletype is currently just ground
-        this._tileGroup = "ground";
-	}
+		this._x = x;
+		this._y = y;
+		this._tileName = tileName;
+		this._tileType = tileType;
+		this._tileGroup = "";
 
 
-	// Get hide value
-	this.getHidden = getHidden;
-	function getHidden() {
+		// Player is never hidden
+		if (tileType == "player") {
+			this._hidden = false;
+			// Tilegroup is player
+			this._tileGroup = "player";
+		}
+		else {
+
+			// If hiding is turned off
+			if(CONSTANTS.HIDING == false) {
+				this._hidden = false;
+			}
+			else {
+				this._hidden = true;
+			}
+			// Tiletype is currently just ground
+			this._tileGroup = "ground";
+		}
+
+	}, // End of initialize()
+
+	getHidden: function() {
 		return this._hidden;
-	}
+	},
 
-	this.Hide = Hide;
-	function Hide() {
+
+	Hide: function() {
 		if (DEBUG) {
 			console.log("Hiding " + this._tileName);
 		}
 		this._hidden = true;
-	}
+	}, // End of Hide()
 
-	this.UnHide = UnHide;
-	function UnHide(force) {
+	UnHide: function(force) {
 		if (DEBUG) {
 			console.log("Unhiding " + this._tileName + " with force of: " + force);
 		}
@@ -69,31 +72,33 @@ function TileObject(tileType, tileName, x ,y) {
 			hitCalculator.getCloseByElements(this._x, this._y, force);
 		}
 
-	}
+	}, // End of UnHide(force)
 
-	this.getTileDrawWidth = getTileDrawWidth;
-	function getTileDrawWidth() {
+
+	RevealNeighbors: function(direction, force) {
+		// Get the close by elements on the given side
+
+	},
+
+
+	getTileDrawWidth: function() {
 		return this._tileDrawWidth;
-	} // End of getTileDrawWidth()
+	}, // End of getTileDrawWidth()
 
-	// Getting the tile type
-	this.getTileType = getTileType;
-    // Get tileType
-	function getTileType() {
+
+	getTileType: function() {
 		return this._tileType;
+	},   // End of getTileType()
 
-	}   // End of getTileType()
+	getTileGroup: function() {
+		// Return the tilegroup
+		return this._tileGroup;
+	}, // End of getTileGroup()
 
-    this.getTileGroup = getTileGroup;
-    function getTileGroup() {
-        // Return the tilegroup
-        return this._tileGroup;
-    }
-
-	// Getting the tilename
-	this.getTileName = getTileName;
-	function getTileName() {
+	getTileName: function() {
 		return this._tileName;
-	}   // End of getTileName
 
-} // End of TileObject()
+	} // End of getTileName()
+
+
+}); // End of TileObject.create()

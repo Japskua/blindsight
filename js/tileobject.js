@@ -66,7 +66,7 @@ var TileObject = Class.create({
 		this._tileDrawWidth = force/100;
 		this._hidden = false;
 
-		// Check if there is still force left
+		// Check if hit force is higher than 0
 		if (force > 0) {
 			// Calculate the close by elements and pass the hit to them as well
 			hitCalculator.getCloseByElements(this._x, this._y, force);
@@ -74,6 +74,13 @@ var TileObject = Class.create({
 
 	}, // End of UnHide(force)
 
+
+	Reveal: function() {
+
+		console.log("Revealing:", this._x, this._y);
+		this._hidden = false;
+
+	}, // End of Reveal()
 
 	RevealNeighbors: function(direction, force) {
 		// Get the close by elements on the given side

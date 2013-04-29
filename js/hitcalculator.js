@@ -61,11 +61,6 @@ HitCalculator.prototype = {
 		// Get the amount of bodies to check
 		var size = world.m_bodyCount;
 
-
-		// The distance should be still checked
-		var leftDistance = distance;
-		var rightDistance = distance;
-
 		// Loop through the whole list of bodies
 		for(var i=0; i<size; i++) {
 
@@ -75,45 +70,18 @@ HitCalculator.prototype = {
 
 			// Again, if debugging
 			if (DEBUG) {
-				//console.log("Checking nearby at",x,y);
+				console.log("Checking nearby at",x,y);
 			}
 
 			// If we are on the same y-level
 			if((y >= posY - TILE_HEIGHT) && (y <= posY + TILE_HEIGHT) ) {
 
 
-				//console.log("Looking for box at", posX-TILE_WIDTH, " - ", posX + TILE_WIDTH);
+				// Check for left side
+				this.CheckForRevealingSides(x,body, distance, "left");
 
-				// Check if there is a tile on the left side of the current one
-				if (x == posX - TILE_WIDTH) {
-
-
-
-					// Check if we still have power left to reveal something on this side
-					if(leftDistance > 0) {
-
-						// Take on away from the distance
-						leftDistance--;
-						// And reveal the body, passing the changed distance amount
-						body.GetShapeList().GetUserData().UnHide(leftDistance);
-					}
-
-				}
-
-				// Check if there is something on the right side
-				if (x == posX + TILE_WIDTH) {
-
-
-					// Check if we still have power on the right side to reveal something
-					if (rightDistance>0) {
-
-						// Take on away from the distance
-						rightDistance--;
-						// And reveal the body, passing the newly changed distance value
-						body.GetShapeList().GetUserData().UnHide(rightDistance);
-
-					}
-				}
+				// Check for right side
+				this.CheckForRevealingSides(x,body, distance, "right");
 
 
 			} // End of checking for y-value
@@ -124,7 +92,51 @@ HitCalculator.prototype = {
 		} // End of for loop
 
 
-	}  // End of getCloseByElements()
+	},  // End of getCloseByElements()
+
+	CheckForRevealingSides: function(x,body, amount, side) {
+
+		// Check the x-values of the bodies, if they match or not
+
+
+		// Get the body position and fix it with -16 (to get the center point)
+		var bodyPosX = body.m_position.x - 16;
+
+		// Loop amount of times
+		for(var i=1; i<=amount; i++) {
+
+			// If the x location is within the amount of tiles to reveal
+			// Calculation: x = body position.x + amount * TILE_WIDTH
+
+			// If we are on the left side
+			if(side == "left") {
+
+
+
+				// We will add the tiles to the position
+				if(x == bodyPosX  + i * gMap.tileSize.x) {
+					// Reveal the tile
+					body.GetShapeList().GetUserData().Reveal();
+				}
+
+			}
+			// If we are on the right side
+			if (side == "right") {
+
+				// We will subtract the tile position
+				if(x == bodyPosX - i * gMap.tileSize.x) {
+					// Reveal the tile
+					body.GetShapeList().GetUserData().Reveal();
+				}
+			}
+
+		}
+
+		// Reveal the body
+		//body.GetShapeList().GetUserData().Reveal();
+
+	} // End of CheckForRevealingSides()
+
 
 
 };

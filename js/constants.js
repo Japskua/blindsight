@@ -14,6 +14,12 @@ var Constants = Class.create({
     PHYSICS_UPDATES_PER_SEC: 60,
     PHYSICS_LOOP_HZ: 1.0 / 60.0,
 
+    // Collision debugging
+    DEBUG_COLLISIONS: false,
+
+    // Platform Hiding
+    HIDING: true,
+
     initialize: function() {
 
     } // End of initialize()

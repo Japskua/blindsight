@@ -21,22 +21,24 @@ function CreateLayer(layer) {
     for(var tileNumber=0; tileNumber<gMap.numXTiles*gMap.numYTiles; tileNumber++) {
 
 
-        if(layerData[tileNumber] == 154) {
+        // If this is the collision layer
+        if(layer.name == "Collision") {
 
-            if(DEBUG) {
-                console.log("Tile:", layerData[tileNumber] , "placed at (", yLocation,",",xLocation,")");
+            // And tilenumber is the correct collision type
+            if(layerData[tileNumber] == 82) {
+                // Create body
+
+                // Create the tiledata
+                var tileData = {
+                    tileName: tileNumber,
+                    tileType: layerData[tileNumber]
+                };
+
+                // Create the physics platform
+                CreatePlatform(xLocation, yLocation, tileData);
             }
-
-
-            var tileData = {
-                tileName: tileNumber,
-                tileType: layerData[tileNumber]
-            };
-
-            // Draw the tile
-            CreatePlatform(xLocation, yLocation, tileData);
-
         }
+
 
         // Make the current xLocation to be bigger
         xLocation++;
@@ -61,11 +63,12 @@ function CreateLevel() {
         console.log("Xtiles:", gMap.numXTiles, " YTiles:", gMap.numYTiles );
     }
 
-    // Get the layer in question
-    var groundLayer = gMap.currentMap.layers[0];
+    // Find the collision layer
+    var collisionLayer = gMap.currentMap.layers[2];
 
-    // Create the layer
-    CreateLayer(groundLayer);
+
+    // Create collision layer
+    CreateLayer(collisionLayer);
 
 
 }

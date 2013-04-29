@@ -48,21 +48,12 @@ function CreatePlatform(x, y, tileData) {
     // Create the new TileObject
 	var tile = new TileObject(tileData.tileType, "platform"+tileData.tileName.toString(), x,y);
 
-	// Create the box in the given place
-	//levelPlatforms.push(createBox(world, x, y, TILE_WIDTH, TILE_HEIGHT, true, tile));
-    //createBox(world, x, y, TILE_WIDTH, TILE_HEIGHT, true, tile)
-
 
     gPhysicsEngine.CreateBox(x+TILEOFFSET, y+TILEOFFSET, TILE_WIDTH, TILE_HEIGHT, true, tile);
     //createBox(world, x+TILEOFFSET, y+TILEOFFSET, TILE_WIDTH, TILE_HEIGHT, true, tile)
 
 	if(DEBUG) {
 		console.log("Created platform" + tileData.tileName.toString() + " at " + x + "," + y);
-        /*
-        console.log("LevelPlatforms:" + levelPlatforms.last().toString());
-        for(var i=0; i<levelPlatforms.length; i++) {
-            console.log(levelPlatforms[i]);
-        } */
 	}
 
 } // End of CreatePlatform()

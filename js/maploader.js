@@ -186,6 +186,60 @@ MapLoader.prototype = {
 
 	}, // End of getTilePacket(tileIndex)
 
+    drawTile: function(context, locationX, locationY) {
+
+        // Find the layer named "Ground"
+
+        // Loop through teh layers
+        for(var layerIndex=0; layerIndex<gMap.currentMap.layers.length; layerIndex++) {
+            // If the name of the layer is not "Ground
+            if(gMap.currentMap.layers[layerIndex].name != "Ground") {
+                // Just leave
+                continue;
+            }
+
+            // Match the x and y coordinates to used level array
+            var tileNumber = this.ConvertToTileNumber(locationX, locationY);
+
+            //console.log("Drawing to tileNumber:", tileNumber);
+
+            // Get the layerData
+            var layerData = gMap.currentMap.layers[layerIndex].data;
+
+            // Get the tileId of the tileNumber in question
+            var tileId = layerData[tileNumber];
+
+            // a. Check if the tile id is 0. If so, just skip (empty)
+            if(tileId == 0) {
+                continue;
+            }
+
+            // b. if the tile is something else than 0, grab the packet data
+            //    using "getTilePacket" calling the tileId
+            var tilePacket = gMap.getTilePacket(tileId);
+
+            // And finally draw the image
+            context.drawImage(tilePacket.image, tilePacket.px, tilePacket.py,
+                this.tileSize.x, this.tileSize.y,
+                locationX, locationY,
+                this.tileSize.x, this.tileSize.y);
+
+
+        }
+
+    }, // End of drawTile()
+
+    ConvertToTileNumber: function(worldX, worldY) {
+
+        var localX = worldX/this.tileSize.x;
+        var localY = worldY/this.tileSize.y;
+        var tileNumber = localX + localY * this.numXTiles;
+
+        // Return the tilenumber
+        return tileNumber;
+
+    }, // End of ConvertToTileNumber()
+
 
 	draw: function(context) {
 
@@ -207,6 +261,17 @@ MapLoader.prototype = {
 				continue;
 			}
 
+
+            // Also, if we are dealing with the Collision Layer
+            if(gMap.currentMap.layers[layerIndex].name == "Collision") {
+
+                // If we are not debugging, skip drawing this layer
+                if(CONSTANTS.DEBUG_COLLISIONS == false) {
+                    continue;
+                }
+
+            }
+
 			// 2. If it is a "tilelayer", grab the "data" array of the given
 			//    layer
 			var layerData = gMap.currentMap.layers[layerIndex].data;
@@ -222,13 +287,15 @@ MapLoader.prototype = {
 					continue;
 				}
 
-				// b. if the tile is something else than 0, grab the packet data
-				//    using "getTilePacket" calling the tileId
-				var tilePacket = gMap.getTilePacket(tileId);
 
 				// Test, if the tile is within the world bounds
 				var worldX = Math.floor(tileIndex % this.numXTiles) * this.tileSize.x;
 				var worldY = Math.floor(tileIndex / this.numXTiles) * this.tileSize.x;
+
+
+                // b. if the tile is something else than 0, grab the packet data
+                //    using "getTilePacket" calling the tileId
+                var tilePacket = gMap.getTilePacket(tileId);
 
 				// And finally draw the image
 				context.drawImage(tilePacket.image, tilePacket.px, tilePacket.py,
@@ -243,6 +310,7 @@ MapLoader.prototype = {
 
 
 	}, // End of draw(context)
+
 
 	LoadMap: function(mapPath) {
 

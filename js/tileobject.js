@@ -27,8 +27,14 @@ function TileObject(tileType, tileName, x ,y) {
         this._tileGroup = "player";
 	}
 	else {
-		//this._hidden = true;
-        this._hidden = false;
+
+        // If hiding is turned off
+		if(CONSTANTS.HIDING == false) {
+            this._hidden = false;
+        }
+        else {
+            this._hidden = true;
+        }
         // Tiletype is currently just ground
         this._tileGroup = "ground";
 	}

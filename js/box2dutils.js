@@ -18,10 +18,22 @@ function drawWorld(world, context) {
                 // And Draw the shape
                 //drawShape(shape, context);
                 //drawStuff(shape,context);
-	            gMap.draw(context);
-	            if(shape.GetUserData().getTileType() == "player") {
-		            drawShape(shape, context);
-	            }
+
+                //console.log("Shape Location", shape.GetUserData()._x, ",", shape.GetUserData()._y);
+
+                // If we are drawing the player
+                if(shape.GetUserData().getTileType() == "player") {
+                    drawShape(shape, context);
+                    // And then just return
+                    continue;
+                }
+
+                // Draw the shape to the marked location
+                gMap.drawTile(context, shape.GetUserData()._x, shape.GetUserData()._y);
+
+
+	            //gMap.draw(context);
+
             }
 
 

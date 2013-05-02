@@ -1,0 +1,36 @@
+{"frames": [
+
+{
+	"filename": "idle_1.png",
+	"frame": {"x":2,"y":65,"w":29,"h":37},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":29,"h":37},
+	"sourceSize": {"w":29,"h":37}
+},
+{
+	"filename": "idle_2.png",
+	"frame": {"x":2,"y":34,"w":29,"h":37},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":29,"h":37},
+	"sourceSize": {"w":29,"h":37}
+},
+{
+	"filename": "idle_3.png",
+	"frame": {"x":2,"y":2,"w":30,"h":37},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":37},
+	"sourceSize": {"w":30,"h":37}
+}],
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "soldier.png",
+	"format": "RGBA8888",
+	"size": {"w":64,"h":128},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e5c76cd3538ad52eaaa8246303af33f4$"
+}
+}

@@ -35,17 +35,31 @@ loadAtlasImage = function(imagename)
 SpriteSheetClass = Class.create({
 	img: null,
 	url:"",
-	sprites: new Array(),
+	sprites: [],
 	//-----------------------------------------
-	init: function () {},
+	init: function () {
+
+        // Null the values so other instances don't use this
+        this.img = null;
+        this.url = "";
+        this.sprites = [];
+
+    },
 	//-----------------------------------------
 	load: function (imgName) {
+        // Load the image
 		this.img = loadAtlasImage(imgName); //new Image(imgName);
+        // And store the image location
 		this.url = imgName;
 	},
 	//-----------------------------------------
 	defSprite: function (name, x, y, w, h, cx, cy) {
-		var spt = {
+
+        // Create a sprite
+        // name, x,y coordinates
+        // width and height in the atlas
+        // center coordinates for the sprite
+        var spt = {
 			"id": name,
 			"x": x,
 			"y": y,
@@ -54,11 +68,14 @@ SpriteSheetClass = Class.create({
 			"cx": cx==null? 0 : cx,
 			"cy": cy==null? 0 : cy
 		};
+        // Add to the list
 		this.sprites.push(spt);
 	},
 	//-----------------------------------------
 	getStats: function (name) {
+        // Loop through all the sprites
 		for (var i = 0; i < this.sprites.length; i++) {
+            // And if the id of the sprite matches the name, return the sprite
 			if (this.sprites[i].id == name) return this.sprites[i];
 		}
 		return null;
@@ -69,11 +86,21 @@ SpriteSheetClass = Class.create({
 //-----------------------------------------
 SpriteSheetAnimClass = Class.create({
 	_spriteSheet:null,
-	_spriteNames:new Array(),
+	_spriteNames:[],
 	_currAnimIdx: 0,
 	_fps:15,
 	_animIncPerFrame:0.5,
 	_paused:false,
+
+    initialize: function() {
+        this._spriteSheet = null;
+        this._spriteNames = [];
+        this._currAnimIdx = 0;
+        this._fps = 15;
+        this._animIncPerFrame = 0.5;
+        this._paused = false;
+    },
+
 	//-----------------------------------------
 	loadSheet: function(sheetName, spriteSheetURI)
 	{
@@ -149,13 +176,20 @@ function getSpriteNamesSimilarTo(nameValue)
 //-----------------------------------------
 function drawSprite(spritename, posX, posY, settings)
 {
-	for( sheetName in gSpriteSheets)
+
+    // Loop through all the sheets in the spritesheet list
+	for(var sheetName in gSpriteSheets)
 	{
+        // Get the sheet
 		var sheet = gSpriteSheets[sheetName];
+        // Try to find if a sprite with "spritename" exists in the list
 		var spt = sheet.getStats(spritename);
+        // If there is no matching spritesheet
 		if(spt == null)
+        // Just continue searching
 			continue;
 
+        // If match found, draw the sprite
 		__drawSpriteInternal(spt,sheet,posX,posY,settings);
 
 
@@ -168,17 +202,25 @@ function drawSprite(spritename, posX, posY, settings)
 //-------
 function __drawSpriteInternal(spt,sheet,posX,posY,settings)
 {
+    // Draw sprites
+    // If the sprite or sheet are null, get out of here!
 	if(spt == null || sheet == null)
 		return;
 
-	var gMap = gGameEngine.gMap;
+
+    // Get the global map
+	//var gMap = gGameEngine.gMap;
+    // Holder for x & y values
 	var hlf = {x: spt.cx , y: spt.cy};
 	//var hlf = {x: spt.w * 0.5, y: spt.h * 0.5};
 
 
-
+    // TODO: FIX THESE TO WORK EVENTUALLY
+    /*
 	var mapTrans = {x: gMap.viewRect.x, y: gMap.viewRect.y};
 	var ctx = gRenderEngine.context;
+
+    // Again, if settings exist
 	if(settings)
 	{
 		if(settings.noMapTrans)
@@ -192,8 +234,10 @@ function __drawSpriteInternal(spt,sheet,posX,posY,settings)
 		}
 
 	}
+    */
+    var ctx = context;
 
-
+    // If there are settings passed, handle things accordingly
 	if(settings && settings.rotRadians != null)
 	{
 		ctx.save();
@@ -214,13 +258,16 @@ function __drawSpriteInternal(spt,sheet,posX,posY,settings)
 
 
 	}
+    // Otherwsise, just draw
 	else
 	{
 		ctx.drawImage(sheet.img,
 			spt.x, spt.y,
 			spt.w, spt.h,
-			(posX - mapTrans.x) + (hlf.x),
-			(posY - mapTrans.y) + (hlf.y),
+            posX + hlf.x,
+            posY + hlf.y,
+			//(posX - mapTrans.x) + (hlf.x),
+			//(posY - mapTrans.y) + (hlf.y),
 			spt.w,
 			spt.h);
 	}

@@ -32,14 +32,17 @@ function step() {
     // Make the physics step
     world.Step(timeStep, iteration);
     // Clear the canvas
-    context.clearRect(0, 0, canvasWidth, canvasHeight);
+    //context.clearRect(0, 0, canvasWidth, canvasHeight);
+    gRenderEngine.context.clearRect(0,0, gRenderEngine.canvas.width, gRenderEngine.canvas.height);
 
     // Draw the new situation
-    drawWorld(world, context);
+    //drawWorld(world, context);
+    drawWorld(world, gRenderEngine.context);
     // Order to wait for a few moments before running the step again
     setTimeout('step()', 10);
 }
 
+/*
 function handleInteractions(){
     // up arrow
 
@@ -84,4 +87,4 @@ function handleInteractions(){
 
 
     player.object.SetLinearVelocity(vel);
-}
+}     */

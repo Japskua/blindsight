@@ -20,8 +20,8 @@ function handleKeyUp(evt){
 
 function handleMouseDown(evt) {
 	// Get the mouseX and mouseY in the game field
-	mouseX = (evt.clientX - context.canvas.offsetLeft);
-	mouseY = (evt.clientY - context.canvas.offsetTop);
+	mouseX = (evt.clientX - gRenderEngine.context.canvas.offsetLeft);
+	mouseY = (evt.clientY - gRenderEngine.context.canvas.offsetTop);
 
 
 	console.log("Clicked at", mouseX, mouseY);

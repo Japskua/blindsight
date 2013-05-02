@@ -163,6 +163,8 @@ function drawShape(shape, context) {
 
 
 function drawDebugBox(x, y, size) {
+    var context = gRenderEngine.context;
+
     context.moveTo(x-size,y-size);
 
     context.lineTo(x-size, y+TILE_HEIGHT+size);

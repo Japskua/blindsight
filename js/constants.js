@@ -20,6 +20,8 @@ var Constants = Class.create({
     // Platform Hiding
     HIDING: true,
 
+    DEBUG: true,
+
     initialize: function() {
 
     } // End of initialize()

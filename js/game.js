@@ -25,6 +25,8 @@ var mouseY;
 var hitCalculator = new HitCalculator();
 var spriteManager = SpriteManager();
 
+var gRenderEngine = new RenderEngine();
+
 
 
 // Show level completed information
@@ -42,6 +44,7 @@ function initGame(){
 
 	// Load the map
     //gMap.LoadMap("https://raw.github.com/Japskua/blindsight/master/assets/map1.js");
+
 
 
     gMap.LoadMapLocalJSON(level1);
@@ -93,37 +96,15 @@ function createPlayer() {
 // This function is run when the window is loaded
 // Starts the game
 Event.observe(window, 'load', function() {
-    // Create the world
-    //world = createWorld();
-    // Get the context
-    context = $('game').getContext('2d');
-    // Get the game canvas element
-    var canvasElement = $('game');
-
-    // Set the size for the canvas according to level settings
-    canvasElement.width = level1["width"] * level1["tilewidth"];
-    canvasElement.height = level1["height"] * level1["tileheight"];
 
 
-
-    // Get the values of canvas size
-    canvasWidth = parseInt(canvasElement.width);
-    canvasHeight = parseInt(canvasElement.height);
-    canvasTop = parseInt(canvasElement.style.top);
-    canvasLeft = parseInt(canvasElement.style.left);
-
-
-    console.log("canvasWidth:",canvasWidth, " canvasHeight:", canvasHeight);
-
+    gRenderEngine.setup();
     // Now, lets initialize everything we need in the game
     initGame();
     // Physics step for Box2D
     step();
 
-    // Add the event listeners for buttons
-    window.addEventListener('keydown',handleKeyDown,true);
-    window.addEventListener('keyup',handleKeyUp,true);
-    window.addEventListener("mousedown", handleMouseDown, true);
+
 });
 
 

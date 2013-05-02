@@ -4,8 +4,8 @@
     <list default="true" id="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" name="Default" comment="" />
     <ignored path="blindsight.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367483453505" ignored="false" />
-    <file path="/game.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367487042383" ignored="false" />
+    <file path="/index.html" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367495967363" ignored="false" />
+    <file path="/game.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367496127849" ignored="false" />
     <file path="/a.dummy" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1364410704716" ignored="false" />
     <file path="/levelparts.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367217339082" ignored="false" />
     <file path="/box2dutils.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367480103920" ignored="false" />
@@ -25,19 +25,19 @@
     <file path="/levels.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366783533793" ignored="false" />
     <file path="/spritemanager.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366889818844" ignored="false" />
     <file path="/entity.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367178212080" ignored="false" />
-    <file path="/player.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367217885120" ignored="false" />
+    <file path="/player.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367498906527" ignored="false" />
     <file path="$USER_HOME$/WebstormProjects/JavascriptTester/index.html" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367166590545" ignored="false" />
     <file path="/player.cs.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367168315551" ignored="false" />
     <file path="/enemy.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367170385551" ignored="false" />
-    <file path="/gameengine.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367487683674" ignored="false" />
+    <file path="/gameengine.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367499010592" ignored="false" />
     <file path="/factory.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367169678640" ignored="false" />
     <file path="/InputEngine.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367170669094" ignored="false" />
-    <file path="/spritesheet.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367476948781" ignored="false" />
+    <file path="/spritesheet.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367498525402" ignored="false" />
     <file path="/physicsengine.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367483603271" ignored="false" />
     <file path="/constants.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367478973379" ignored="false" />
     <file path="/physicsmanager.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367483657331" ignored="false" />
     <file path="/levelmanager.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367231291473" ignored="false" />
-    <file path="/renderengine.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367487454636" ignored="false" />
+    <file path="/renderengine.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367498391632" ignored="false" />
     <file path="/controls.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367480139169" ignored="false" />
     <file path="/inputengine.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367491709149" ignored="false" />
     <file path="/timer.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367482171204" ignored="false" />
@@ -60,12 +60,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="gameengine.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="gameengine.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/core/gameengine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="55" selection-start="1751" selection-end="1751" vertical-scroll-proportion="27.0">
+            <state line="41" column="33" selection-start="767" selection-end="767" vertical-scroll-proportion="0.54269004">
               <folding>
-                <element signature="e#1807#3307#0" expanded="false" />
+                <element signature="e#1886#3386#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -74,27 +74,18 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="47" selection-start="5299" selection-end="5299" vertical-scroll-proportion="-8.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="controls.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/controls.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="4" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0">
+            <state line="118" column="0" selection-start="5958" selection-end="5958" vertical-scroll-proportion="-21.076923">
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inputengine.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="inputengine.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/core/inputengine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="10" selection-start="3068" selection-end="3068" vertical-scroll-proportion="1.5534091">
+            <state line="69" column="62" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -112,7 +103,7 @@
       <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="7" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0">
+            <state line="24" column="31" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -120,12 +111,50 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="player.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/entities/player.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="77" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="entity.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/entities/entity.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="74" column="19" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="renderengine.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/core/renderengine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="78" selection-start="1611" selection-end="1611" vertical-scroll-proportion="0.0">
+            <state line="85" column="0" selection-start="2116" selection-end="2116" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#159#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="box2dutils.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/box2dutils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="9" selection-start="1794" selection-end="1794" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spritesheet.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/spritesheet.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="179" column="0" selection-start="4481" selection-end="4481" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,22 +170,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/maploader.js" />
         <option value="$PROJECT_DIR$/js/tileobject.js" />
         <option value="$PROJECT_DIR$/assets/map1.js" />
-        <option value="$PROJECT_DIR$/js/spritesheet.js" />
         <option value="$PROJECT_DIR$/js/constants.js" />
         <option value="$PROJECT_DIR$/js/controls.js" />
         <option value="$PROJECT_DIR$/js/core/timer.js" />
         <option value="$PROJECT_DIR$/js/hitcalculator.js" />
         <option value="$PROJECT_DIR$/js/core/physicsengine.js" />
-        <option value="$PROJECT_DIR$/js/game.js" />
         <option value="$PROJECT_DIR$/js/box2dutils.js" />
         <option value="$PROJECT_DIR$/js/physicsmanager.js" />
-        <option value="$PROJECT_DIR$/js/core/gameengine.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/core/renderengine.js" />
         <option value="$PROJECT_DIR$/js/core/inputengine.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/game.js" />
+        <option value="$PROJECT_DIR$/js/core/renderengine.js" />
+        <option value="$PROJECT_DIR$/js/spritesheet.js" />
+        <option value="$PROJECT_DIR$/js/entities/player.js" />
+        <option value="$PROJECT_DIR$/js/core/gameengine.js" />
       </list>
     </option>
   </component>
@@ -489,20 +518,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/levelparts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="4" selection-start="163" selection-end="163" vertical-scroll-proportion="0.019318182">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="16" selection-start="436" selection-end="436" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/map1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="4" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0">
@@ -526,57 +541,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/entities/entity.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/box2dutils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="47" selection-start="5299" selection-end="5299" vertical-scroll-proportion="-8.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/core/gameengine.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="55" selection-start="1751" selection-end="1751" vertical-scroll-proportion="27.0">
-          <folding>
-            <element signature="e#1807#3307#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/hitcalculator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="54" column="45" selection-start="1254" selection-end="1254" vertical-scroll-proportion="1.0431818">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/core/renderengine.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="78" selection-start="1611" selection-end="1611" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#159#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="7" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -592,6 +559,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="0" selection-start="5958" selection-end="5958" vertical-scroll-proportion="-21.076923">
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/spritemanager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/entities/entity.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="19" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/box2dutils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="9" selection-start="1794" selection-end="1794" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="31" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/core/inputengine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="62" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/core/physicsengine.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="103" column="90" selection-start="2795" selection-end="2795" vertical-scroll-proportion="0.0">
@@ -599,10 +612,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/core/inputengine.js">
+    <entry file="file://$PROJECT_DIR$/js/core/renderengine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="10" selection-start="3068" selection-end="3068" vertical-scroll-proportion="1.5534091">
+        <state line="85" column="0" selection-start="2116" selection-end="2116" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#159#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/spritesheet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="179" column="0" selection-start="4481" selection-end="4481" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/entities/player.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="77" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/core/gameengine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="33" selection-start="767" selection-end="767" vertical-scroll-proportion="0.54269004">
+          <folding>
+            <element signature="e#1886#3386#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

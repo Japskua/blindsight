@@ -38,6 +38,9 @@ var GameEngine = Class.create({
 		// TODO: Load the map here
 		// gMap = new Map();
 
+        // Load spritesheets
+        player.loadSprite("assets/soldier.png");
+
 	}, // End of setup
 
     getTime: function() {
@@ -164,6 +167,8 @@ var GameEngine = Class.create({
 
         // Draw the new situation
         gRenderEngine.draw();
+
+        player.draw(gRenderEngine.context);
 
         // Order to wait for a few moments before running the step again
         setTimeout('gGameEngine.step()', 10);

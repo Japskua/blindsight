@@ -14,10 +14,7 @@ var DEBUG_COLLISION = null;
 //var world = createWorld();
 var world = gPhysicsEngine.CreateWorld();
 var context;
-var canvasWidth;
-var canvasHeight;
-var canvasTop;
-var canvasLeft;
+
 var keys = [];
 var mouseX;
 var mouseY;

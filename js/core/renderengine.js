@@ -84,6 +84,8 @@ RenderEngine = Class.create({
         // Draw the world
         this.DrawWorld();
 
+
+
     }, // End of draw()
 
     DrawWorld: function() {

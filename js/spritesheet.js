@@ -112,7 +112,7 @@ SpriteSheetAnimClass = Class.create({
 		sheet.load(spriteSheetURI);
 
 		this._spriteSheet = sheet
-		gSpriteSheets['grits_effects'] =sheet;
+		gSpriteSheets['blindsight'] =sheet;
 
 		this._spriteNames.length = 0;
 		this._currAnimIdx = 0;
@@ -177,9 +177,13 @@ function getSpriteNamesSimilarTo(nameValue)
 function drawSprite(spritename, posX, posY, settings)
 {
 
+
+
     // Loop through all the sheets in the spritesheet list
 	for(var sheetName in gSpriteSheets)
 	{
+        console.log("Looking for ", sheetName);
+
         // Get the sheet
 		var sheet = gSpriteSheets[sheetName];
         // Try to find if a sprite with "spritename" exists in the list
@@ -235,7 +239,7 @@ function __drawSpriteInternal(spt,sheet,posX,posY,settings)
 
 	}
     */
-    var ctx = context;
+    var ctx = gRenderEngine.context;
 
     // If there are settings passed, handle things accordingly
 	if(settings && settings.rotRadians != null)

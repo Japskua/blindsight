@@ -56,10 +56,10 @@ HitCalculator.prototype = {
 	getCloseByElements: function(x,y, distance) {
 
 		// Get all world bodies
-		var body = world.GetBodyList();
+		var body = gPhysicsEngine.world.GetBodyList();
 
 		// Get the amount of bodies to check
-		var size = world.m_bodyCount;
+		var size = gPhysicsEngine.world.m_bodyCount;
 
 		// Loop through the whole list of bodies
 		for(var i=0; i<size; i++) {

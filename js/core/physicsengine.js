@@ -23,7 +23,7 @@ var PhysicsEngine = Class.create({
         worldAABB.maxVertex.Set(1000, 1000);
         var gravity = new b2Vec2(0, 300);
         var doSleep = true;
-        var world = new b2World(worldAABB, gravity, doSleep);
+        this.world = new b2World(worldAABB, gravity, doSleep);
         return world;
 
     }, // End of CreateWorld()
@@ -34,11 +34,11 @@ var PhysicsEngine = Class.create({
         var start = Date.now();
 
         // Make a new physics step
-        this.world.Step(
+        /*this.world.Step(
              CONSTANTS.PHYSICS_LOOP_HZ, // Frame rate
              10, // velocity iterations
              10 // position iterations
-        );
+        );*/
 
 
 
@@ -64,7 +64,7 @@ var PhysicsEngine = Class.create({
         var boxBd = new b2BodyDef();
         boxBd.AddShape(boxSd);
         boxBd.position.Set(x,y);
-        return world.CreateBody(boxBd)
+        return this.world.CreateBody(boxBd)
 
     }, // End of CreateBox()
 
@@ -83,7 +83,7 @@ var PhysicsEngine = Class.create({
         // up arrow
 
         // Get the list of collisions
-        var collision = world.m_contactList;
+        var collision = this.world.m_contactList;
 
         player.canJump = false;
         // If there are collisions

@@ -88,7 +88,7 @@ function createPlayer() {
 	ballBd.allowSleep = false;
 	ballBd.AddShape(ballSd);
 	ballBd.position.Set(20,0);
-	player.object = world.CreateBody(ballBd);
+	player.object = gPhysicsEngine.world.CreateBody(ballBd);
 
 } // End of createPlayer
 
@@ -97,12 +97,14 @@ function createPlayer() {
 // Starts the game
 Event.observe(window, 'load', function() {
 
+    gGameEngine.setup();
 
     gRenderEngine.setup();
     // Now, lets initialize everything we need in the game
     initGame();
     // Physics step for Box2D
-    step();
+    //step();
+    gGameEngine.step();
 
 
 });

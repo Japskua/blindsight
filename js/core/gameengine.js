@@ -13,16 +13,25 @@ var GameEngine = Class.create({
 
 		this.entities = [];
 		this._deferredKill = [];
+        this.clock = new TimerClass();
 
 	}, // End of initialize()
 
 	entities: [],
 	_deferredKill: [],
+    fps: 0,
+    currentTick: 0,
+    lastFpsSec: 0,
+    timeSinceGameUpdate: 0,
+    timeSincePhysicsUpdate: 0,
+    clock: null,
 
 	setup: function() {
 
 		// Setup Input Engine here
 		// TODO: Missing input engine
+
+        gPhysicsEngine.CreateWorld();
 
 		gInputEngine.setup();
 
@@ -31,10 +40,20 @@ var GameEngine = Class.create({
 
 	}, // End of setup
 
+    getTime: function() {
+        return this.currentTick * 0.05;
+    },
+
 	update: function(){
+
+        // Add to the tick
+        this.currentTick++;
 
 		// Update player position
 		gGameEngine.updatePlayer();
+        // TODO: Check player controls here!
+        // Example showed applyInputs()
+
 
 		// Update all the entities
 		// by looping through the list of entities
@@ -62,8 +81,94 @@ var GameEngine = Class.create({
 		// And finally empty the list
 		this._deferredKill = [];
 
-
 	}, // End of update()
+
+    updatePhysics: function() {
+
+        gPhysicsEngine.update();
+
+        // TODO: Update player position here
+
+
+    }, // End of updatePhysics()
+
+    run: function() {
+
+        // Add the frames by one
+        this.fps++;
+        GlobalTimer.step();
+
+        // Get the elapsed time
+        var timeElapsed = this.clock.tick();
+        // And update update time since last tick
+        this.timeSinceGameUpdate += timeElapsed;
+        this.timeSincePhysicsUpdate += timeElapsed;
+
+
+        while (this.timeSinceGameUpdate >= CONSTANTS.GAME_LOOP_HZ &&
+                    this.timeSincePhysicsUpdate >= CONSTANTS.PHYSICS_LOOP_HZ) {
+
+            // Update the engine status
+            this.update();
+            // Update physics as well
+            this.updatePhysics();
+
+            // And update the time backwards
+            this.timeSinceGameUpdate -= CONSTANTS.GAME_LOOP_HZ;
+            this.timeSincePhysicsUpdate -= CONSTANTS.PHYSICS_LOOP_HZ;
+
+        } // End of while
+
+        // Check if another physics loop is still waiting for update
+        while(this.timeSincePhysicsUpdate >= CONSTANTS.PHYSICS_LOOP_HZ) {
+            // Do some extra physics calculations
+            this.updatePhysics();
+            this.timeSincePhysicsUpdate -= CONSTANTS.PHYSICS_LOOP_HZ;
+        }
+
+        // If the updates are full
+        if(this.lastFpsSec < this.currentTick/CONSTANTS.GAME_UPDATES_PER_SEC && this.currentTick % CONSTANTS.GAME_UPDATES_PER_SEC == 0) {
+            // Set the last FPS correctly
+            this.lastFpsSec = this.currentTick / CONSTANTS.GAME_UPDATES_PER_SEC;
+            // And zero the current FPS
+            this.fps = 0;
+        }
+
+
+
+    }, // End of run()
+
+    step: function(){
+        // If player drops to the bottom
+        if (player.object.GetCenterPosition().y > gRenderEngine.canvas.height){
+            player.object.SetCenterPosition(new b2Vec2(20,0),0)
+        }
+        // If player reaches the right end of the level
+        else if (player.object.GetCenterPosition().x > gRenderEngine.canvas.width-50){
+            showWin();
+            return;
+        }
+
+
+        // Handle the interactions
+        gPhysicsEngine.HandleInteractions();
+
+        // Update the engine situation
+        this.update();
+
+        var timeStep = 1.0/60;
+        var iteration = 1;
+
+        // Make the physics step
+        gPhysicsEngine.world.Step(timeStep, iteration);
+
+        // Draw the new situation
+        gRenderEngine.draw();
+
+        // Order to wait for a few moments before running the step again
+        setTimeout('gGameEngine.step()', 10);
+
+    }, // End of step()
 
 
 
@@ -88,7 +193,18 @@ var GameEngine = Class.create({
 
 	removeEntity: function(entity) {
 
-		// TODO: Remove function
+        // If the entity does not exist
+        // Just return
+        if(!entity) return;
+
+
+        // TODO: Remove function
+        // Remove the entity from the named entities
+        if(entity.name) {
+
+        }
+
+
 
 	}, // End of removeEntity()
 

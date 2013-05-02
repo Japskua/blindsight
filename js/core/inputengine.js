@@ -9,7 +9,10 @@
 var InputEngine = Class.create({
 
 	initialize: function() {
-		// Nothing here yet
+        if(CONSTANTS.DEBUG == true) {
+            console.log("InputEngine initialized")
+        }
+
 	},
 
 	// A dictionary mapping ASCII key codes to string values
@@ -37,9 +40,9 @@ var InputEngine = Class.create({
 		gInputEngine.bind(68, 'move-right');
 
 		// Adding the event listeners for the appropriate DOM events.
-		document.getElementById('my_canvas').addEventListener('mousemove', gInputEngine.onMouseMove);
-		document.getElementById('my_canvas').addEventListener('keydown', gInputEngine.onKeyDown);
-		document.getElementById('my_canvas').addEventListener('keyup', gInputEngine.onKeyUp);
+		document.getElementById('game').addEventListener('mousemove', gInputEngine.onMouseMove);
+		document.getElementById('game').addEventListener('keydown', gInputEngine.onKeyDown);
+		document.getElementById('game').addEventListener('keyup', gInputEngine.onKeyUp);
 	},
 
 	//-----------------------------

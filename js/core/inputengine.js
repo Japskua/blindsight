@@ -25,6 +25,13 @@ var InputEngine = Class.create({
 	// is currently being performed.
 	actions: {},
 
+    presses: {},
+    locks: {},
+    delayedKeyup: {},
+
+    isUsingMouse: false,
+    isUsingKeyboard: false,
+
 	mouse: {
 		x: 0,
 		y: 0
@@ -41,8 +48,18 @@ var InputEngine = Class.create({
 
 		// Adding the event listeners for the appropriate DOM events.
 		document.getElementById('game').addEventListener('mousemove', gInputEngine.onMouseMove);
-		document.getElementById('game').addEventListener('keydown', gInputEngine.onKeyDown);
-		document.getElementById('game').addEventListener('keyup', gInputEngine.onKeyUp);
+		//document.getElementById('game').addEventListener('keydown', gInputEngine.onKeyDown);
+		//document.getElementById('game').addEventListener('keyup', gInputEngine.onKeyUp);
+
+
+        document.getElementById("game").addEventListener("mousedown", gInputEngine.onMouseDown);
+
+        window.addEventListener("keydown", gInputEngine.onKeyDown);
+        window.addEventListener("keyup", gInputEngine.onKeyUp);
+
+        //window.addEventListener('keydown',handleKeyDown,true);
+        //window.addEventListener('keyup',handleKeyUp,true);
+        //window.addEventListener("mousedown", handleMouseDown, true);
 	},
 
 	//-----------------------------
@@ -50,6 +67,32 @@ var InputEngine = Class.create({
 		gInputEngine.mouse.x = event.clientX;
 		gInputEngine.mouse.y = event.clientY;
 	},
+
+    onMouseDown: function(evt) {
+
+        // Get the mouseX and mouseY in the game field
+        mouseX = (evt.clientX - gRenderEngine.context.canvas.offsetLeft);
+        mouseY = (evt.clientY - gRenderEngine.context.canvas.offsetTop);
+
+
+        console.log("Clicked at", mouseX, mouseY);
+        getBodyAtMouse();
+
+    }, // End of onMouseDown(event)
+
+    getBodyAtMouse: function() {
+
+        // Create the vector
+        mousePVec = new b2Vec2(mouseX, mouseY);
+
+        var aabb = new b2AABB();
+        aabb.minVertex.Set (mouseX - TILE_WIDTH, mouseY - TILE_HEIGHT);
+        aabb.maxVertex.Set(mouseX + TILE_WIDTH, mouseY + TILE_HEIGHT);
+        selectedBody = null;
+
+        mouseAabb = aabb;
+
+    }, // End of getBodyAtMouse()
 
 	//-----------------------------
 	onKeyDown: function (event) {
@@ -59,7 +102,13 @@ var InputEngine = Class.create({
 		//
 		// You'll need to use the bindings object you set in 'bind'
 		// in order to do this.
-		var action = gInputEngine.bindings[event.keyID];
+        keys[event.keyCode] = true;
+
+        //console.log("keycode:", event.keyCode, " keyID:", event.keyIdentifier);
+
+		var action = gInputEngine.bindings[event.keyIdentifier];
+
+
 
 		if (action) {
 			gInputEngine.actions[action] = true;
@@ -74,7 +123,9 @@ var InputEngine = Class.create({
 		//
 		// You'll need to use the bindings object you set in 'bind'
 		// in order to do this.
-		var action = gInputEngine.bindings[event.keyID];
+		var action = gInputEngine.bindings[event.keyIdentifier];
+
+        keys[event.keyCode] = false;
 
 		if (action) {
 			gInputEngine.actions[action] = false;

@@ -69,9 +69,11 @@ RenderEngine = Class.create({
 
         // Add the event listeners
         // Add the event listeners for buttons
+        /*
         window.addEventListener('keydown',handleKeyDown,true);
         window.addEventListener('keyup',handleKeyUp,true);
         window.addEventListener("mousedown", handleMouseDown, true);
+        */
     },
 
     draw: function() {

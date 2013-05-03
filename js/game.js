@@ -42,14 +42,14 @@ function initGame(){
 	// Load the map
     //gMap.LoadMap("https://raw.github.com/Japskua/blindsight/master/assets/map1.js");
 
+    gMap.LoadMap("https://dl.dropboxusercontent.com/u/4692161/blindsight/map1.json")
 
-
-    gMap.LoadMapLocalJSON(level1);
+    //gMap.LoadMapLocalJSON(level1);
 
     console.log("gMap.fullyLoaded", gMap.fullyLoaded);
 
     var spriteSheetClass = new SpriteSheetClass();
-    spriteSheetClass.load("https://www.dropbox.com/lightbox/home/Public/blindsight?select=soldier.png");
+    spriteSheetClass.load("https://dl.dropboxusercontent.com/u/4692161/blindsight/soldier.png");
 
     // Get the atlas JSON
     jQuery.getJSON("https://dl.dropboxusercontent.com/u/4692161/blindsight/soldier.json", function(data) {
@@ -58,6 +58,11 @@ function initGame(){
         console.log(data);
 
         spriteSheetClass.ParseAtlasDefinition(data);
+
+        // Create the animclass
+        var spriteSheetAnimClass = new SpriteSheetAnimClass();
+        spriteSheetAnimClass.loadSheet("blindsight", spriteSheetClass.url);
+
     });
 
     console.log("LOADED IMAGE:", spriteSheetClass.img);
@@ -71,10 +76,8 @@ function initGame(){
 
     }
 
-	CreateLevel();
+	//CreateLevel();
 	createPlayer();
-
-	//gGameEngine.setup();
 
 
 	// Testing the game engine spawner

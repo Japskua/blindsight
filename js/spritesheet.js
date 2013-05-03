@@ -241,16 +241,17 @@ function drawSprite(spritename, posX, posY, settings)
 {
 
 
-
     // Loop through all the sheets in the spritesheet list
 	for(var sheetName in gSpriteSheets)
 	{
-        console.log("Looking for ", sheetName);
+        //console.log("Looking for ", sheetName);
 
         // Get the sheet
 		var sheet = gSpriteSheets[sheetName];
+
         // Try to find if a sprite with "spritename" exists in the list
 		var spt = sheet.getStats(spritename);
+
         // If there is no matching spritesheet
 		if(spt == null)
         // Just continue searching
@@ -275,17 +276,15 @@ function __drawSpriteInternal(spt,sheet,posX,posY,settings)
 		return;
 
 
-    // Get the global map
-	//var gMap = gGameEngine.gMap;
     // Holder for x & y values
 	var hlf = {x: spt.cx , y: spt.cy};
 	//var hlf = {x: spt.w * 0.5, y: spt.h * 0.5};
 
 
     // TODO: FIX THESE TO WORK EVENTUALLY
-    /*
+
 	var mapTrans = {x: gMap.viewRect.x, y: gMap.viewRect.y};
-	var ctx = gRenderEngine.context;
+    var ctx = gRenderEngine.context;
 
     // Again, if settings exist
 	if(settings)
@@ -301,8 +300,8 @@ function __drawSpriteInternal(spt,sheet,posX,posY,settings)
 		}
 
 	}
-    */
-    var ctx = gRenderEngine.context;
+
+
 
     // If there are settings passed, handle things accordingly
 	if(settings && settings.rotRadians != null)
@@ -325,7 +324,7 @@ function __drawSpriteInternal(spt,sheet,posX,posY,settings)
 
 
 	}
-    // Otherwsise, just draw
+    // Otherwise, just draw
 	else
 	{
 		ctx.drawImage(sheet.img,

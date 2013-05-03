@@ -15,6 +15,7 @@ var GameEngine = Class.create({
 		this._deferredKill = [];
         this.clock = new TimerClass();
 
+
 	}, // End of initialize()
 
 	entities: [],
@@ -25,6 +26,7 @@ var GameEngine = Class.create({
     timeSinceGameUpdate: 0,
     timeSincePhysicsUpdate: 0,
     clock: null,
+
 
 	setup: function() {
 
@@ -169,7 +171,15 @@ var GameEngine = Class.create({
         // Draw the new situation
         gRenderEngine.draw();
 
-        player.draw(gRenderEngine.context);
+        var settings = {
+            rotRadians: 90 * (Math.PI / 180.0)
+
+        };
+
+        drawSprite("idle_1.png", 220, 220, settings);
+
+
+        //player.draw(gRenderEngine.context);
 
         // Order to wait for a few moments before running the step again
         setTimeout('gGameEngine.step()', 10);

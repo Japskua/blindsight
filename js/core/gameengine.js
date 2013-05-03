@@ -142,6 +142,7 @@ var GameEngine = Class.create({
     }, // End of run()
 
     step: function(){
+
         // If player drops to the bottom
         if (player.object.GetCenterPosition().y > gRenderEngine.canvas.height){
             player.object.SetCenterPosition(new b2Vec2(20,0),0)

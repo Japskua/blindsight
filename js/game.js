@@ -48,6 +48,20 @@ function initGame(){
 
     console.log("gMap.fullyLoaded", gMap.fullyLoaded);
 
+    var spriteSheetClass = new SpriteSheetClass();
+    spriteSheetClass.load("https://www.dropbox.com/lightbox/home/Public/blindsight?select=soldier.png");
+
+    // Get the atlas JSON
+    jQuery.getJSON("https://dl.dropboxusercontent.com/u/4692161/blindsight/soldier.json", function(data) {
+
+        console.log("------------------------------------------JSON!---------------------");
+        console.log(data);
+
+        spriteSheetClass.ParseAtlasDefinition(data);
+    });
+
+    console.log("LOADED IMAGE:", spriteSheetClass.img);
+
 
     if(gMap.fullyLoaded == true) {
         // Load Spritemap
@@ -101,6 +115,7 @@ Event.observe(window, 'load', function() {
     initGame();
     // Physics step for Box2D
     //step();
+
     gGameEngine.step();
 
 

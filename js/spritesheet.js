@@ -70,6 +70,8 @@ SpriteSheetClass = Class.create({
 		};
         // Add to the list
 		this.sprites.push(spt);
+
+        console.log(spt);
 	},
 	//-----------------------------------------
 	getStats: function (name) {
@@ -79,7 +81,68 @@ SpriteSheetClass = Class.create({
 			if (this.sprites[i].id == name) return this.sprites[i];
 		}
 		return null;
-	}
+	},
+
+    ParseAtlasDefinition: function(atlasJSON) {
+
+        // Parse the Atlas JSON usin JSON.Parse and store the
+        // result in a variable
+
+        // Loop through all the frames
+        for (var key = 0; key < atlasJSON.frames.length; key++) {
+
+            // Get the sprite
+            var sprite = atlasJSON.frames[key];
+
+
+            // Define the sprite offset
+            var cx = -sprite.frame.w * 0.5;
+            var cy = -sprite.frame.h * 0.5;
+
+            // If the sprite is trimmed
+            if(sprite.trimmed) {
+                // 1. Find the center pixel in the original image.
+                var orignalCenterX = sprite.sourceSize.w * 0.5;
+                var orignalCenterY = sprite.sourceSize.h * 0.5;
+
+                console.log("---------------------------------------");
+                console.log(key);
+                console.log("---------------------------------------");
+                console.log("Original Center: " + orignalCenterX + ", " + orignalCenterY);
+
+                // 2. Translate the center to the new trimmed coordinate system
+                var  translatedCenterX = orignalCenterX - sprite.spriteSourceSize.x;
+                var  translatedCenterY = orignalCenterY - sprite.spriteSourceSize.y;
+
+                console.log("Translated Center: " + translatedCenterX + ", " + translatedCenterY);
+                console.log("Trimmed Size: " + sprite.spriteSourceSize.w + ", " + sprite.spriteSourceSize.h);
+
+                // 3. Find the distance from the lower right corner to the translated center pixel value.
+                mYcx = -(sprite.spriteSourceSize.w - translatedCenterX);
+                mYcy = -(sprite.spriteSourceSize.h - translatedCenterY);
+
+                console.log("My Center (From Bottom Right): " + mYcx + ", " + mYcy);
+
+                cx =  -sprite.sourceSize.w/2 + sprite.spriteSourceSize.x;
+                cy =  -sprite.sourceSize.h/2 + sprite.spriteSourceSize.y;
+
+                console.log("Official Center (From Bottom Right): " + cx + ", " + cy);
+                console.log("1/2 Trimmed Size: " + (sprite.frame.w * 0.5) + ", " + (sprite.frame.h * 0.5));
+                console.log("Official Center + My Center: " + -(cx + mYcx) + ", " + -(cy + mYcy))
+
+            } // End of if sprite.trimmed
+
+
+            // Get the spritename
+            var name = atlasJSON.frames[key].filename;
+
+            // Define the sprite for this sheet by calling
+            // defSprite() to store the info into sprites array
+            this.defSprite(name, sprite.frame.x, sprite.frame.y, sprite.frame.w, sprite.frame.h, cx, cy);
+
+        }
+
+    }
 
 
 });

@@ -49,7 +49,31 @@ var Player = Class.create(Entity, {
      _drawPlayerAvatar: function(context, settings) {
 
 
-         context.drawImage(this.spriteSheet, 0, 0, 20, 20, 120, 120, 20, 20);
+         var frame = {
+
+             x: 2,
+             y: 2,
+             w:30,
+             h:37
+
+         };
+
+         var startX = 0;
+         var startY = 0;
+
+         var originWidth = 40;
+         var originHeigh = 40;
+
+         var cx = -frame.w * 0.5;
+         var cy = -frame.h * 0.5;
+
+         var locationX = 120;
+         var locationY = 120;
+
+         var destinationWidth = 30;
+         var destinationHeight = 30;
+
+         context.drawImage(this.spriteSheet, frame.x, frame.y, frame.w, frame.h, locationX, locationY, destinationWidth, destinationHeight);
 
          //drawSprite("soldier.png", 0, 0 );
 

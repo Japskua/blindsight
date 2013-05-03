@@ -12,6 +12,18 @@
  See the License for the specific language governing permissions and
  #limitations under the License.*/
 
+function checkWait(conditionFunction, resultFunction)
+{
+    var tev = setInterval(function()
+    {
+        if(conditionFunction())
+        {
+            resultFunction();
+            clearInterval(tev)
+        }
+    }, 1000);
+} // End of checkWait()
+
 al_currAssetStates= Array();
 function al_isImgFilename(fname)
 {
@@ -70,6 +82,7 @@ function loadAssets(uriList, onCompleteFunction)
 		//else //TODO
 
 	}
+
 
 	checkWait(al_isLoadFinished, onCompleteFunction);
 }

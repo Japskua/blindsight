@@ -28,6 +28,8 @@ var gRenderEngine = new RenderEngine();
 
 // Show level completed information
 function showWin(){
+    context = gRenderEngine.context;
+
     context.fillStyle    = '#000';
     context.font         = '30px verdana';
     context.textBaseline = 'top';
@@ -36,45 +38,20 @@ function showWin(){
 }
 
 
+function showLoad(){
+    context = gRenderEngine.context;
+
+    context.fillStyle    = '#000';
+    context.font         = '30px verdana';
+    context.textBaseline = 'top';
+    context.fillText('Loading the level...', 30, 0);
+
+}
+
+
 // Initializes the game
 function initGame(){
 
-	// Load the map
-    //gMap.LoadMap("https://raw.github.com/Japskua/blindsight/master/assets/map1.js");
-
-    gMap.LoadMap("https://dl.dropboxusercontent.com/u/4692161/blindsight/map1.json")
-
-    //gMap.LoadMapLocalJSON(level1);
-
-    console.log("gMap.fullyLoaded", gMap.fullyLoaded);
-
-    var spriteSheetClass = new SpriteSheetClass();
-    spriteSheetClass.load("https://dl.dropboxusercontent.com/u/4692161/blindsight/soldier.png");
-
-    // Get the atlas JSON
-    jQuery.getJSON("https://dl.dropboxusercontent.com/u/4692161/blindsight/soldier.json", function(data) {
-
-        console.log("------------------------------------------JSON!---------------------");
-        console.log(data);
-
-        spriteSheetClass.ParseAtlasDefinition(data);
-
-        // Create the animclass
-        var spriteSheetAnimClass = new SpriteSheetAnimClass();
-        spriteSheetAnimClass.loadSheet("blindsight", spriteSheetClass.url);
-
-    });
-
-    console.log("LOADED IMAGE:", spriteSheetClass.img);
-
-
-    if(gMap.fullyLoaded == true) {
-        // Load Spritemap
-        //spriteManager.LoadSpriteMap("assets/futuretiles.png");
-        console.log("-----Fully Loaded!---------");
-
-
-    }
 
 	//CreateLevel();
 	createPlayer();
@@ -114,12 +91,24 @@ Event.observe(window, 'load', function() {
     gGameEngine.setup();
 
     gRenderEngine.setup();
-    // Now, lets initialize everything we need in the game
-    initGame();
-    // Physics step for Box2D
-    //step();
 
-    gGameEngine.step();
+    showLoad();
+
+    // Now, lets initialize everything we need in the game
+    gGameEngine.preloadAssets();
+
+    // Check for preloading of assets
+    // Once done, initialize the game and take the first step
+    checkWait(function() {
+        return gGameEngine.preloadComplete;
+    },
+    function() {
+        initGame();
+        gGameEngine.step();
+
+    }); // End of checkWait()
+
+
 
 
 });

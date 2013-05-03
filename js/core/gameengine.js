@@ -186,6 +186,67 @@ var GameEngine = Class.create({
 
     }, // End of step()
 
+    preloadComplete: false,
+
+    preloadAssets: function() {
+
+        // First, load the images
+        var assets = [];
+
+        // Push the player image to the list
+        assets.push("https://dl.dropboxusercontent.com/u/4692161/blindsight/soldier.png");
+
+
+
+
+        // <------------ MAPS ------------------------>
+
+
+
+
+        // <----------- SOUNDS ----------------------->
+
+
+
+        // <------------- LOAD THE ASSETS ------------>
+
+        loadAssets(assets, function() {
+
+            // After loading these, proceed to JSON loading
+            // <--------------- LOAD JSONS ------------------------->
+
+                gMap.LoadMap("https://dl.dropboxusercontent.com/u/4692161/blindsight/map1.json")
+
+
+
+                // Get the atlas JSON
+                jQuery.getJSON("https://dl.dropboxusercontent.com/u/4692161/blindsight/soldier.json", function(data) {
+
+                    console.log("------------------------------------------JSON!---------------------");
+                    console.log(data);
+
+
+
+                    var spriteSheetClass = new SpriteSheetClass();
+                    spriteSheetClass.load("https://dl.dropboxusercontent.com/u/4692161/blindsight/soldier.png");
+
+                    spriteSheetClass.ParseAtlasDefinition(data);
+
+                    // Create the animclass
+                    var spriteSheetAnimClass = new SpriteSheetAnimClass();
+                    spriteSheetAnimClass.loadSheet("blindsight", spriteSheetClass.url);
+
+
+                    gGameEngine.preloadComplete = true;
+
+
+                }); // End of getJSON()
+
+        }); // End of loadAssets()
+
+
+    }, // End of preloadAssets()
+
 
 
 	spawnEntity: function(typename) {

@@ -118,6 +118,9 @@ RenderEngine = Class.create({
                     // If we are drawing the player
                     if(shape.GetUserData().getTileType() == "player") {
                         drawShape(shape, context);
+
+	                    player.draw(shape);
+
                         // And then just return
                         continue;
                     }

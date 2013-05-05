@@ -332,10 +332,8 @@ function __drawSpriteInternal(spt,sheet,posX,posY,settings)
 			spt.w, spt.h,
             posX + hlf.x,
             posY + hlf.y,
-			//(posX - mapTrans.x) + (hlf.x),
-			//(posY - mapTrans.y) + (hlf.y),
-			spt.w,
-			spt.h);
+			(posX - mapTrans.x) + (hlf.x),
+			(posY - mapTrans.y) + (hlf.y));
 	}
 
 };

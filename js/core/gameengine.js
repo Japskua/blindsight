@@ -171,13 +171,15 @@ var GameEngine = Class.create({
         // Draw the new situation
         gRenderEngine.draw();
 
+	    /*
         var settings = {
-            rotRadians: 90 * (Math.PI / 180.0)
+            rotRadians: 90 * (Math.PI / 180.0),
+	        noMapTrans: true
 
         };
 
         drawSprite("idle_1.png", 220, 220, settings);
-
+        */
 
         //player.draw(gRenderEngine.context);
 

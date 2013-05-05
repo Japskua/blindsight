@@ -442,7 +442,7 @@ MapLoader.prototype = {
 
 
         // Load the tilesets
-        this.LoadTileSets()
+        this.LoadTileSets();
 
 		// Finally, set to fully loaded
 		gMap.fullyLoaded = true;

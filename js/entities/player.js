@@ -37,16 +37,34 @@ var Player = Class.create(Entity, {
 
     }, // End of loadSprite(filename)
 
-    draw: function(){
+    draw: function(shape){
 
-        var context = gRenderEngine.context;
+		this._drawPlayerAvatar(shape);
 
-        this._drawPlayerAvatar(context);
+	    //drawSprite("idle_1.png", 220, 220, settings);
+
+        //this._drawPlayerAvatar(context);
 
     }, // end of draw()
 
 
-     _drawPlayerAvatar: function(context, settings) {
+     _drawPlayerAvatar: function(shape) {
+
+	     var posX = shape.m_position.x;
+	     var posY = shape.m_position.y;
+
+	     //console.log("Drawing player to position", posX);
+
+	     var settings = {
+		     rotRadians: 90 * (Math.PI / 180.0),
+		     noMapTrans: true
+
+	     };
+
+	     drawSprite("idle_1.png", posX, posY, settings);
+	     //drawSprite("idle_1.png", 220, 220, settings);
+
+	     /*
 
 
          var frame = {
@@ -76,6 +94,7 @@ var Player = Class.create(Entity, {
          context.drawImage(this.spriteSheet, frame.x, frame.y, frame.w, frame.h, locationX, locationY, destinationWidth, destinationHeight);
 
          //drawSprite("soldier.png", 0, 0 );
+         */
 
 
      } // end of _drawPlayerAvatar()

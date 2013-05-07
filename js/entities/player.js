@@ -13,10 +13,11 @@ var Player = Class.create(Entity, {
 
         this.canJump = false;
         this.object = null;
-        this._legSpriteAnimList = [];
-        this._currLegAnimIndex = 0;
+        this._spriteAnimList = [];
+        this._animIndex = 0;
         this.spriteSheet = null;
         this._currentState = this.states.IDLE;
+        this._runSpriteAnimList = [];
 
 
 
@@ -26,8 +27,9 @@ var Player = Class.create(Entity, {
 
     object: null,
     canJump: false,
-    _legSpriteAnimList: [],
-    _currLegAnimIndex: 0,
+    _spriteAnimList: [],
+    _animIndex: 0,
+    _runSpriteAnimList: [],
     spriteSheet: null,
     states: {
         IDLE: "idle",
@@ -40,7 +42,7 @@ var Player = Class.create(Entity, {
 
     LoadSpriteAnimations: function() {
 
-        var names = ["idle"];
+        var names = ["idle", "run"];
         // Loop through all the animations in the list
         for (var animationNumber=0; animationNumber<names.length; animationNumber++) {
 
@@ -51,19 +53,40 @@ var Player = Class.create(Entity, {
             // Load the sheet
             animationSheet.loadSheet("blindsight", "/assets/soldier.png");
 
-            // Loop through the amount of animations
-            for( var i=1; i<4; i++) {
-                animationSheet.pushFrame(names[animationNumber] + "_" + i + ".png");
+            // Defien the name variable and amount of frames
+            var amountFrames = 0;
+            var name = names[animationNumber];
 
+            // Define the amount of frames in each animation
+            if (name == "idle") {
+                amountFrames = 3;
+            }
+            else if (name == "run") {
+                amountFrames = 7;
             }
 
-            // And finally, add this to the leg list
-            this._legSpriteAnimList.push(animationSheet);
+            // Push all the frames to the animation sheet
+            animationSheet = this.PushFrames(amountFrames, animationSheet, name);
+
+            // And finally, add this to the animation list
+            this._spriteAnimList.push(animationSheet);
 
         }
 
 
     }, // End of LoadSpriteAnimations()
+
+    PushFrames: function(amountFrames, animationSheet, name) {
+
+        // Loop through the amount of animations
+        for( var i=1; i<amountFrames; i++) {
+            animationSheet.pushFrame(name + "_" + i + ".png");
+
+        }
+
+        return animationSheet;
+
+    }, // End of PushFrames()
 
 
     ChangeState: function(state) {
@@ -99,7 +122,7 @@ var Player = Class.create(Entity, {
         // Call the parent
         //$super.update();
 
-        //this._legSpriteAnimList[this._currLegAnimIndex].pause(true);
+        //this._spriteAnimList[this._animIndex].pause(true);
 
 
 
@@ -109,17 +132,9 @@ var Player = Class.create(Entity, {
 
      _drawPlayerAvatar: function(shape) {
 
-
-
-         // Get the current animation index
-         var sprite = this._legSpriteAnimList[this._currLegAnimIndex].getCurrentFrameStats();
-
-
-
 	     var posX = shape.m_position.x;
 	     var posY = shape.m_position.y;
 
-	     //console.log("Drawing player to position", posX);
 
 	     var settings = {
 		     //rotRadians: 90 * (Math.PI / 180.0),
@@ -128,7 +143,17 @@ var Player = Class.create(Entity, {
 
 	     };
 
-         this._legSpriteAnimList[this._currLegAnimIndex].draw(posX, posY, settings);
+         var animIndex = this._animIndex;
+
+         // Check the current state and set it to the respective animation
+         if (this._currentState == player.states.IDLE) {
+             animIndex = 0;
+         }
+         else if (this._currentState == player.states.WALKING) {
+             animIndex = 1;
+         }
+
+         this._spriteAnimList[animIndex].draw(posX, posY, settings);
 
 
 	     //drawSprite(sprite.id, posX, posY, settings);

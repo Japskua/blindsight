@@ -108,10 +108,11 @@ var InputEngine = Class.create({
 
 		var action = gInputEngine.bindings[event.keyIdentifier];
 
-
+        player.ChangeState(player.states.WALKING);
 
 		if (action) {
 			gInputEngine.actions[action] = true;
+            console.log("ACTIONACTION ACTIONACTION")
 		}
 	},
 
@@ -126,6 +127,8 @@ var InputEngine = Class.create({
 		var action = gInputEngine.bindings[event.keyIdentifier];
 
         keys[event.keyCode] = false;
+
+        player.ChangeState(player.states.IDLE);
 
 		if (action) {
 			gInputEngine.actions[action] = false;

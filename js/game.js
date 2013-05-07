@@ -66,6 +66,8 @@ function initGame(){
 
 function createPlayer() {
 
+    player.LoadSpriteAnimations();
+
     var playerSd = new b2BoxDef();
 
     // Mass property

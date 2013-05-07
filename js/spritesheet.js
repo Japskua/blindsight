@@ -138,7 +138,8 @@ SpriteSheetClass = Class.create({
 
             // Define the sprite for this sheet by calling
             // defSprite() to store the info into sprites array
-            this.defSprite(name, sprite.frame.x, sprite.frame.y, sprite.frame.w, sprite.frame.h, cx, cy);
+            this.defSprite(name, sprite.frame.x, sprite.frame.y, sprite.frame.h, sprite.frame.w, cx, cy);
+
 
         }
 
@@ -198,22 +199,34 @@ SpriteSheetAnimClass = Class.create({
 	//-----------------------------------------
 	draw: function(posX, posY, settings)
 	{
+        // If the spritesheet does not exist, just return
 		if(this._spriteSheet == null) return;
 
+        // if the animation is not paused
 		if(!this._paused)
+        {
+
+
+            // Progress the current animation index by the animations per frame
 			this._currAnimIdx +=  this._animIncPerFrame;
 
+        }
+        // Get the current animation index
 		var cIDX = Math.floor(this._currAnimIdx) % this._spriteNames.length;
 
+        // Get the sprite
 		var spt = this._spriteSheet.getStats(this._spriteNames[cIDX]);
+        // If there is no such sprite, just get the heck out of here
 		if(spt == null)
 			return;
 
+        // Finally, draw the next animation step
 		__drawSpriteInternal(spt,this._spriteSheet,posX,posY,settings);
 	},
 	//-----------------------------------------
 	getCurrentFrameStats:function()
 	{
+
 		var cIDX = Math.floor(this._currAnimIdx) % this._spriteNames.length;
 		return this._spriteSheet.getStats(this._spriteNames[cIDX]);
 	}

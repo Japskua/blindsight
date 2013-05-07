@@ -122,7 +122,8 @@ var Player = Class.create(Entity, {
 	     //console.log("Drawing player to position", posX);
 
 	     var settings = {
-		     rotRadians: 90 * (Math.PI / 180.0),
+		     //rotRadians: 90 * (Math.PI / 180.0),
+             rotRadians: 180 * (Math.Pi / 180.0),
 		     noMapTrans: true
 
 	     };

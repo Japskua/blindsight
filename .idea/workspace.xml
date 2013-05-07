@@ -25,14 +25,14 @@
     <file path="/levels.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366783533793" ignored="false" />
     <file path="/spritemanager.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1366889818844" ignored="false" />
     <file path="/entity.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367178212080" ignored="false" />
-    <file path="/player.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367913001362" ignored="false" />
+    <file path="/player.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367914917242" ignored="false" />
     <file path="$USER_HOME$/WebstormProjects/JavascriptTester/index.html" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367166590545" ignored="false" />
     <file path="/player.cs.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367168315551" ignored="false" />
     <file path="/enemy.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367170385551" ignored="false" />
     <file path="/gameengine.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367773817125" ignored="false" />
     <file path="/factory.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367169678640" ignored="false" />
     <file path="/InputEngine.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367170669094" ignored="false" />
-    <file path="/spritesheet.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367913095371" ignored="false" />
+    <file path="/spritesheet.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367914846827" ignored="false" />
     <file path="/physicsengine.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367483603271" ignored="false" />
     <file path="/constants.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367478973379" ignored="false" />
     <file path="/physicsmanager.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367483657331" ignored="false" />
@@ -73,7 +73,7 @@
       <file leaf-file-name="player.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/entities/player.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="106" selection-start="1539" selection-end="1539" vertical-scroll-proportion="1.0">
+            <state line="125" column="47" selection-start="2783" selection-end="2783" vertical-scroll-proportion="0.48114902">
               <folding />
             </state>
           </provider>
@@ -109,7 +109,7 @@
       <file leaf-file-name="spritesheet.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/spritesheet.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="129" selection-start="4540" selection-end="4540" vertical-scroll-proportion="-14.12">
+            <state line="141" column="95" selection-start="4957" selection-end="4957" vertical-scroll-proportion="-18.88">
               <folding />
             </state>
           </provider>
@@ -148,8 +148,8 @@
         <option value="$PROJECT_DIR$/js/core/renderengine.js" />
         <option value="$PROJECT_DIR$/js/game.js" />
         <option value="$PROJECT_DIR$/js/core/gameengine.js" />
-        <option value="$PROJECT_DIR$/js/entities/player.js" />
         <option value="$PROJECT_DIR$/js/spritesheet.js" />
+        <option value="$PROJECT_DIR$/js/entities/player.js" />
       </list>
     </option>
   </component>
@@ -298,24 +298,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="box2d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blindsight" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blindsight" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -435,7 +417,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1698" height="1068" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278328" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -576,20 +558,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="26" selection-start="1115" selection-end="1115" vertical-scroll-proportion="-12.76">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/soldier.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/levelmanager.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="20" selection-start="982" selection-end="982" vertical-scroll-proportion="0.0">
@@ -604,9 +572,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/soldier.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="1" vertical-scroll-proportion="-0.28417265">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="26" selection-start="1115" selection-end="1115" vertical-scroll-proportion="-12.76">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/spritesheet.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="129" selection-start="4540" selection-end="4540" vertical-scroll-proportion="-14.12">
+        <state line="141" column="95" selection-start="4957" selection-end="4957" vertical-scroll-proportion="-18.88">
           <folding />
         </state>
       </provider>
@@ -620,7 +602,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/entities/player.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="106" selection-start="1539" selection-end="1539" vertical-scroll-proportion="1.0">
+        <state line="125" column="47" selection-start="2783" selection-end="2783" vertical-scroll-proportion="0.48114902">
           <folding />
         </state>
       </provider>

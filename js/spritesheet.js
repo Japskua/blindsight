@@ -138,7 +138,8 @@ SpriteSheetClass = Class.create({
 
             // Define the sprite for this sheet by calling
             // defSprite() to store the info into sprites array
-            this.defSprite(name, sprite.frame.x, sprite.frame.y, sprite.frame.h, sprite.frame.w, cx, cy);
+            //this.defSprite(name, sprite.frame.x, sprite.frame.y, sprite.frame.h, sprite.frame.w, cx, cy);
+            this.defSprite(name, sprite.frame.x, sprite.frame.y, sprite.frame.w, sprite.frame.h, cx, cy);
 
 
         }

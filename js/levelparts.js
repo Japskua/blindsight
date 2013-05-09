@@ -49,7 +49,8 @@ function CreatePlatform(x, y, tileData) {
 	var tile = new TileObject(tileData.tileType, "platform"+tileData.tileName.toString(), x,y);
 
 
-    gPhysicsEngine.CreateBox(x+TILEOFFSET, y+TILEOFFSET, TILE_WIDTH, TILE_HEIGHT, true, tile);
+    //gPhysicsEngine.CreateBox(x+TILEOFFSET, y+TILEOFFSET, TILE_WIDTH, TILE_HEIGHT, true, tile);
+    gPhysicsEngine.CreateBox(x+TILEOFFSET, y, TILE_WIDTH, TILE_HEIGHT, true, tile);
     //createBox(world, x+TILEOFFSET, y+TILEOFFSET, TILE_WIDTH, TILE_HEIGHT, true, tile)
 
 	if(DEBUG) {

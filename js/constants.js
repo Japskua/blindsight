@@ -18,9 +18,13 @@ var Constants = Class.create({
     DEBUG_COLLISIONS: false,
 
     // Platform Hiding
-    HIDING: true,
+    HIDING: false,
+    //HIDING: true,
 
     DEBUG: true,
+
+    COLLISION_TILE_NUMBER: 25,
+    //COLLISION_TILE_NUMBER: 82,
 
     initialize: function() {
 

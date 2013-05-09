@@ -178,10 +178,16 @@ MapLoader.prototype = {
                 }
             }; // End of image.onload()
 
+
+            console.log("Trying to load following:", levelMap.tilesets[i].image);
+
             // The src value to load each new image from is in the
             // "image" property of the "tilesets"
             image.src = "assets/" + levelMap.tilesets[i].image;
 
+            //image.src = "https://dl.dropboxusercontent.com/u/4692161/blindsight/levels/" + levelMap.tilesets[i].image;
+
+            //console.log("IMAGE SOURCE-----------", image.src);
 
             // Next, create the object for each tileset to
             // be stored in the tilesets array

@@ -25,7 +25,7 @@ function CreateLayer(layer) {
         if(layer.name == "Collision") {
 
             // And tilenumber is the correct collision type
-            if(layerData[tileNumber] == 82) {
+            if(layerData[tileNumber] == CONSTANTS.COLLISION_TILE_NUMBER) {
                 // Create body
 
                 // Create the tiledata
@@ -34,6 +34,7 @@ function CreateLayer(layer) {
                     tileType: layerData[tileNumber]
                 };
 
+                // TODO: Only draws tiles with physics bodies - requires fixing!!!!
                 // Create the physics platform
                 CreatePlatform(xLocation, yLocation, tileData);
             }
@@ -63,12 +64,21 @@ function CreateLevel() {
         console.log("Xtiles:", gMap.numXTiles, " YTiles:", gMap.numYTiles );
     }
 
-    // Find the collision layer
-    var collisionLayer = gMap.currentMap.layers[2];
+
+    // Loop through all the layers
+    for(var i=0; i<gMap.currentMap.layers.length; i++) {
+
+        // If the layer name is collision
+        if(gMap.currentMap.layers[i].name == "Collision") {
+            // Create the collision layer
+            var collisionLayer = gMap.currentMap.layers[1];
 
 
-    // Create collision layer
-    CreateLayer(collisionLayer);
+            // Create collision layer
+            CreateLayer(collisionLayer);
+        }
+    }
+
 
 
 }

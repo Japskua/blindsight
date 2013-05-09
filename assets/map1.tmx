@@ -5,17 +5,17 @@
  </tileset>
  <layer name="Ground" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYKAumIWEByOYRSQeBaNgpANQPlhFAh7NNyMPAACsrRBV
+   eJxjYMANXIDYFYjd8KhBB7OgGBsIAeJQIA4jwbxRMAoGG2AFYjYqmicKxGJUNG8UjAJ6AQB+TgM5
   </data>
  </layer>
  <layer name="Ground_2" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo4A8cBKITxHApwfMdaNgFIwCWgMAKXUH5Q==
+   eJxjYBgFo2AUjIJRMApIBwAGQAAB
   </data>
  </layer>
  <layer name="Collision" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYKAuCELCgxEEEYlHwSgYBaNgFOAHAILqBCs=
+   eJxjYKAuCILiUTAKRsEoGAXDGwAA0uUApQ==
   </data>
  </layer>
 </map>

@@ -217,7 +217,13 @@ var GameEngine = Class.create({
             // After loading these, proceed to JSON loading
             // <--------------- LOAD JSONS ------------------------->
 
-                gMap.LoadMap("https://dl.dropboxusercontent.com/u/4692161/blindsight/map1.json")
+                //gMap.LoadMap("https://dl.dropboxusercontent.com/u/4692161/blindsight/map1.json")
+
+
+                // Try to load another map
+                //gMap.LoadMap("https://dl.dropboxusercontent.com/u/4692161/blindsight/levels/level_1.json");
+
+               gMap.LoadMap("https://dl.dropboxusercontent.com/u/4692161/blindsight/level_1.json");
 
 
 

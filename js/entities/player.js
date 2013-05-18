@@ -51,7 +51,7 @@ var Player = Class.create(Entity, {
             animationSheet._animIncPerFrame = 0.05;
 
             // Load the sheet
-            animationSheet.loadSheet("blindsight", "/assets/soldier.png");
+            animationSheet.loadSheet(CONSTANTS.SHEET_NAME, CONSTANTS.PLAYER_SHEET_NAME);
 
             // Defien the name variable and amount of frames
             var amountFrames = 0;
@@ -59,10 +59,10 @@ var Player = Class.create(Entity, {
 
             // Define the amount of frames in each animation
             if (name == "idle") {
-                amountFrames = 3;
+                amountFrames = CONSTANTS.ANIMATION_IDLE_FRAME_AMOUNT;
             }
             else if (name == "run") {
-                amountFrames = 7;
+                amountFrames = CONSTANTS.ANIMATION_RUN_FRAME_AMOUNT;
             }
 
             // Push all the frames to the animation sheet

@@ -41,7 +41,7 @@ var GameEngine = Class.create({
 		// gMap = new Map();
 
         // Load spritesheets
-        player.loadSprite("assets/soldier.png");
+        //player.loadSprite("assets/soldier.png");
 
 	}, // End of setup
 
@@ -196,7 +196,7 @@ var GameEngine = Class.create({
         var assets = [];
 
         // Push the player image to the list
-        assets.push("https://dl.dropboxusercontent.com/u/4692161/blindsight/soldier.png");
+        assets.push(CONSTANTS.PLAYER_IMAGE_ADDRESS);
 
 
 
@@ -223,12 +223,13 @@ var GameEngine = Class.create({
                 // Try to load another map
                 //gMap.LoadMap("https://dl.dropboxusercontent.com/u/4692161/blindsight/levels/level_1.json");
 
-               gMap.LoadMap("https://dl.dropboxusercontent.com/u/4692161/blindsight/level_1.json");
+               gMap.LoadMap(CONSTANTS.LEVEL1_JSON_ADDRESS);
 
 
 
                 // Get the atlas JSON
-                jQuery.getJSON("https://dl.dropboxusercontent.com/u/4692161/blindsight/soldier.json", function(data) {
+                //jQuery.getJSON("https://dl.dropboxusercontent.com/u/4692161/blindsight/soldier.json", function(data) {
+                jQuery.getJSON(CONSTANTS.PLAYER_JSON_ADDRESS, function(data) {
 
                     console.log("------------------------------------------JSON!---------------------");
                     console.log(data);
@@ -236,13 +237,13 @@ var GameEngine = Class.create({
 
 
                     var spriteSheetClass = new SpriteSheetClass();
-                    spriteSheetClass.load("https://dl.dropboxusercontent.com/u/4692161/blindsight/soldier.png");
+                    spriteSheetClass.load(CONSTANTS.PLAYER_IMAGE_ADDRESS);
 
                     spriteSheetClass.ParseAtlasDefinition(data);
 
                     // Create the animclass
                     var spriteSheetAnimClass = new SpriteSheetAnimClass();
-                    spriteSheetAnimClass.loadSheet("blindsight", spriteSheetClass.url);
+                    spriteSheetAnimClass.loadSheet(CONSTANTS.SHEET_NAME, spriteSheetClass.url);
 
 
                     gGameEngine.preloadComplete = true;

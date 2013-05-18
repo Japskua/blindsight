@@ -162,7 +162,7 @@ SpriteSheetAnimClass = Class.create({
         this._spriteNames = [];
         this._currAnimIdx = 0;
         this._fps = 15;
-        this._animIncPerFrame = 0.5;
+        this._animIncPerFrame = 0.5; // Animation speed
         this._paused = false;
     },
 
@@ -177,7 +177,7 @@ SpriteSheetAnimClass = Class.create({
 		sheet.load(spriteSheetURI);
 
 		this._spriteSheet = sheet
-		gSpriteSheets['blindsight'] =sheet;
+		gSpriteSheets[CONSTANTS.SHEET_NAME] =sheet;
 
 		this._spriteNames.length = 0;
 		this._currAnimIdx = 0;

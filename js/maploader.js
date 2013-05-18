@@ -183,6 +183,7 @@ MapLoader.prototype = {
 
             // The src value to load each new image from is in the
             // "image" property of the "tilesets"
+            // TODO: Check if this needs to be removed or not!?
             image.src = "assets/" + levelMap.tilesets[i].image;
 
             //image.src = "https://dl.dropboxusercontent.com/u/4692161/blindsight/levels/" + levelMap.tilesets[i].image;

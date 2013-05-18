@@ -26,6 +26,27 @@ var Constants = Class.create({
     COLLISION_TILE_NUMBER: 25,
     //COLLISION_TILE_NUMBER: 82,
 
+    // <------- SPRITE AND IMAGE RELATED ------------>
+
+    SHEET_NAME: "blindsight",
+
+    PLAYER_SHEET_NAME: "",
+    //PLAYER_SHEET_NAME: "/assets/soldier.png",
+
+    // Player JSON_ADDRESS
+    //PLAYER_JSON_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/soldier.json",
+    PLAYER_JSON_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/player.json",
+
+    //PLAYER_IMAGE_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/soldier.png",
+    PLAYER_IMAGE_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/player.png",
+
+    LEVEL1_JSON_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/level_1.json",
+
+    // <<------------ PLAYER ANIMATIONS --------------------->>
+
+    ANIMATION_RUN_FRAME_AMOUNT: 7,
+    ANIMATION_IDLE_FRAME_AMOUNT: 4,
+
     initialize: function() {
 
     } // End of initialize()

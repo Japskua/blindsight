@@ -161,7 +161,32 @@ var Player = Class.create(Entity, {
 
 
 
-     } // end of _drawPlayerAvatar()
+     }, // end of _drawPlayerAvatar()
+
+    FireProjectile: function() {
+
+        if(DEBUG) {
+            console.log("Player firing projectile at x=", this.position.x, "y=", this.position.y);
+        }
+
+        // Spawn a new projectile
+        var projectile = gGameEngine.spawnEntity("Projectile");
+
+        // Set the location to be where the player is
+        projectile.position.x = 200;
+        projectile.position.y = 200;
+
+        // Get the spritesheet from the loader
+        projectile.currentSpriteName = "others.png";
+
+        projectile.draw();
+
+
+
+
+
+
+    } // End of FireProjectile()
 
 
 }); // End of Player.create()

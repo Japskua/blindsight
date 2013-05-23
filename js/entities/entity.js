@@ -70,6 +70,10 @@ var Entity = Class.create({
 		// If we have a sprite
 		if(this.currentSpriteName) {
 
+            if(DEBUG) {
+                console.log("Drawing", this.currentSpriteName, "At", this.position);
+            }
+
 			// Draw the sprite
 			// and make the center to be the origin (this.hsize) instead of top left corner
 			drawSprite(this.currentSpriteName,

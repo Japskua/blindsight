@@ -198,6 +198,9 @@ var GameEngine = Class.create({
         // Push the player image to the list
         assets.push(CONSTANTS.PLAYER_IMAGE_ADDRESS);
 
+        // Push the projectile image to the list
+        assets.push(CONSTANTS.PROJECTILE_IMAGE_ADDRESS);
+
 
 
 
@@ -245,7 +248,6 @@ var GameEngine = Class.create({
                     var spriteSheetAnimClass = new SpriteSheetAnimClass();
                     spriteSheetAnimClass.loadSheet(CONSTANTS.SHEET_NAME, spriteSheetClass.url);
 
-
                     gGameEngine.preloadComplete = true;
 
 
@@ -270,6 +272,11 @@ var GameEngine = Class.create({
 
         // Add the entity to the list of entities in the game engine
 		gGameEngine.entities.push(entity);
+
+        // If Debugging
+        if(DEBUG) {
+            console.log("Created the given entity:", typename, entity);
+        }
 
         // And return the created entity
 		return entity;

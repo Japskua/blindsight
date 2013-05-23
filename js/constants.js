@@ -47,6 +47,8 @@ var Constants = Class.create({
 
     LEVEL1_JSON_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/level_1.json",
 
+    PROJECTILE_IMAGE_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/projectile.png",
+
     // <<------------ PLAYER ANIMATIONS --------------------->>
 
     ANIMATION_RUN_FRAME_AMOUNT: 7,

@@ -33,8 +33,16 @@
 	"sourceSize": {"w":18,"h":40}
 },
 {
+	"filename": "others.png",
+	"frame": {"x":62,"y":2,"w":8,"h":8},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":2,"w":8,"h":8},
+	"sourceSize": {"w":16,"h":16}
+},
+{
 	"filename": "run_1.png",
-	"frame": {"x":62,"y":2,"w":18,"h":40},
+	"frame": {"x":72,"y":2,"w":18,"h":40},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":18,"h":40},
@@ -42,7 +50,7 @@
 },
 {
 	"filename": "run_2.png",
-	"frame": {"x":82,"y":2,"w":18,"h":40},
+	"frame": {"x":92,"y":2,"w":18,"h":40},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":18,"h":40},
@@ -50,7 +58,7 @@
 },
 {
 	"filename": "run_3.png",
-	"frame": {"x":102,"y":2,"w":14,"h":40},
+	"frame": {"x":112,"y":2,"w":14,"h":40},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":2,"y":0,"w":14,"h":40},
@@ -95,6 +103,6 @@
 	"format": "RGBA8888",
 	"size": {"w":128,"h":128},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:13aea7081ec9f6d6c5ec8f58e9294a16$"
+	"smartupdate": "$TexturePacker:SmartUpdate:c83074820767db89828c62e430b63fdb$"
 }
 }

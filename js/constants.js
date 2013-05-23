@@ -18,12 +18,17 @@ var Constants = Class.create({
     DEBUG_COLLISIONS: false,
 
     // Platform Hiding
+    // False = don't hide
+    // True = hide
     HIDING: false,
-    //HIDING: true,
 
+    // Show debug information
+    // True = show information
+    // False = don't show any extra info
     DEBUG: true,
 
-    COLLISION_TILE_NUMBER: 25,
+    COLLISION_TILE_NUMBER: 4,
+    // COLLISION_TILE_NUMBER: 25,
     //COLLISION_TILE_NUMBER: 82,
 
     // <------- SPRITE AND IMAGE RELATED ------------>

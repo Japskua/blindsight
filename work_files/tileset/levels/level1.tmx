@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="leveltiles" tilewidth="32" tileheight="32">
-  <image source="leveltiles.png" width="192" height="160"/>
+  <image source="../32px/leveltiles.png" width="192" height="160"/>
  </tileset>
  <layer name="Ground" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYMAPGAnIYwNsVDYPHyDVPEYsmBLziLFvOJlHSD2l5hGKH1yAB4qpFT6k2k+MWQwMlJuH7iZyzaNW+icUTtjikxAeBUMHAAAcuwBR
+   eJxjYMAPGAnIkwoGg3lsVDYPHyDVPEYsmBLziLFvuJqHLSyp7b7hBmgdXkPZbGyAB4oHg3n4MK0AAMJEAGI=
   </data>
  </layer>
  <layer name="Collision" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYMAPWAjIkwoG2jwWLJgS84ixbziZR0g9peYRih9SzSMXkGs/PrMYGCg3D91N5JpHrfRPKJywxSchPAqGDgAAha4AyQ==
+   eJxjYMAPWAjIkwpGzSOsHh1TYh4x9g1X87CFJbXdN9wArcNrKJs92M3Dh2kFANa/AK0=
   </data>
  </layer>
 </map>

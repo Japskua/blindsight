@@ -110,6 +110,8 @@ Event.observe(window, 'load', function() {
 
     // <<<<-------- INITIAL SETUP --------------->>> //
 
+
+
     WriteLog("|-----------------------------------------------------|");
     WriteLog("Initializations done.");
     WriteLog("Proceeding to Setup phase");
@@ -122,6 +124,8 @@ Event.observe(window, 'load', function() {
     gInputEngine.setup();
     // 3. Setup the rendering engine
     gRenderEngine.setup();
+
+    showLoad();
 
 
     // <<<<-------- PRELOADING OF ASSETS ------------>>> //

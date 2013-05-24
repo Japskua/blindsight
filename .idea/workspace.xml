@@ -5,7 +5,7 @@
     <ignored path="blindsight.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/index.html" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1369329241806" ignored="false" />
-    <file path="/game.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1369390155022" ignored="false" />
+    <file path="/game.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1369390775701" ignored="false" />
     <file path="/a.dummy" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1364410704716" ignored="false" />
     <file path="/levelparts.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1369387967434" ignored="false" />
     <file path="/box2dutils.js" changelist="509a5193-2bcd-4f24-a6ac-f5714c3a2b7c" time="1367480103920" ignored="false" />
@@ -63,19 +63,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="game.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="208" column="23" selection-start="4576" selection-end="4576" vertical-scroll-proportion="0.0">
+            <state line="26" column="77" selection-start="410" selection-end="410" vertical-scroll-proportion="-2.8443182">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="physicsengine.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="physicsengine.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/core/physicsengine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="19" selection-start="2962" selection-end="2962" vertical-scroll-proportion="0.98068184">
+            <state line="99" column="59" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -173,9 +173,9 @@
         <option value="$PROJECT_DIR$/js/core/gameengine.js" />
         <option value="$PROJECT_DIR$/js/maploader.js" />
         <option value="$PROJECT_DIR$/js/levelmanager.js" />
-        <option value="$PROJECT_DIR$/js/game.js" />
         <option value="$PROJECT_DIR$/js/core/renderengine.js" />
         <option value="$PROJECT_DIR$/js/core/physicsengine.js" />
+        <option value="$PROJECT_DIR$/js/game.js" />
       </list>
     </option>
   </component>
@@ -374,7 +374,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1698" height="1068" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278328" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -553,13 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="208" column="23" selection-start="4576" selection-end="4576" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/core/renderengine.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="91" column="30" selection-start="2228" selection-end="2228" vertical-scroll-proportion="0.0">
@@ -569,7 +562,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/core/physicsengine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="19" selection-start="2962" selection-end="2962" vertical-scroll-proportion="0.98068184">
+        <state line="99" column="59" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="77" selection-start="410" selection-end="410" vertical-scroll-proportion="-2.8443182">
           <folding />
         </state>
       </provider>

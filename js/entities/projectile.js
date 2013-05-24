@@ -59,11 +59,20 @@ var Projectile = Class.create(Entity, {
         projectileBodyDef.fixedRotation = false;
 
         // Is this a really fast moving object?
-        projectileBodyDef.bullet = true;
+        projectileBodyDef.bullet = false;
 
         projectileBodyDef.AddShape(projectileSd);
-        projectileBodyDef.position.Set(20,0);
+
+        projectileBodyDef.position.Set(player.position.x, player.position.y);
+
         this.object = gPhysicsEngine.world.CreateBody(projectileBodyDef);
+
+        var vel = this.object.GetLinearVelocity();
+
+        vel.x = CONSTANTS.BULLET_FIRING_SPEED;
+        vel.y = -CONSTANTS.BULLET_FIRING_SPEED;
+
+        this.object.SetLinearVelocity(vel);
 
     }, // End of _createPhysicsBody()
 
@@ -78,7 +87,7 @@ var Projectile = Class.create(Entity, {
             animationSheet._animIncPerFrame = 0.05;
 
             // Load the sheet
-            animationSheet.loadSheet(CONSTANTS.SHEET_NAME, CONSTANTS.PROJECTILE_SHEET_NAME);
+            animationSheet.loadSheet(CONSTANTS.SHEET_NAME, CONSTANTS.OBJECTS_SHEET_NAME);
 
             // Defien the name variable and amount of frames
             var amountFrames = 0;
@@ -93,8 +102,7 @@ var Projectile = Class.create(Entity, {
             // And finally, add this to the animation list
             this._spriteAnimList.push(animationSheet);
 
-
-            console.log("SPRITEANIMLIST", this._spriteAnimList)
+            WriteLog("SPRITEANIMLIST", this._spriteAnimList);
         }
 
 
@@ -117,13 +125,13 @@ var Projectile = Class.create(Entity, {
         //$super();
 
         // If not dead yet
-        // Incremenet the location by 1
-        var x = this.getPosition().x;
-        var y = this.getPosition().y;
+        // Incremenent the location by 1
+        //var x = this.getPosition().x;
+        //var y = this.getPosition().y;
 
-        x += 1;
+        //x += 1;
 
-        this.setPosition(x, y);
+        //this.setPosition(x, y);
 
         //console.log("Updated projectile position to", this.position.x);
 
@@ -131,11 +139,9 @@ var Projectile = Class.create(Entity, {
 
     }, // End of update()
 
-    draw: function($super) {
+    draw: function() {
 
         //$super();
-        //drawSprite(this.currentSpriteName, this.position.x, this.position.y);
-        //drawSprite(this.currentSpriteName, 200, this.position.y)
         this._drawProjectile();
 
     }, // End of draw()
@@ -150,6 +156,8 @@ var Projectile = Class.create(Entity, {
 
         // Get the animation index
         var animIndex = this._animIndex;
+
+
 
         // And then draw
         this._spriteAnimList[animIndex].draw(this.position.x, this.position.y, settings);

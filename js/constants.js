@@ -46,6 +46,8 @@ var Constants = Class.create({
 
     PROJECTILE_IMAGE_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/projectile_1.png",
 
+    BULLET_FIRING_SPEED: 100,
+
     // <<------------ PLAYER ANIMATIONS --------------------->>
 
     ANIMATION_RUN_FRAME_AMOUNT: 7,

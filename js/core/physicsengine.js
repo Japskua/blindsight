@@ -33,17 +33,6 @@ var PhysicsEngine = Class.create({
         // Get the start time for the update
         var start = Date.now();
 
-        // Make a new physics step
-        /*this.world.Step(
-             CONSTANTS.PHYSICS_LOOP_HZ, // Frame rate
-             10, // velocity iterations
-             10 // position iterations
-        );*/
-
-
-
-
-
         // Return the amount of time it took to update
         return (Date.now() - start);
 
@@ -108,6 +97,9 @@ var PhysicsEngine = Class.create({
 
             //CheckPlayerCollision(collision);
             CheckCollision(collision, "player", "ground");
+
+            // Check for bullet collisions
+            CheckCollision(collision, "projectile", "ground");
 
             // Check if player is touching ground and is allowed to jump again
             CheckPlayerTouchingGround(collision);

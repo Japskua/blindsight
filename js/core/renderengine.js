@@ -104,7 +104,7 @@ var RenderEngine = Class.create({
 
                     // If we are drawing the player
                     if(shape.GetUserData().getTileType() == "player") {
-                        drawShape(shape, context);
+                        //drawShape(shape, context);
 
 	                    player.draw(shape);
 
@@ -113,12 +113,17 @@ var RenderEngine = Class.create({
                     }
                     // if we are drawing a projectile
                     if(shape.GetUserData().getTileType() == "projectile") {
+
+
+
+                        // TODO:: FIX THE DRAWING HERE!!
                         drawShape(shape, context);
 
 
 
+
                         // And then return
-                        continue
+                        continue;
                     }
 
                     // Draw the shape to the marked location
@@ -134,6 +139,7 @@ var RenderEngine = Class.create({
         } // End of for(draw bodies)
 
 
+
         // Get the game engine entities list
         // Draw the objects in the list
         for (var i=0; i<gGameEngine.entities.length; i++) {
@@ -142,10 +148,15 @@ var RenderEngine = Class.create({
 
             //console.log("ENTITY", entity)
 
-            if (entity.name != "Player") {
+           // if (entity.name != "player") {
+           //     entity.draw();
+           // }
+
+            /*
+            if (entity.name == "Projectile") {
                 entity.draw();
             }
-
+              */
 
             //console.log("ENTITY", entity);
 

@@ -184,14 +184,9 @@ var Player = Class.create(Entity, {
 
         WriteLog("Projectile position before setting is", projectile.getPosition())
 
-        //projectile.setPosition(this.getPosition().x, this.getPosition().y);
-
         projectile.setPosition(200, 200)
 
         WriteLog("Projectile position is", projectile.position)
-
-        // Get the spritesheet from the loader
-        projectile.currentSpriteName = "projectile_1.png";
 
 
     } // End of FireProjectile()

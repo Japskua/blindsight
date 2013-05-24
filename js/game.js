@@ -17,8 +17,6 @@ var mouseX;
 var mouseY;
 
 var hitCalculator = new HitCalculator();
-var spriteManager = SpriteManager();
-
 
 
 
@@ -61,7 +59,6 @@ function initGame(){
 
 
 function createPlayer() {
-
 
     player.LoadSpriteAnimations();
 

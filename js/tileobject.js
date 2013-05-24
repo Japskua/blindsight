@@ -7,6 +7,9 @@
  */
 
 
+// ------------------------------------------------------------ //
+// Called from CreatePlatform() function
+// ------------------------------------------------------------ //
 var TileObject = Class.create({
 
 	_tileType: null,
@@ -57,16 +60,12 @@ var TileObject = Class.create({
 
 
 	Hide: function() {
-		if (DEBUG) {
-			console.log("Hiding " + this._tileName);
-		}
+		WriteLog("Hiding " + this._tileName);
 		this._hidden = true;
 	}, // End of Hide()
 
 	UnHide: function(force) {
-		if (DEBUG) {
-			console.log("Unhiding " + this._tileName + " with force of: " + force);
-		}
+		WriteLog("Unhiding " + this._tileName + " with force of: " + force);
 
 		this._tileDrawWidth = force/100;
 		this._hidden = false;
@@ -86,16 +85,6 @@ var TileObject = Class.create({
 		this._hidden = false;
 
 	}, // End of Reveal()
-
-	RevealNeighbors: function(direction, force) {
-		// Get the close by elements on the given side
-
-	},
-
-
-	getTileDrawWidth: function() {
-		return this._tileDrawWidth;
-	}, // End of getTileDrawWidth()
 
 
 	getTileType: function() {

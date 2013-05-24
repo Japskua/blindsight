@@ -44,9 +44,8 @@ HitCalculator.prototype = {
 	    // And then fix it to fit more nicely within the game's purpose
 	    force = force/1000;
 
-        if (DEBUG) {
-            console.log("Hit object with force of " + force);
-        }
+        WriteLog("Hit object with force of " + force);
+
 
         // Return the force value
         return force;
@@ -69,9 +68,8 @@ HitCalculator.prototype = {
 			var posX = body.m_position.x;
 
 			// Again, if debugging
-			if (DEBUG) {
-				console.log("Checking nearby at",x,y);
-			}
+			WriteLog("Checking nearby at",x,y);
+
 
 			// If we are on the same y-level
 			if((y >= posY - TILE_HEIGHT) && (y <= posY + TILE_HEIGHT) ) {

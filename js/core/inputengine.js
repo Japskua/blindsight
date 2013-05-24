@@ -81,7 +81,7 @@ var InputEngine = Class.create({
 
         console.log("Clicked at", mouseX, mouseY);
         //gInputEngine.getBodyAtMouse();
-        //player.FireProjectile();
+        player.FireProjectile();
 
     }, // End of onMouseDown(event)
 

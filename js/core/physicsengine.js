@@ -106,7 +106,11 @@ var PhysicsEngine = Class.create({
             }   // End of DEBUG
 
 
-            CheckPlayerCollision(collision);
+            //CheckPlayerCollision(collision);
+            CheckCollision(collision, "player", "ground");
+
+            // Check if player is touching ground and is allowed to jump again
+            CheckPlayerTouchingGround(collision);
 
         }  // End of if (collision != null)
 

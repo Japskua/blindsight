@@ -286,9 +286,7 @@ var GameEngine = Class.create({
 		gGameEngine.entities.push(entity);
 
         // If Debugging
-        if(CONSTANTS.DEBUG) {
-            console.log("Created the given entity:", typename, entity);
-        }
+        WriteLog("Created the given entity:", typename, entity);
 
         // And return the created entity
 		return entity;

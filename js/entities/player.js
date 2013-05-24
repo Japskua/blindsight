@@ -174,62 +174,21 @@ var Player = Class.create(Entity, {
 
     FireProjectile: function() {
 
-        if(DEBUG) {
-            console.log("Player firing projectile at x=", this.position.x, "y=", this.position.y);
-        }
+        WriteLog("Player firing projectile at x=", this.position.x, "y=", this.position.y);
+
 
         // Spawn a new projectile
         var projectile = gGameEngine.spawnEntity("Projectile");
 
-        // Load the projectile assets
-        projectile.LoadSpriteAnimations();
-
-        player.LoadSpriteAnimations();
 
 
-        // add the physics
-        var projectileSd = new b2BoxDef();
-
-
-        // Mass property
-        projectileSd.density = 1.0;
-        // Sliding value
-        projectileSd.friction = 1.0;
-        // Bounciness
-        projectileSd.restitution = 0.0;
-        projectileSd.userData = new TileObject("projectile", "projectile");
-
-        // Create the new body
-        var projectileBodyDef = new b2BodyDef();
-        // Damping reduces world velocity of the bodies
-        projectileBodyDef.angularDamping = 0.0;
-        projectileBodyDef.linearDamping = 0.0;
-        // Allow body to sleep?
-        projectileBodyDef.allowSleep = false;
-
-        // Fix rotation e.g. don't let player to rotate around any axis due to physics
-        projectileBodyDef.fixedRotation = true;
-
-        // Is this a really fast moving object?
-        projectileBodyDef.bullet = false;
-
-        projectileBodyDef.AddShape(projectileSd);
-        projectileBodyDef.position.Set(20,0);
-        player.object = gPhysicsEngine.world.CreateBody(projectileBodyDef);
-
-        // Set the location to be where the player is
-        //projectile.position.x = this.position.x;
-        //projectile.position.y = this.position.y;
-
-        //projectile.position = this.getPosition();
-
-        console.log("Projectile position before setting is", projectile.getPosition())
+        WriteLog("Projectile position before setting is", projectile.getPosition())
 
         //projectile.setPosition(this.getPosition().x, this.getPosition().y);
 
         projectile.setPosition(200, 200)
 
-        console.log("Projectile position is", projectile.position)
+        WriteLog("Projectile position is", projectile.position)
 
         // Get the spritesheet from the loader
         projectile.currentSpriteName = "projectile_1.png";

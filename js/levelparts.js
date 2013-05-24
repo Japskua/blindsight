@@ -9,34 +9,7 @@
 var TILE_WIDTH = gMap.tileSize.x/2;
 var TILE_HEIGHT = gMap.tileSize.y/2;
 var TILEOFFSET = gMap.tileSize.x/2;
-var levelPlatforms = []
-var listGrounds = []
 
-
-// Creates a platform object in the given coordinates
-function CreateLinkedPlatform(x, y, userdata, list) {
-
-    // Set the x and y to be correct sizes
-    x=x*gMap.tileSize.x;
-    y=y*gMap.tileSize.y;
-
-	var tile = new TileObject("ground", "platform"+userdata.toString(), x, y);
-
-	// Create the box in the given place
-	//list.add(createBox(world, x, y, TILE_WIDTH, TILE_HEIGHT, true, tile))
-	//levelPlatforms.push(createBox(world, x, y, TILE_WIDTH, TILE_HEIGHT, true, tile));
-
-
-    gPhysicsEngine.CreateBox(x+TILEOFFSET, y+TILEOFFSET, TILE_WIDTH, TILE_HEIGHT, true, tile);
-
-    //createBox(world, x+TILEOFFSET, y+TILEOFFSET, TILE_WIDTH, TILE_HEIGHT, true, tile)
-    list.add(tile);
-
-	if(DEBUG) {
-		console.log("Created platform" + userdata.toString() + " at " + x + "," + y);
-	}
-
-} // End of CreatePlatform()
 
 // Creates a platform object in the given coordinates
 function CreatePlatform(x, y, tileData) {

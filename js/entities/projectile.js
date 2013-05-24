@@ -17,6 +17,11 @@ var Projectile = Class.create(Entity, {
         this.position.y = 0;
         this.name = "Projectile";
 
+        // Load the projectile assets
+        this.LoadSpriteAnimations();
+
+        this._createPhysicsBody();
+
 
     }, // End of initialize()
 
@@ -28,6 +33,39 @@ var Projectile = Class.create(Entity, {
     _animIndex: 0,
     _runSpriteAnimList: [],
     spriteSheet: null,
+
+    _createPhysicsBody: function() {
+
+        // add the physics
+        var projectileSd = new b2BoxDef();
+
+        // Mass property
+        projectileSd.density = 1.0;
+        // Sliding value
+        projectileSd.friction = 1.0;
+        // Bounciness
+        projectileSd.restitution = 0.0;
+        projectileSd.userData = new TileObject("projectile", "projectile");
+
+        // Create the new body
+        var projectileBodyDef = new b2BodyDef();
+        // Damping reduces world velocity of the bodies
+        projectileBodyDef.angularDamping = 0.0;
+        projectileBodyDef.linearDamping = 0.0;
+        // Allow body to sleep?
+        projectileBodyDef.allowSleep = false;
+
+        // Fix rotation e.g. don't let projectile to rotate around any axis due to physics
+        projectileBodyDef.fixedRotation = false;
+
+        // Is this a really fast moving object?
+        projectileBodyDef.bullet = true;
+
+        projectileBodyDef.AddShape(projectileSd);
+        projectileBodyDef.position.Set(20,0);
+        this.object = gPhysicsEngine.world.CreateBody(projectileBodyDef);
+
+    }, // End of _createPhysicsBody()
 
     LoadSpriteAnimations: function() {
 
@@ -119,6 +157,6 @@ var Projectile = Class.create(Entity, {
 
     } // End of drawProjectile()
 
-}); // End of Player.create()
+}); // End of Projectile.create()
 
 gFactory.nameClassMap["Projectile"] = Projectile;

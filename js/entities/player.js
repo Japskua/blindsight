@@ -55,7 +55,7 @@ var Player = Class.create(Entity, {
             animationSheet._animIncPerFrame = 0.05;
 
             // Load the sheet
-            animationSheet.loadSheet(CONSTANTS.SHEET_NAME, CONSTANTS.PLAYER_SHEET_NAME);
+            animationSheet.loadSheet(CONSTANTS.SHEET_NAME, CONSTANTS.OBJECTS_SHEET_NAME);
 
             // Defien the name variable and amount of frames
             var amountFrames = 0;

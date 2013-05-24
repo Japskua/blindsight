@@ -35,16 +35,12 @@ var Constants = Class.create({
 
     SHEET_NAME: "blindsight",
 
-    PLAYER_SHEET_NAME: "",
-    PROJECTILE_SHEET_NAME: "projectile",
-    //PLAYER_SHEET_NAME: "/assets/soldier.png",
+    OBJECTS_SHEET_NAME: "",
 
-    // Player JSON_ADDRESS
-    //PLAYER_JSON_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/soldier.json",
-    PLAYER_JSON_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/player.json",
+    // Objects JSON_ADDRESS
+    OBJECTS_JSON_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/player.json",
 
-    //PLAYER_IMAGE_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/soldier.png",
-    PLAYER_IMAGE_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/player.png",
+    OBJECTS_IMAGE_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/player.png",
 
     LEVEL1_JSON_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/level_1.json",
 
@@ -55,7 +51,19 @@ var Constants = Class.create({
     ANIMATION_RUN_FRAME_AMOUNT: 7,
     ANIMATION_IDLE_FRAME_AMOUNT: 4,
 
+    assetListImages: [],
+    assetListMaps: [],
+    assetListSounds: [],
+
     initialize: function() {
+
+        this.assetListImages.push(this.PROJECTILE_IMAGE_ADDRESS);
+        this.assetListImages.push(this.OBJECTS_IMAGE_ADDRESS);
+
+
+        if(this.DEBUG) {
+            console.log("CONSTANTS Initialized");
+        }
 
     } // End of initialize()
 

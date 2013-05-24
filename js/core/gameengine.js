@@ -28,20 +28,23 @@ var GameEngine = Class.create({
     clock: null,
 
 
+    // Sets up the game engine to be ready to use
+    // all required things.
+    // For example loads the input engine
+    //
+    //
 	setup: function() {
 
-		// Setup Input Engine here
-		// TODO: Missing input engine
+        //gPhysicsEngine.CreateWorld();
 
-        gPhysicsEngine.CreateWorld();
+        WriteLog("GameEngine setup started");
 
-		gInputEngine.setup();
 
 		// TODO: Load the map here
 		// gMap = new Map();
 
-        // Load spritesheets
-        //player.loadSprite("assets/soldier.png");
+
+        WriteLog("GameEngine setup done!");
 
 	}, // End of setup
 
@@ -190,68 +193,78 @@ var GameEngine = Class.create({
 
     preloadComplete: false,
 
+    // ---------------------------------------------------- //
+    // THIS FUNCTION IS CALLED FROM GAME.JS AFTER SETTING UP EVERYTHING
+    //----------------------------------------------------- //
+    // Loads the defined assets
     preloadAssets: function() {
 
-        // First, load the images
+        // Create a holder for all the assets
         var assets = [];
 
-        // Push the player image to the list
-        assets.push(CONSTANTS.PLAYER_IMAGE_ADDRESS);
 
-        // Push the projectile image to the list
-        assets.push(CONSTANTS.PROJECTILE_IMAGE_ADDRESS);
+        // <------------ IMAGES ------------------->
 
-
-
+        // Get all the image assets from the Constants image asset list
+        for (var i=0; i<CONSTANTS.assetListImages.length; i++) {
+            // Push the entry to the assetlist
+            assets.push(CONSTANTS.assetListImages[i]);
+        }
 
         // <------------ MAPS ------------------------>
 
-
+        // Get all the map assets from the constants list
+        for (i=0; i<CONSTANTS.assetListMaps.length; i++) {
+            // Push the entry to the assetlist
+            assets.push(CONSTANTS.assetListMaps[i]);
+        }
 
 
         // <----------- SOUNDS ----------------------->
 
+        // Get all the sound assets from the Constants sound asset list
+        for (i=0; i<CONSTANTS.assetListSounds.length; i++) {
+            // Push the entry to the assetList
+            assets.push(CONSTANTS.assetListSounds[i]);
+        }
+
 
 
         // <------------- LOAD THE ASSETS ------------>
+        // This part loads the previously defined assets and then proceeds on loading JSONS
 
         loadAssets(assets, function() {
 
             // After loading these, proceed to JSON loading
             // <--------------- LOAD JSONS ------------------------->
 
-                //gMap.LoadMap("https://dl.dropboxusercontent.com/u/4692161/blindsight/map1.json")
 
-
-                // Try to load another map
-                //gMap.LoadMap("https://dl.dropboxusercontent.com/u/4692161/blindsight/levels/level_1.json");
-
-               gMap.LoadMap(CONSTANTS.LEVEL1_JSON_ADDRESS);
+            // Load the first level for the map
+            gMap.LoadMap(CONSTANTS.LEVEL1_JSON_ADDRESS);
 
 
 
-                // Get the atlas JSON
-                //jQuery.getJSON("https://dl.dropboxusercontent.com/u/4692161/blindsight/soldier.json", function(data) {
-                jQuery.getJSON(CONSTANTS.PLAYER_JSON_ADDRESS, function(data) {
+            // Then, get the graphics JSON
+            jQuery.getJSON(CONSTANTS.OBJECTS_JSON_ADDRESS, function(data) {
 
-                    console.log("------------------------------------------JSON!---------------------");
-                    console.log(data);
-
+                console.log("------------------------------------------JSON!---------------------");
+                console.log(data);
 
 
-                    var spriteSheetClass = new SpriteSheetClass();
-                    spriteSheetClass.load(CONSTANTS.PLAYER_IMAGE_ADDRESS);
 
-                    spriteSheetClass.ParseAtlasDefinition(data);
+                var spriteSheetClass = new SpriteSheetClass();
+                spriteSheetClass.load(CONSTANTS.OBJECTS_IMAGE_ADDRESS);
 
-                    // Create the animclass
-                    var spriteSheetAnimClass = new SpriteSheetAnimClass();
-                    spriteSheetAnimClass.loadSheet(CONSTANTS.SHEET_NAME, spriteSheetClass.url);
+                spriteSheetClass.ParseAtlasDefinition(data);
 
-                    gGameEngine.preloadComplete = true;
+                // Create the animclass
+                var spriteSheetAnimClass = new SpriteSheetAnimClass();
+                spriteSheetAnimClass.loadSheet(CONSTANTS.SHEET_NAME, spriteSheetClass.url);
+
+                gGameEngine.preloadComplete = true;
 
 
-                }); // End of getJSON()
+            }); // End of getJSON()
 
         }); // End of loadAssets()
 
@@ -274,7 +287,7 @@ var GameEngine = Class.create({
 		gGameEngine.entities.push(entity);
 
         // If Debugging
-        if(DEBUG) {
+        if(CONSTANTS.DEBUG) {
             console.log("Created the given entity:", typename, entity);
         }
 

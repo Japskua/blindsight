@@ -4,12 +4,9 @@
 var initId = 0;
 
 // Create the player
-var player = gGameEngine.spawnEntity("Player");
+//var player = gGameEngine.spawnEntity("Player");
 
 
-var DEBUG = true;
-
-var DEBUG_COLLISION = null;
 
 //var world = createWorld();
 var world = gPhysicsEngine.CreateWorld();
@@ -22,7 +19,6 @@ var mouseY;
 var hitCalculator = new HitCalculator();
 var spriteManager = SpriteManager();
 
-var gRenderEngine = new RenderEngine();
 
 
 
@@ -110,6 +106,36 @@ function createProjectile() {
 // Starts the game
 Event.observe(window, 'load', function() {
 
+
+    // <<<<-------- INITIAL SETUP --------------->>> //
+
+    WriteLog("|-----------------------------------------------------|");
+    WriteLog("Initializations done.");
+    WriteLog("Proceeding to Setup phase");
+    WriteLog("|-----------------------------------------------------|");
+
+
+    // 1. Setup the game engine
+    gGameEngine.setup();
+    // 2. Setup the input engine
+    gInputEngine.setup();
+    // 3. Setup the rendering engine
+    gRenderEngine.setup();
+
+
+    // <<<<-------- PRELOADING OF ASSETS ------------>>> //
+
+    // 4. Preload all required assets
+    gGameEngine.preloadAssets();
+
+    WriteLog("|-----------------------------------------------------|");
+    WriteLog("Preloading of assets done")
+    WriteLog("Proceeding to next phase");
+    WriteLog("|-----------------------------------------------------|");
+
+    // <<<<-------- PRELOADING OF ASSETS ------------>>> //
+
+    /*
     gGameEngine.setup();
 
     gRenderEngine.setup();
@@ -130,7 +156,7 @@ Event.observe(window, 'load', function() {
 
     }); // End of checkWait()
 
-
+      */
 
 
 });

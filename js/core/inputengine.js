@@ -38,7 +38,11 @@ var InputEngine = Class.create({
 	},
 
 	//-----------------------------
+    // Set up all the input used in the game
 	setup: function () {
+
+        WriteLog("InputEngine Setup Started");
+
 		// Example usage of bind, where we're setting up
 		// the W, A, S, and D keys in that order.
 		gInputEngine.bind(87, 'move-up');
@@ -46,20 +50,20 @@ var InputEngine = Class.create({
 		gInputEngine.bind(83, 'move-down');
 		gInputEngine.bind(68, 'move-right');
 
-		// Adding the event listeners for the appropriate DOM events.
+		// <--- Add all the neccessary DOM element listeners here ---->
+
+        // <--- MOUSE ---->
 		document.getElementById('game').addEventListener('mousemove', gInputEngine.onMouseMove);
-		//document.getElementById('game').addEventListener('keydown', gInputEngine.onKeyDown);
-		//document.getElementById('game').addEventListener('keyup', gInputEngine.onKeyUp);
-
-
         document.getElementById("game").addEventListener("mousedown", gInputEngine.onMouseDown);
 
+
+        // <--- KEYBOARD -->
         window.addEventListener("keydown", gInputEngine.onKeyDown);
         window.addEventListener("keyup", gInputEngine.onKeyUp);
 
-        //window.addEventListener('keydown',handleKeyDown,true);
-        //window.addEventListener('keyup',handleKeyUp,true);
-        //window.addEventListener("mousedown", handleMouseDown, true);
+
+        WriteLog("InputEngine Setup Done!");
+
 	},
 
 	//-----------------------------
@@ -77,7 +81,7 @@ var InputEngine = Class.create({
 
         console.log("Clicked at", mouseX, mouseY);
         //gInputEngine.getBodyAtMouse();
-        player.FireProjectile();
+        //player.FireProjectile();
 
     }, // End of onMouseDown(event)
 

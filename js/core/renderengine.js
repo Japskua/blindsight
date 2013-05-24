@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-RenderEngine = Class.create({
+var RenderEngine = Class.create({
 
     canvas: null,
     context: null,
@@ -29,51 +29,36 @@ RenderEngine = Class.create({
 
     },
 
+    // -------------------------------------------------------------- //
+    // Sets up the rendering engine
     setup: function(){
         // Configure all neccessary stuff here
 
-
-
+        WriteLog("RenderEngine: Setup Started")
 
         // Get the canvas
         this.canvas = $("game");
 
-        console.log(this.canvas);
+        WriteLog("RenderEngine: Canvas Loaded:", this.canvas);
 
         // Get the context
-        this.context = $('game').getContext('2d');
-        // Get the game canvas element
-        var canvasElement = $('game');
+        this.context = this.canvas.getContext('2d');
 
-        console.log(canvasElement);
 
-        // TODO: FIX THE ELEMENTS TO BE LOADED CORRECTLY!!!!!
-        // Set the size for the canvas according to level settings
-        //canvasElement.width = level1["width"] * level1["tilewidth"];
-        //canvasElement.height = level1["height"] * level1["tileheight"];
-
-        canvasElement.width = 20 * 32;
-        canvasElement.height = 20 * 32;
-
-        console.log(canvasElement);
+        this.canvas.width = 20 * 32;
+        this.canvas.height = 20 * 32;
 
         // Get the values of canvas size
-        this.canvas.width = parseInt(canvasElement.width);
-        this.canvas.height = parseInt(canvasElement.height);
-        this.canvas.top = parseInt(canvasElement.style.top);
-        this.canvas.left = parseInt(canvasElement.style.left);
+        this.canvas.top = parseInt(this.canvas.style.top);
+        this.canvas.left = parseInt(this.canvas.style.left);
 
 
-        console.log("canvasWidth:",this.canvas.width, " canvasHeight:", this.canvas.height);
+        WriteLog("RenderEngine: Canvas has been set up with the following values");
+        WriteLog("RenderEngine: canvasWidth:", this.canvas.width, " canvasHeight:", this.canvas.height);
 
 
-        // Add the event listeners
-        // Add the event listeners for buttons
-        /*
-        window.addEventListener('keydown',handleKeyDown,true);
-        window.addEventListener('keyup',handleKeyUp,true);
-        window.addEventListener("mousedown", handleMouseDown, true);
-        */
+        WriteLog("RenderEngine: Setup Done!");
+
     },
 
     draw: function() {
@@ -208,4 +193,4 @@ RenderEngine = Class.create({
 
 });
 
-//gRenderEngine = new RenderEngine();
+gRenderEngine = new RenderEngine();

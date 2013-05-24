@@ -99,6 +99,12 @@ function createPlayer() {
 
 } // End of createPlayer
 
+function createProjectile() {
+
+
+
+}
+
 
 // This function is run when the window is loaded
 // Starts the game

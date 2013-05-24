@@ -9,8 +9,9 @@
 
 var Player = Class.create(Entity, {
 
-    initialize: function() {
+    initialize: function($super) {
 
+        $super();
         this.canJump = false;
         this.object = null;
         this._spriteAnimList = [];
@@ -18,6 +19,8 @@ var Player = Class.create(Entity, {
         this.spriteSheet = null;
         this._currentState = this.states.IDLE;
         this._runSpriteAnimList = [];
+        this.name = "Player";
+
 
 
 
@@ -25,6 +28,7 @@ var Player = Class.create(Entity, {
 
     },
 
+    position: {x:0, y:0},
     object: null,
     canJump: false,
     _spriteAnimList: [],
@@ -132,8 +136,12 @@ var Player = Class.create(Entity, {
 
      _drawPlayerAvatar: function(shape) {
 
-	     var posX = shape.m_position.x;
-	     var posY = shape.m_position.y;
+         this.setPosition(shape.m_position.x, shape.m_position.y);
+
+         //this.position.x = shape.m_position.x;
+         //this.position.y = shape.m_position.y;
+	     //var posX = shape.m_position.x;
+	     //var posY = shape.m_position.y;
 
 
 	     var settings = {
@@ -153,7 +161,8 @@ var Player = Class.create(Entity, {
              animIndex = 1;
          }
 
-         this._spriteAnimList[animIndex].draw(posX, posY, settings);
+         this._spriteAnimList[animIndex].draw(this.position.x, this.position.y, settings);
+         //this._spriteAnimList[animIndex].draw(posX, posY, settings);
 
 
 	     //drawSprite(sprite.id, posX, posY, settings);
@@ -172,18 +181,58 @@ var Player = Class.create(Entity, {
         // Spawn a new projectile
         var projectile = gGameEngine.spawnEntity("Projectile");
 
+        // Load the projectile assets
+        projectile.LoadSpriteAnimations();
+
+        player.LoadSpriteAnimations();
+
+
+        // add the physics
+        var projectileSd = new b2BoxDef();
+
+
+        // Mass property
+        projectileSd.density = 1.0;
+        // Sliding value
+        projectileSd.friction = 1.0;
+        // Bounciness
+        projectileSd.restitution = 0.0;
+        projectileSd.userData = new TileObject("projectile", "projectile");
+
+        // Create the new body
+        var projectileBodyDef = new b2BodyDef();
+        // Damping reduces world velocity of the bodies
+        projectileBodyDef.angularDamping = 0.0;
+        projectileBodyDef.linearDamping = 0.0;
+        // Allow body to sleep?
+        projectileBodyDef.allowSleep = false;
+
+        // Fix rotation e.g. don't let player to rotate around any axis due to physics
+        projectileBodyDef.fixedRotation = true;
+
+        // Is this a really fast moving object?
+        projectileBodyDef.bullet = false;
+
+        projectileBodyDef.AddShape(projectileSd);
+        projectileBodyDef.position.Set(20,0);
+        player.object = gPhysicsEngine.world.CreateBody(projectileBodyDef);
+
         // Set the location to be where the player is
-        projectile.position.x = 200;
-        projectile.position.y = 200;
+        //projectile.position.x = this.position.x;
+        //projectile.position.y = this.position.y;
+
+        //projectile.position = this.getPosition();
+
+        console.log("Projectile position before setting is", projectile.getPosition())
+
+        //projectile.setPosition(this.getPosition().x, this.getPosition().y);
+
+        projectile.setPosition(200, 200)
+
+        console.log("Projectile position is", projectile.position)
 
         // Get the spritesheet from the loader
-        projectile.currentSpriteName = "others.png";
-
-        projectile.draw();
-
-
-
-
+        projectile.currentSpriteName = "projectile_1.png";
 
 
     } // End of FireProjectile()

@@ -31,6 +31,11 @@ var TileObject = Class.create({
 			// Tilegroup is player
 			this._tileGroup = "player";
 		}
+        else if (tileType == "projectile") {
+            this._hidden = false;
+            // Tilegroup is projectile
+            this._tileGroup = "projectile";
+        }
 		else {
 
 			// If hiding is turned off

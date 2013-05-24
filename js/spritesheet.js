@@ -284,6 +284,8 @@ function drawSprite(spritename, posX, posY, settings)
 //-------
 function __drawSpriteInternal(spt,sheet,posX,posY,settings)
 {
+
+
     // Draw sprites
     // If the sprite or sheet are null, get out of here!
 	if(spt == null || sheet == null)

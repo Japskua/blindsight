@@ -90,6 +90,7 @@ RenderEngine = Class.create({
 
     DrawWorld: function() {
 
+       // get the world
         var world = gPhysicsEngine.world;
         var context = this.context;
 
@@ -124,6 +125,15 @@ RenderEngine = Class.create({
                         // And then just return
                         continue;
                     }
+                    // if we are drawing a projectile
+                    if(shape.GetUserData().getTileType() == "projectile") {
+                        drawShape(shape, context);
+
+
+
+                        // And then return
+                        continue
+                    }
 
                     // Draw the shape to the marked location
                     gMap.drawTile(context, shape.GetUserData()._x, shape.GetUserData()._y);
@@ -135,7 +145,27 @@ RenderEngine = Class.create({
 
 
             }
+        } // End of for(draw bodies)
+
+
+        // Get the game engine entities list
+        // Draw the objects in the list
+        for (var i=0; i<gGameEngine.entities.length; i++) {
+
+            var entity = gGameEngine.entities[i];
+
+            //console.log("ENTITY", entity)
+
+            if (entity.name != "Player") {
+                entity.draw();
+            }
+
+
+            //console.log("ENTITY", entity);
+
         }
+
+
 
 
     }, // End of DrawWorld();

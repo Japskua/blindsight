@@ -24,6 +24,7 @@ var Entity = Class.create({
 	    this.hsize.x = 0;
 	    this.hsize.y = 0;
 	    this.markedForDeath = false;
+        this.name = "";
 
 
     }, // End of initialize()
@@ -44,6 +45,7 @@ var Entity = Class.create({
 	// The Z-index for rendering layer
 	zIndex: 0,
 	markedForDeath: null,
+    name: "",
 
 
 
@@ -65,6 +67,12 @@ var Entity = Class.create({
 
 	}, // End of kill()
 
+    getPosition: function() {
+
+        return this.position;
+
+    }, // end of getPosition
+
 	draw: function() {
 
 		// If we have a sprite
@@ -81,6 +89,13 @@ var Entity = Class.create({
 				this.position.y.round() - this.hsize.y);
 		}
 
-	} // End of draw()
+	}, // End of draw()
+
+    setPosition: function(x,y) {
+
+        this.position.x = x;
+        this.position.y = y;
+
+    } // End of setPosition(x,y)
 
 }); // End Entity.create()

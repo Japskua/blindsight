@@ -33,7 +33,7 @@
 	"sourceSize": {"w":18,"h":40}
 },
 {
-	"filename": "others.png",
+	"filename": "projectile_1.png",
 	"frame": {"x":62,"y":2,"w":8,"h":8},
 	"rotated": false,
 	"trimmed": true,
@@ -103,6 +103,6 @@
 	"format": "RGBA8888",
 	"size": {"w":128,"h":128},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:c83074820767db89828c62e430b63fdb$"
+	"smartupdate": "$TexturePacker:SmartUpdate:7dcbb993ced22e1431a022c76711b65a$"
 }
 }

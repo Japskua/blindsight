@@ -36,6 +36,7 @@ var Constants = Class.create({
     SHEET_NAME: "blindsight",
 
     PLAYER_SHEET_NAME: "",
+    PROJECTILE_SHEET_NAME: "projectile",
     //PLAYER_SHEET_NAME: "/assets/soldier.png",
 
     // Player JSON_ADDRESS
@@ -47,7 +48,7 @@ var Constants = Class.create({
 
     LEVEL1_JSON_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/level_1.json",
 
-    PROJECTILE_IMAGE_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/projectile.png",
+    PROJECTILE_IMAGE_ADDRESS: "https://dl.dropboxusercontent.com/u/4692161/blindsight/projectile_1.png",
 
     // <<------------ PLAYER ANIMATIONS --------------------->>
 

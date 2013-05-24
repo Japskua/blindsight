@@ -4,7 +4,7 @@
 var initId = 0;
 
 // Create the player
-//var player = gGameEngine.spawnEntity("Player");
+var player = gGameEngine.spawnEntity("Player");
 
 
 
@@ -61,6 +61,7 @@ function initGame(){
 
 
 function createPlayer() {
+
 
     player.LoadSpriteAnimations();
 
@@ -128,10 +129,45 @@ Event.observe(window, 'load', function() {
     // 4. Preload all required assets
     gGameEngine.preloadAssets();
 
-    WriteLog("|-----------------------------------------------------|");
-    WriteLog("Preloading of assets done")
-    WriteLog("Proceeding to next phase");
-    WriteLog("|-----------------------------------------------------|");
+    // 5. Wait until all the assets are loaded
+
+    // Check for preloading of assets
+    // Once done, initialize the game and take the first step
+    checkWait(function() {
+            // Try to find if the preloading of assets is done
+            return gGameEngine.preloadComplete;
+        },
+    // Once done, run the following function
+    function() {
+        WriteLog("|-----------------------------------------------------|");
+        WriteLog("Preloading of assets done")
+        WriteLog("Proceeding to Creating the level");
+        WriteLog("|-----------------------------------------------------|");
+
+
+        // 5. Load the map
+        gMap.LoadMap(CONSTANTS.LEVEL1_JSON_ADDRESS);
+
+
+
+
+
+        //initGame();
+    }); // End of checkWait()
+
+
+    // Now, check if the level is loaded
+    checkWait(function() {
+            // Try to find if the level has been loaded
+            return gMap.levelLoaded;
+        },
+        // Once done, proceed with creating the game
+        InitializeGame);  // End of checkWAit()
+
+
+
+    // 6. Create the player
+
 
     // <<<<-------- PRELOADING OF ASSETS ------------>>> //
 
@@ -160,6 +196,20 @@ Event.observe(window, 'load', function() {
 
 
 });
+
+function InitializeGame() {
+    // Initialize the game    ,
+
+    WriteLog("|-----------------------------------------------------|");
+    WriteLog("Level Loaded!");
+    WriteLog("Starting the game");
+    WriteLog("|-----------------------------------------------------|");
+
+    initGame();
+    gGameEngine.step();
+
+
+}
 
 
 // disable vertical scrolling from arrows :)

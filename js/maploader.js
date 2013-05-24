@@ -58,6 +58,9 @@ MapLoader.prototype = {
         h: 512
     },
 
+    // Whether the level in question has been loaded or not
+    levelLoaded: false,
+
 
 
     // Loadcount that keeps track of amount of images to load
@@ -149,6 +152,11 @@ MapLoader.prototype = {
         }
     },
 
+
+    // -------------------------------------------------------- //
+    // This function is called from ParseMapJSON
+    // -------------------------------------------------------- //
+    // Handles loading the tilesets
     LoadTileSets: function() {
 
         var levelMap = gMap.currentMap;
@@ -405,38 +413,37 @@ MapLoader.prototype = {
 	}, // End of draw(context)
 
 
+    // ------------------------------------------------------------------ //
+    // This function is called from
+    // 1 - Event.Observe when the window is loaded
+    // ------------------------------------------------------------------ //
+    // Loads the given map
 	LoadMap: function(mapPath) {
 
-		// Use this to load the given map
-		console.log("Loading map from:", mapPath);
-
-
-        //throw "MapLoader.LoadMap() Not implemented! (Use LoadMapLocalJSON() instead";
-        console.log(mapPath);
-        console.log(mapPath["height"]);
+        WriteLog("LoadMap: Loading the given map from:", mapPath);
 
         jQuery.getJSON(mapPath, function(data) {
+            WriteLog("LoadMap: Received map data from server");
             gMap.ParseMapJSON(data);
         });
 
-
-		//var obj = JSON.parse(this.ReadJSON(mapPath));
-		//console.log("OBJ is", obj);
-
 	}, // End of LoadMap()
 
+    // ------------------------------------------------------------------ //
+    // This function is called from LoadMap
+    // ------------------------------------------------------------------ //
 	/*
 	This function is used to parse the map from a JSON
 	 */
 	ParseMapJSON: function(mapJSON) {
 
-        console.log("LOADED", mapJSON);
+        WriteLog("ParseMapJSON: Starting to parse the map", mapJSON);
 
 		// First, save the loaded file to currentMap
-		//gMap.currentMap = JSON.parse(mapJSON);
         gMap.currentMap = mapJSON;
 
-		console.log("currentMap",gMap.currentMap);
+        WriteLog("ParseMapJSON: Stored the mapdata to currentMap", gMap.currentMap);
+
 		// Then, continue adding the values
 
 		// Number of tiles

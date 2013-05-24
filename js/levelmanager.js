@@ -7,6 +7,10 @@
  */
 
 
+// ----------------------------------------------------------------------- //
+// This function is called from CreateLevel() function
+// ----------------------------------------------------------------------- //
+// Creates the given layer
 function CreateLayer(layer) {
 
     // Get the tile data of the layer
@@ -58,12 +62,14 @@ function CreateLayer(layer) {
 } // End of CreateLayer()
 
 
+// ------------------------------------------------------------------ //
+// This function is called from ParseMapJSON at the end of loading
+// ------------------------------------------------------------------ //
+// Creates the level
 function CreateLevel() {
-    if(DEBUG) {
-        console.log("Creating the level");
-        console.log("Xtiles:", gMap.numXTiles, " YTiles:", gMap.numYTiles );
-    }
 
+    WriteLog("Creating the level");
+    WriteLog("Xtiles:", gMap.numXTiles, " YTiles:", gMap.numYTiles);
 
     // Loop through all the layers
     for(var i=0; i<gMap.currentMap.layers.length; i++) {
@@ -79,6 +85,9 @@ function CreateLevel() {
         }
     }
 
+
+    // And finally set the level loaded to true
+    gMap.levelLoaded = true;
 
 
 }

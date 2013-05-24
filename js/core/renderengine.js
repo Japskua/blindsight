@@ -88,7 +88,8 @@ var RenderEngine = Class.create({
         for (var body = world.m_bodyList; body; body = body.m_next) {
             // Get all the shapes of the bodies
             for (var shape = body.GetShapeList(); shape != null; shape = shape.GetNext()) {
-                if (DEBUG) {
+
+                if (CONSTANTS.DEBUG) {
                     var variable = shape.GetUserData().getHidden();
                     // console.log("Drawing shape that is: " + variable);
                 }

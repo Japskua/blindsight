@@ -247,9 +247,8 @@ var GameEngine = Class.create({
             // Then, get the graphics JSON
             jQuery.getJSON(CONSTANTS.OBJECTS_JSON_ADDRESS, function(data) {
 
-                console.log("------------------------------------------JSON!---------------------");
-                console.log(data);
-
+                WriteLog("preLoadAssets: Incoming JSON Data...");
+                WriteLog(data);
 
 
                 var spriteSheetClass = new SpriteSheetClass();

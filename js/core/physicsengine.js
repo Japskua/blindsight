@@ -79,6 +79,8 @@ var PhysicsEngine = Class.create({
     }, // End of DrawDebugBox()
 
 
+    previousCollision: null,
+
     HandleInteractions: function() {
         // up arrow
 
@@ -88,13 +90,13 @@ var PhysicsEngine = Class.create({
         player.canJump = false;
         // If there are collisions
         if (collision != null){
-            if (DEBUG) {
+            if (CONSTANTS.DEBUG) {
                 var collisionObject1 = collision.GetShape1().GetUserData() ;
                 var collisionObject2 = collision.GetShape2().GetUserData();
                 // If the collided object is something different than previous collision
-                if (collisionObject1 != DEBUG_COLLISION) {
+                if (collisionObject1 != this.previousCollision) {
                     // Save to DEBUG_COLLISION
-                    DEBUG_COLLISION = collisionObject1;
+                    this.previousCollision = collisionObject1;
 
                     // Inform
                     console.log(collisionObject1.getTileName() + " collided with " + collisionObject2.getTileName() + " and was hidden: " + collisionObject1.getHidden());

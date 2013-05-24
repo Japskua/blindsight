@@ -53,7 +53,7 @@ function CreatePlatform(x, y, tileData) {
     gPhysicsEngine.CreateBox(x+TILEOFFSET, y, TILE_WIDTH, TILE_HEIGHT, true, tile);
     //createBox(world, x+TILEOFFSET, y+TILEOFFSET, TILE_WIDTH, TILE_HEIGHT, true, tile)
 
-	if(DEBUG) {
+	if(CONSTANTS.DEBUG) {
 		console.log("Created platform" + tileData.tileName.toString() + " at " + x + "," + y);
 	}
 
